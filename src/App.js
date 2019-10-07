@@ -1,5 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react'
 
-import Index from './pages/index'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+import './assets/styles/reset.css'
+
+import MyRouter from './pages/Router'
 
 
+export default class App extends Component {
+  render() {
+    return (
+      <Router>
+        <MyRouter></MyRouter>
+      </Router>
+    )
+  }
+}

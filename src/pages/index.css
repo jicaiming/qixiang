@@ -1,0 +1,30 @@
+.normal{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+.home{
+    color : red;
+}
+.home_active{
+    color : #666
+}
+.category{
+    color : red;
+}
+.category_active{
+    color : #666
+}
+.message{
+    color : red;
+}
+.message_active{
+    color : #666
+}
+.profile{
+    color : red;
+}
+.profile_active{
+    color : #666
+}
