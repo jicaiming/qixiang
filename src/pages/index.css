@@ -1,30 +1,69 @@
 .normal{
     display: flex;
     flex: 1;
-    align-items: center;
-    justify-content: center;
 }
 .home{
-    color : red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    background: url("../assets/images/ui切图/首页-默认.png") no-repeat center center ;
+    background-size : .23rem .4rem;
+    
 }
 .home_active{
-    color : #666
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    background: url("../assets/images/ui切图/首页-选中.png") no-repeat center center;
+    background-size : .23rem .4rem;
 }
 .category{
-    color : red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    background: url("../assets/images/ui切图/分类-默认.png") no-repeat center center;
+    background-size : .23rem .4rem;
 }
 .category_active{
-    color : #666
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    background: url("../assets/images/ui切图/分类-选中.png") no-repeat center center;
+    background-size : .23rem .4rem;
 }
 .message{
-    color : red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    background: url("../assets/images/ui切图/消息-默认.png") no-repeat center center;
+    background-size : .23rem .4rem;
 }
 .message_active{
-    color : #666
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    background: url("../assets/images/ui切图/消息-选中.png") no-repeat center center;
+    background-size : .23rem .4rem;
 }
 .profile{
-    color : red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    background: url("../assets/images/ui切图/我的-默认.png") no-repeat center center;
+    background-size : .23rem .4rem;
 }
 .profile_active{
-    color : #666
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    background: url("../assets/images/ui切图/我的-选中.png") no-repeat center center;
+    background-size : .23rem .4rem;
 }
