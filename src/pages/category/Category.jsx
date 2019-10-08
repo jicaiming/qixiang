@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export default class Category extends Component {
+class Category extends PureComponent {
     render() {
         return (
             <div>
@@ -9,3 +9,5 @@ export default class Category extends Component {
         )
     }
 }
+
+export default Category
