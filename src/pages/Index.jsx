@@ -17,9 +17,6 @@ export default class Index extends PureComponent {
         let { match } = this.props
         return (
             <Container>
-                <header>
-                    
-                </header>
                 <Main>
                     <Route path={`${match.path}/home`} component={Home} ></Route>
                     <Route path={`${match.path}/category`} component={Category} ></Route>
