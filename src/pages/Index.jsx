@@ -5,6 +5,7 @@ import { Container , Main , Footer } from './index_css'
 import { Route , NavLink } from 'react-router-dom'
 
 import './index.css'
+import '../assets/styles/reset.css'
 
 import Home from './home/Home'
 import Category from './category/Category'
@@ -25,16 +26,16 @@ export default class Index extends PureComponent {
                 </Main>
                 <Footer>
                     <NavLink className='normal' to={`${match.path}/home`}>
-                        <div className={this.props.location.pathname==='/index/home' ? "home" : "home_active"}>首页</div>
+                        <div className={this.props.location.pathname==='/index/home' ? "home_active" : "home"}></div>
                     </NavLink>
                     <NavLink className='normal' to={`${match.path}/category`}>
-                        <div className={this.props.location.pathname==='/index/category' ? "category" : "category_active"}>分类</div>
+                        <div className={this.props.location.pathname==='/index/category' ? "category_active" : "category"}></div>
                     </NavLink>
                     <NavLink className='normal' to={`${match.path}/message`}>
-                        <div className={this.props.location.pathname==='/index/message' ? "message" : "message_active"}>消息</div>
+                        <div className={this.props.location.pathname==='/index/message' ? "message_active" : "message"}></div>
                     </NavLink>
                     <NavLink className='normal' to={`${match.path}/profile`}>
-                        <div className={this.props.location.pathname==='/index/profile' ? "profile" : "profile_active"}>我的</div>
+                        <div className={this.props.location.pathname==='/index/profile' ? "profile_active" : "profile"}></div>
                     </NavLink>
                 </Footer>
             </Container>  
