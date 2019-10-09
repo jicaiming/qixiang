@@ -2,15 +2,16 @@ import React from 'react'
 
 import PrimaryClassification from './components/PrimaryClassification'
 import SubClassification from './components/SubClassification'
-import GoodsItem from './components/GoodsItem'
+import GoodsList from './components/GoodsList'
+import TimeBtn from './components/TimeBtn'
 
 export default (props) => {
   return (
     <>
       <PrimaryClassification></PrimaryClassification>
       <SubClassification></SubClassification>
-      <GoodsItem></GoodsItem>
-      <GoodsItem></GoodsItem>
+      <GoodsList></GoodsList>
+      <TimeBtn></TimeBtn>
     </>
   )
 }
