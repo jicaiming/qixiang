@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 import border from 'components/border.js'
 
-import userMessage from 'images/ui切图/矩形1.png'
-
+import bg from 'images/我的/bg.png'
 
 
 const ProfileMessage = styled.div`
@@ -29,7 +28,7 @@ const ProfileMessage = styled.div`
             width: 3.45rem;
             height:1.5rem;
             z-index:9;
-            background-image:url(${userMessage}) ;
+            background-image:url(${bg}) ; 
             background-size:3.45rem 1.5rem; 
             img{
                 width:0.12rem;
