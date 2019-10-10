@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 
-import { ProfileMessage, ProfileOrder, ProfileServe,ListItem } from './StyleProfile.js'
+import { ProfileMessage, ProfileOrder, ProfileServe, ListItem } from './StyleProfile.js'
 import userPhoto from 'images/我的/我的-头像.png'
 import edit from 'images/我的/我的-编辑icon.png'
 
-// import bianJi from 'images/ui切图/bianji.png'
-
-// import x from 'images/ui切图/bianji.png'
-// import g from 'images/ui切图/bianji.png'
-// import r from 'images/ui切图/bianji.png'
-// import c from 'images/ui切图/bianji.png'
+import waitPay from 'images/我的/待付款icon.png'
+import accountPaid from 'images/我的/已付款.png'
+import finished from 'images/我的/已结束.png'
+import allOrders from 'images/我的/全部订单.png'
 
 
 
@@ -37,14 +35,30 @@ export default class Profile extends Component {
                 <ProfileOrder>
                     <h4>我的订单</h4>
                     <div>
-                        <ul>
+                        <div>
+                            <img src={waitPay} alt="" />
+                            <p>待付款</p>
+                        </div>
+                        <div>
+                            <img src={accountPaid} alt="" />
+                            <p>已付款</p>
+                        </div>
+                        <div>
+                            <img src={finished} alt="" />
+                            <p>已结束</p>
+                        </div>
+                        <div>
+                            <img src={allOrders} alt="" />
+                            <p>全部订单</p>
+                        </div>
+                        {/* <ul>
                             <li>
-                                <img src="" alt="" />
+                                
                             </li>
                             <li>haha</li>
                             <li>sssssssss</li>
                             <li>xc</li>
-                        </ul>
+                        </ul> */}
                     </div>
                 </ProfileOrder>
                 <ProfileServe>

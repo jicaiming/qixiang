@@ -76,15 +76,13 @@ const ProfileOrder = styled.div`
     >div{
         background:#fff;
         height:0.83rem;
-        ul{
+        display:flex;
+        >div{
+            flex:1;
+            text-align:center;
             height:100%;
-            display:flex;
             /* justify-content:space-around; */
-            align-items:center;
-            li{
-                width: 25%;
-                text-align:center
-            }
+            /* align-items:center; */
         }
     }
 `
@@ -103,10 +101,11 @@ const ProfileServe = styled.div`
      }
 `
 
+
 const ListItem = border({
     width: '0 0 1px 0',
-    style:'solid',
-    color:'#cecece',
+    style: 'solid',
+    color: '#cecece',
     comp: styled.div`
         margin:0 0.15rem;
     `
