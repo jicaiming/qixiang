@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 
 import { ProfileMessage, ProfileOrder, ProfileServe,ListItem } from './StyleProfile.js'
-import userImg from 'images/ui切图/20150224120123_fUzMf.png'
-import bianJi from 'images/ui切图/bianji.png'
+import userPhoto from 'images/我的/我的-头像.png'
+import edit from 'images/我的/我的-编辑icon.png'
+
+// import bianJi from 'images/ui切图/bianji.png'
 
 // import x from 'images/ui切图/bianji.png'
 // import g from 'images/ui切图/bianji.png'
@@ -20,10 +22,10 @@ export default class Profile extends Component {
                 <ProfileMessage>
                     <div>
                         <div>
-                            <img src={userImg} alt="" />
+                            <img src={userPhoto} alt="" />
                         </div>
                         <div>
-                            <img src={bianJi} alt="" />
+                            <img src={edit} alt="" />
                             <div>
                                 <p>guangruixiao</p>
                                 <p>请添加活动区域</p>
