@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 
 import { ListContainer } from '../StyledCategory'
-import GoodsItem from './GoodsItem'
+import CarItem from './CarItem'
 
 let List = [
   {
@@ -22,7 +22,7 @@ export default class GoodsList extends PureComponent {
       <ListContainer>
         {
           List.map((value, index) => (
-            <GoodsItem key={index} value={value}></GoodsItem>
+            <CarItem key={index} value={value}></CarItem>
           ))
         }
       </ListContainer>
