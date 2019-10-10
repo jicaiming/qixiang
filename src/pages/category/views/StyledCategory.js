@@ -99,6 +99,14 @@ const SelectContainer = border({
     .price {
       padding-right: .07rem;
     }
+    .num {
+      img {
+        width: .21rem;
+        height: .21rem;
+        background: url('assets/images/decrease.png') no-repeat;
+        background-size: 100% 100%;
+      }
+    }
     h4 {
       font-size: .14rem;
       font-family: PingFangSC-Regular,PingFangSC;

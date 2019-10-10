@@ -13,9 +13,9 @@ export default class SelectNum extends PureComponent {
         <div className="num">
           <h4>数量</h4>
           <p>
-            <img src="http://placehold.it/21x21.png" alt=""/>
+            <img src="assets/images/decrease.png" alt=""/>
             <em>5</em>
-            <img src="http://placehold.it/21x21.png" alt=""/>
+            <img src="assets/images/分类/increase.png" alt=""/>
           </p>
         </div>
       </SelectContainer>
