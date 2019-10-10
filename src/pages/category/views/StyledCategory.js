@@ -141,7 +141,12 @@ const SelectContainer = border({
 const PriceContainer = border({
   width: '0 1px 0 0',
   color: '#D2D2D2',
-  comp: styled.div``
+  comp: styled.div`
+    width: .93rem;
+    p {
+      text-align: right;
+    }
+  `
 })
 
 const ListContainer = styled.div`

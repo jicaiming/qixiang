@@ -8,7 +8,7 @@ export default class SelectNum extends PureComponent {
       <SelectContainer>
         <PriceContainer className="price">
           <h4>价格</h4>
-          <p>{this.props.price}<i>元</i><span>/天</span></p>
+          <p>{this.props.price} <i>元</i><span>/天</span></p>
         </PriceContainer>
         <div className="num">
           <h4>数量</h4>
