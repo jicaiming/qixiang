@@ -11,7 +11,7 @@ const HomeContainer = styled.div`
         align-items:center;
         font-size:.16rem; 
         padding:0 .15rem;
-        .home{
+        .home_home{
             color:#fff;
         }
         .area{

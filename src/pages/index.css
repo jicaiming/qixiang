@@ -3,83 +3,67 @@
     flex: 1;
 }
 .home{
-<<<<<<< HEAD
-    color : #37C2BC;
-=======
     display: flex;
     justify-content: center;
     align-items: center;
     flex:1;
-    background: url("../assets/images/ui切图/首页-默认.png") no-repeat center center ;
+    background: url("../assets/images/icon/首页-默认.png") no-repeat center center ;
     background-size : .23rem .4rem;
     
->>>>>>> master
 }
 .home_active{
     display: flex;
     justify-content: center;
     align-items: center;
     flex:1;
-    background: url("../assets/images/ui切图/首页-选中.png") no-repeat center center;
+    background: url("../assets/images/icon/首页-选中.png") no-repeat center center;
     background-size : .23rem .4rem;
 }
 .category{
-<<<<<<< HEAD
-    color : #37C2BC;
-=======
     display: flex;
     justify-content: center;
     align-items: center;
     flex:1;
-    background: url("../assets/images/ui切图/分类-默认.png") no-repeat center center;
+    background: url("../assets/images/icon/分类-默认.png") no-repeat center center;
     background-size : .23rem .4rem;
->>>>>>> master
 }
 .category_active{
     display: flex;
     justify-content: center;
     align-items: center;
     flex:1;
-    background: url("../assets/images/ui切图/分类-选中.png") no-repeat center center;
+    background: url("../assets/images/icon/分类-选中.png") no-repeat center center;
     background-size : .23rem .4rem;
 }
 .message{
-<<<<<<< HEAD
-    color : #37C2BC;
-=======
     display: flex;
     justify-content: center;
     align-items: center;
     flex:1;
-    background: url("../assets/images/ui切图/消息-默认.png") no-repeat center center;
+    background: url("../assets/images/icon/消息-默认.png") no-repeat center center;
     background-size : .23rem .4rem;
->>>>>>> master
 }
 .message_active{
     display: flex;
     justify-content: center;
     align-items: center;
     flex:1;
-    background: url("../assets/images/ui切图/消息-选中.png") no-repeat center center;
+    background: url("../assets/images/icon/消息-选中.png") no-repeat center center;
     background-size : .23rem .4rem;
 }
 .profile{
-<<<<<<< HEAD
-    color : #37C2BC;
-=======
     display: flex;
     justify-content: center;
     align-items: center;
     flex:1;
-    background: url("../assets/images/ui切图/我的-默认.png") no-repeat center center;
+    background: url("../assets/images/icon/我的-默认.png") no-repeat center center;
     background-size : .23rem .4rem;
->>>>>>> master
 }
 .profile_active{
     display: flex;
     justify-content: center;
     align-items: center;
     flex:1;
-    background: url("../assets/images/ui切图/我的-选中.png") no-repeat center center;
+    background: url("../assets/images/icon/我的-选中.png") no-repeat center center;
     background-size : .23rem .4rem;
 }

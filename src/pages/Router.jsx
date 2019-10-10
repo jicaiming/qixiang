@@ -7,8 +7,6 @@ import Page404 from './Page404'
 import City from './home/City'
 import Classic from './home/Classic'
 
-
-
 export default class MyRouter extends Component {
     render() {
         return (

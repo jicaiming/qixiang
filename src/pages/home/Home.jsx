@@ -8,7 +8,7 @@ export default class Home extends Component {
             <div>
                 <HomeContainer>
                     <header>
-                        <div className="home">首页</div>
+                        <div className="home_home">首页</div>
                         <div className="area" onClick={ () => this.handleClickCity()}><span className='city'>上海市</span><span>徐汇区</span><i></i></div>
                     </header>
                     <section className="banner">

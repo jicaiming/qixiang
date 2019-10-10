@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import {CityContainer} from './StyledCity'
-import GuangZhou from 'assets/images/hxj-img/timg.jpg'
+// import GuangZhou from 'assets/images/hxj-img/timg.jpg'
 
 export default class City extends Component {
     render() {
@@ -14,7 +14,7 @@ export default class City extends Component {
                 <section className="city_container">
                     <div>
                         <div className="img">
-                            <img src={GuangZhou} alt="" />
+                            <img src="" alt="" />
                         </div>
                         <div className="details">
                             <h4>广州</h4>
@@ -24,8 +24,8 @@ export default class City extends Component {
                             </div>
                         </div>
                     </div>
-                    <div><div className="img"><img src={GuangZhou} alt="" /></div></div>
-                    <div><div className="img"><img src={GuangZhou} alt="" /></div></div>
+                    <div><div className="img"><img src="" alt="" /></div></div>
+                    <div><div className="img"><img src="" alt="" /></div></div>
                 </section>
             </CityContainer>
         )
