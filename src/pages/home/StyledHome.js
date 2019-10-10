@@ -1,0 +1,105 @@
+import styled from 'styled-components'
+
+const HomeContainer = styled.div`
+    header{
+        height:.44rem;
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+        color:#fff;
+        background:#37C2BC;
+        align-items:center;
+        font-size:.16rem; 
+        padding:0 .15rem;
+        .home_home{
+            color:#fff;
+        }
+        .area{
+            .city{
+                margin-right:.05rem;
+            }
+        }  
+    }
+    section.banner{
+        padding:.12rem;
+        div{
+            height:0;
+            position:relative;
+            padding-bottom:41.59544%;
+            background:red;
+            border-radius:.1rem;
+            img{
+                width:100%;
+            }
+        }
+    }
+    ul.list{
+        display:flex;
+        justify-content:center;
+        padding: 0 .25rem;
+        li{
+            flex:1;
+            background:orange;
+            img{
+                width:.45rem;
+                height:.45rem;
+            }   
+        }
+    }
+    section{
+        padding: 0 .15rem;
+        margin-bottom:.35rem;
+        .hot_header{
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:.1rem;
+            div{
+                h4{
+                    font-size:.16rem;
+                    color:#000;
+                    font-weight:500;
+                }
+            }
+            span{
+                color:#4A4A4A;
+                font-size:.12rem;
+            }
+        }
+    }
+    .hot_container{
+        display:flex;
+        justify-content:space-between;         
+        li{
+            width:1.675rem;
+            div{
+                height:0;
+                position:relative;
+                padding-bottom:44.1791%;
+                background-color: olive; 
+                border-radius:.1rem;
+                img{
+                    width:100%;
+                }                
+            }
+        }
+    }
+    .classic_container{    
+        li{
+            width:100%;
+            margin-bottom:.15rem;
+            div{
+                height:0;
+                position:relative;
+                padding-bottom:31.30435%;
+                background-color: olive; 
+                border-radius:.1rem;
+                img{
+                    width:100%;
+                }                
+            }
+        }
+    }
+`
+export {
+    HomeContainer
+}
