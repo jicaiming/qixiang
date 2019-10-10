@@ -8,6 +8,12 @@ import waitPay from 'images/我的/待付款icon.png'
 import accountPaid from 'images/我的/已付款.png'
 import finished from 'images/我的/已结束.png'
 import allOrders from 'images/我的/全部订单.png'
+import enterprise from 'images/我的/关于企业.png'
+import notice from 'images/我的/公告.png'
+import set from 'images/我的/设置.png'
+import more from 'images/我的/更多.png'
+
+
 
 
 
@@ -51,25 +57,30 @@ export default class Profile extends Component {
                             <img src={allOrders} alt="" />
                             <p>全部订单</p>
                         </div>
-                        {/* <ul>
-                            <li>
-                                
-                            </li>
-                            <li>haha</li>
-                            <li>sssssssss</li>
-                            <li>xc</li>
-                        </ul> */}
                     </div>
                 </ProfileOrder>
                 <ProfileServe>
                     <h4>我的服务</h4>
                     <div>
-                        <ListItem><p>关于企业</p></ListItem>
-                        <ListItem><p>公告</p></ListItem>
-                        <ListItem><p>设置</p></ListItem>
+                        <ListItem>
+                            <img src={enterprise} alt="" />
+                            <p>关于企业</p>
+                            <img src={more} alt="" />
+                        </ListItem>
+                        <ListItem>
+                            <img src={notice} alt="" />
+                            <p>公告</p>
+                            <img src={more} alt="" />
+                        </ListItem>
+                        <ListItem>
+                            <img src={set} alt="" />
+                            <p>设置</p>
+                            <img src={more} alt="" />
+                        </ListItem>
                     </div>
                 </ProfileServe>
             </>
         )
     }
 }
+

@@ -81,8 +81,34 @@ const ProfileOrder = styled.div`
             flex:1;
             text-align:center;
             height:100%;
-            /* justify-content:space-around; */
-            /* align-items:center; */
+            display:flex;
+            flex-direction:column;
+            justify-content:center; 
+            align-items:center;
+            p{
+                margin-top:0.04rem;
+                font-size:0.11rem;
+                line-height:0.15rem;
+                font-weight:lighter;
+            }
+        }
+        div:nth-of-type(1){
+            img{
+                width:0.28rem;
+                height:0.275rem;
+            }
+        }
+        div:nth-of-type(2),div:nth-of-type(4){
+            img{
+                width:0.28rem;
+                height:0.285rem;
+            }
+        }
+        div:nth-of-type(3){
+            img{
+                width:0.23rem;
+                height:0.275rem;
+            }
         }
     }
 `
@@ -101,15 +127,26 @@ const ProfileServe = styled.div`
      }
 `
 
+const ListItem = styled.div`
+    margin:0 0.15rem;
+    display:flex;
+    justify-content:center; 
+    align-items:center;
 
-const ListItem = border({
-    width: '0 0 1px 0',
-    style: 'solid',
-    color: '#cecece',
-    comp: styled.div`
-        margin:0 0.15rem;
-    `
-})
+    img:nth-of-type(1){
+        width:0.3rem;
+        height:0.3rem;
+    }
+`
+
+// const ListItem = border({
+//     width: '0 0 1px 0',
+//     style: 'solid',
+//     color: '#cecece',
+//     comp: styled.div`
+//         margin:0 0.15rem;
+//     `
+// })
 
 
 
