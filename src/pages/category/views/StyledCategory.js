@@ -53,7 +53,7 @@ const SubContainer = styled.div`
   }
 `
 
-const ItemContainer = border({
+const CarContainer = border({
   width: '1px 0 0 0',
   color: '#D2D2D2',
   comp: styled.div`
@@ -187,7 +187,7 @@ const TimeBtnActiveContainer = styled(TimeBtnContainer)`
 export {
   PrimaryContainer,
   SubContainer,
-  ItemContainer,
+  CarContainer,
   SelectContainer,
   PriceContainer,
   ListContainer,

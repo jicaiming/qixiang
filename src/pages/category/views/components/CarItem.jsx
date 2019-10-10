@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react'
 
-import { ItemContainer } from '../StyledCategory'
+import { CarContainer } from '../StyledCategory'
 import SelectNum from './SelectNum'
 
-export default class GoodsItem extends PureComponent {
+export default class CarItem extends PureComponent {
   render() {
     return (
-      <ItemContainer>
+      <CarContainer>
         <div className="pic">
           <img src={this.props.value.img} alt=""/>
         </div>
@@ -15,7 +15,7 @@ export default class GoodsItem extends PureComponent {
           <h3>2.0自动 | 三厢5座</h3>
           <SelectNum price={this.props.value.price}></SelectNum>
         </div>
-      </ItemContainer>
+      </CarContainer>
     )
   }
 }

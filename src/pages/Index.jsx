@@ -26,16 +26,16 @@ export default class Index extends PureComponent {
                 </Main>
                 <Footer>
                     <NavLink className='normal' to={`${match.path}/home`}>
-                        <div className={this.props.location.pathname==='/index/home' ? "home_active" : "home"}></div>
+                        <div className={this.props.location.pathname.indexOf('/index/home')!==-1 ? "home_active" : "home"}></div>
                     </NavLink>
                     <NavLink className='normal' to={`${match.path}/category`}>
-                        <div className={this.props.location.pathname==='/index/category' ? "category_active" : "category"}></div>
+                        <div className={this.props.location.pathname.indexOf('/index/category')!==-1 ? "category_active" : "category"}></div>
                     </NavLink>
                     <NavLink className='normal' to={`${match.path}/message`}>
-                        <div className={this.props.location.pathname==='/index/message' ? "message_active" : "message"}></div>
+                        <div className={this.props.location.pathname.indexOf('/index/message')!==-1 ? "message_active" : "message"}></div>
                     </NavLink>
                     <NavLink className='normal' to={`${match.path}/profile`}>
-                        <div className={this.props.location.pathname==='/index/profile' ? "profile_active" : "profile"}></div>
+                        <div className={this.props.location.pathname.indexOf('/index/profile')!==-1 ? "profile_active" : "profile"}></div>
                     </NavLink>
                 </Footer>
             </Container>  
