@@ -5,25 +5,25 @@
     justify-content: center;
 }
 .home{
-    color : red;
+    color : #37C2BC;
 }
 .home_active{
     color : #666
 }
 .category{
-    color : red;
+    color : #37C2BC;
 }
 .category_active{
     color : #666
 }
 .message{
-    color : red;
+    color : #37C2BC;
 }
 .message_active{
     color : #666
 }
 .profile{
-    color : red;
+    color : #37C2BC;
 }
 .profile_active{
     color : #666
