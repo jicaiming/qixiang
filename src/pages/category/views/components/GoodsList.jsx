@@ -6,11 +6,13 @@ import GoodsItem from './GoodsItem'
 let List = [
   {
     name : 1,
-    price : 10
+    price : 10,
+    img : 'http://placehold.it/600x300/00f/ccc.png'
   },
   {
     name : 2,
-    price : 20
+    price : 20,
+    img : 'http://placehold.it/600x300/0f0/ccc.png'
   }
 ]
 

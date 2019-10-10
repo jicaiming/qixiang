@@ -2,6 +2,9 @@ import React, { PureComponent } from 'react'
 
 import { SelectContainer, PriceContainer } from '../StyledCategory'
 
+import decreaseImg from 'assets/images/category/decrease.png'
+import increaseImg from 'assets/images/category/increase.png'
+
 export default class SelectNum extends PureComponent {
   render() {
     return (
@@ -13,9 +16,9 @@ export default class SelectNum extends PureComponent {
         <div className="num">
           <h4>数量</h4>
           <p>
-            <img src="assets/images/decrease.png" alt=""/>
+            <img src={decreaseImg} alt=""/>
             <em>5</em>
-            <img src="assets/images/分类/increase.png" alt=""/>
+            <img src={increaseImg} alt=""/>
           </p>
         </div>
       </SelectContainer>

@@ -103,8 +103,6 @@ const SelectContainer = border({
       img {
         width: .21rem;
         height: .21rem;
-        background: url('assets/images/decrease.png') no-repeat;
-        background-size: 100% 100%;
       }
     }
     h4 {

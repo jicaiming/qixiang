@@ -8,7 +8,7 @@ export default class GoodsItem extends PureComponent {
     return (
       <ItemContainer>
         <div className="pic">
-          <img src="http://placehold.it/600x300/00f/ccc.png" alt=""/>
+          <img src={this.props.value.img} alt=""/>
         </div>
         <div className="info">
           <h2>丰田 凯美瑞{this.props.value.name}</h2>
