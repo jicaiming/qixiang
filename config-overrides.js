@@ -9,8 +9,18 @@ module.exports = override(
 
   addWebpackAlias({
     ['assets']: path.resolve(__dirname, 'src/assets'),
+<<<<<<< HEAD
     ['styles']: path.resolve(__dirname, 'src/assets/styles'),
     ['images']: path.resolve(__dirname, 'src/assets/images'),
+=======
+<<<<<<< HEAD
+    ['styles']: path.resolve(__dirname, 'src/assets/styles'),
+    ['images']: path.resolve(__dirname, 'src/assets/images'),
+=======
+    // ['styles']: path.resolve(__dirname, 'src/assets/styles'),
+    // ['images']: path.resolve(__dirname, 'src/assets/images'),
+>>>>>>> origin/xxp
+>>>>>>> 6a6a7af8a3dc8f425e2c17f58dac4a974de43e69
     ['components']: path.resolve(__dirname, 'src/components'),
     ['utils']: path.resolve(__dirname, 'src/utils'),
   })
