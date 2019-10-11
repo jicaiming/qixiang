@@ -19,16 +19,16 @@ class Category extends PureComponent {
                 paddingTop: '.2rem'
             }}>
                 <Switch>
-                    <Route
-                        path={`${match.path}`}
-                        component={CategoryUI}
-                    >
-                    </Route>
                     <Redirect 
                         from={`${match.path}`}
                         exact
                         to={`${match.path}/car`}    
                     ></Redirect>
+                    <Route
+                        path={`${match.path}`}
+                        component={CategoryUI}
+                    >
+                    </Route>
                 </Switch>
             </div>
         )
