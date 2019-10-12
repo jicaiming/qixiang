@@ -6,6 +6,7 @@ import Index from './Index'
 import Page404 from './Page404'
 import City from './home/City'
 import Classic from './home/Classic'
+import ClassicDetails from './home/ClassicDetails'
 
 export default class MyRouter extends Component {
     render() {
@@ -18,6 +19,7 @@ export default class MyRouter extends Component {
                     <Redirect from='/' exact to='/index/home'></Redirect> 
                     <Route path='/city' component={City} exact></Route>
                     <Route path='/classic' component={Classic} exact></Route>
+                    <Route path='/classic/:type' component={ClassicDetails} exact></Route>
                     <Route component={Page404} ></Route>
                 </Switch>
             </>
