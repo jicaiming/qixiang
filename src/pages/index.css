@@ -1,3 +1,8 @@
+@font-face {
+    font-family: PingFangSC-Medium; 
+    src: url('../assets/fonts/PingFang Medium.ttf'); 
+}
+
 .normal{
     display: flex;
     flex: 1;

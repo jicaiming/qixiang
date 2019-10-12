@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 
 import {ClassicContainer} from './StyledClassic'
+import {HomeHeaderContainer} from 'components/StyledHomeHeader.js'
 
 import HomeClassic1 from 'assets/images/classic_case/home_classic1.png'
 import HomeClassic2 from 'assets/images/classic_case/home_classic2.png'
 import HomeClassic3 from 'assets/images/classic_case/home_classic3.png'
+import Back from 'assets/images/icon/back.png'
 
 class Classic extends Component {
     state = {
@@ -14,10 +16,10 @@ class Classic extends Component {
     render() {
         return (
             <ClassicContainer>
-                <header>
-                    <i onClick={() => this.handleClickback()}>返回</i>
+                <HomeHeaderContainer>
+                    <i onClick={() => this.handleClickback()}><img src={Back} alt=""/> </i>
                     <h4>经典案例</h4>
-                </header>
+                </HomeHeaderContainer>
                 <section className="classic_container">
                     <ul>
                         <li onClick={() => this.handleClickClassic('classic1')} ><div><img src={HomeClassic1} alt=""/></div></li>

@@ -34,10 +34,11 @@ const HomeContainer = styled.div`
             }
         }
     }
-    ul.list{
+    ul.home_list{
         display:flex;
         justify-content:center;
         padding: 0 .25rem;
+        margin-bottom:.38rem;
         li{
             flex:1;
             text-align:center;
@@ -68,38 +69,43 @@ const HomeContainer = styled.div`
                 font-size:.12rem;
             }
         }
-    }
-    .hot_container{
-        display:flex;
-        justify-content:space-between;         
-        li{
-            width:1.675rem;
-            div{
-                height:0;
-                position:relative;
-                padding-bottom:44.1791%; 
-                border-radius:.1rem;
-                img{
-                    width:100%;
-                }                
+        .hot_container{
+            display:flex;
+            justify-content:space-between;         
+            li{
+                width:1.675rem;
+                div{
+                    height:0;
+                    position:relative;
+                    padding-bottom:44.1791%; 
+                    border-radius:.1rem;
+                    img{
+                        width:100%;
+                    }                
+                }
             }
         }
     }
-    .classic_container{    
-        li{
-            width:100%;
-            margin-bottom:.15rem;
-            div{
-                height:0;
-                position:relative;
-                padding-bottom:31.30435%;
-                border-radius:.1rem;
-                img{
-                    width:100%;
-                }                
+
+    .home_classic{
+        margin-top:.38rem;
+        .classic_container{    
+            li{
+                width:100%;
+                margin-bottom:.15rem;
+                div{
+                    height:0;
+                    position:relative;
+                    padding-bottom:31.30435%;
+                    border-radius:.1rem;
+                    img{
+                        width:100%;
+                    }                
+                }
             }
         }
     }
+
 `
 export {
     HomeContainer

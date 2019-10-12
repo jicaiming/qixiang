@@ -1,18 +1,21 @@
 import React, { Component } from 'react'
 
 import {CityContainer} from './StyledCity'
+import {HomeHeaderContainer} from 'components/StyledHomeHeader.js'
+
 import GuangZhou from 'assets/images/city/guangzhou.png'
 import ShangHai from 'assets/images/city/shanghai.png'
 import ShenZhen from 'assets/images/city/shenzhen.png'
+import Back from 'assets/images/icon/back.png'
 
 export default class City extends Component {
     render() {
         return (
             <CityContainer>
-                <header>
-                    <i onClick={() => this.handleClickback()}>返回</i>
+                <HomeHeaderContainer>
+                    <i onClick={() => this.handleClickback()}><img src={Back} alt=""/> </i>
                     <h4>选择城市</h4>
-                </header>
+                </HomeHeaderContainer>
                 <section className="city_container">
                     <div className="city_item" onClick={ () => this.handleClickCityItem()}>
                         <div className="city_img">

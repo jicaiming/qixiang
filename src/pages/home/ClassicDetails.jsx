@@ -2,8 +2,12 @@ import React, { Component } from 'react'
 import BScroll from 'better-scroll'
 
 import {ClassicDetailsContainer} from './StyledClassicDetails'
+import {HomeHeaderContainer} from 'components/StyledHomeHeader.js'
+
 
 import Classic3 from 'assets/images/classic_case/classic1.png'
+import Back from 'assets/images/icon/back.png'
+
 
 export default class ClassicDetails extends Component {
     state = {
@@ -12,10 +16,10 @@ export default class ClassicDetails extends Component {
     render() {
         return (
             <ClassicDetailsContainer>
-                <header>
-                    <i onClick={() => this.handleClickback()}>返回</i>
+                <HomeHeaderContainer>
+                    <i onClick={() => this.handleClickback()}><img src={Back} alt=""/> </i>
                     <h4>经典案例</h4>
-                </header>
+                </HomeHeaderContainer>
                 <div className="classic_wrapper">
                     <div className="classic_son">
                         <img src={Classic3} alt=""/>
