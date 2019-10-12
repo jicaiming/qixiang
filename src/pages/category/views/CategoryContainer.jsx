@@ -12,6 +12,8 @@ class Category extends PureComponent {
     render() {
         let { match } = this.props
         // console.log(match)
+        let bigKind = this.props.location.pathname.split('/')[3]
+        console.log(bigKind)
         return (
             <div style={{
                 height: '100%',
@@ -27,6 +29,7 @@ class Category extends PureComponent {
                     <Route
                         path={`${match.path}`}
                         component={CategoryUI}
+                        bigKind={bigKind}
                     >
                     </Route>
                 </Switch>

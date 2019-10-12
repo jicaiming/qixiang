@@ -27,8 +27,8 @@ class PrimaryClassification extends PureComponent {
     )
   }
   componentDidMount() {
-    console.log(this.refs)
-    console.log(this.props.bigKind)
+    // console.log(this.refs)
+    // console.log(this.props.bigKind)
     this.refs[this.props.bigKind].className="active"
   }
   componentDidUpdate() {
