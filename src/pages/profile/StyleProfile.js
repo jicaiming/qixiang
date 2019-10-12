@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import border from 'components/border.js'
+// import border from 'components/border.js'
 
 import bg from 'images/我的/bg.png'
 
