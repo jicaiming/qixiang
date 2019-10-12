@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const ClassicContainer = styled.div`
+    margin-top:.2rem;
     header{
         height:.44rem;
         width:100%;
@@ -34,7 +35,6 @@ const ClassicContainer = styled.div`
                     height:0;
                     position:relative;
                     padding-bottom:31.30435%;
-                    background-color: olive; 
                     border-radius:.1rem;
                     img{
                         width:100%;

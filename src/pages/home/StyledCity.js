@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const CityContainer = styled.div`
+    margin-top:.2rem;
     header{
         height:.44rem;
         width:100%;
@@ -28,10 +29,10 @@ const CityContainer = styled.div`
         height:100%;
         display:flex;
         flex-direction:column;
-        position: relative;
-        div{
+        div.city_item{
             flex:1;
-            div.img{
+            position: relative;
+            div.city_img{
                 position: relative;
                 height:0;
                 padding-bottom:53.6%;
@@ -39,25 +40,37 @@ const CityContainer = styled.div`
                     width:100%;
                 }
             }
-            div.details{
+            div.city_name{
                 position: absolute;
-                left: 0;
-                top: 0;
-                width:100%;
-                height:33.3333%;
+                top: 50%;
+                left: 50%;
+                height: 40%;
+                width: 50%;
+                margin: -10% 0 0 -25%;
                 color:#fff;
                 text-align:center;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
                 h4{
                     width:100%;
                     font-size:.17rem;
                     font-weight:500;
+                    font-family:'苹方 粗体';
                 }
                 span{
-                    width:100%;
+                    /* font-weight:600; */
+                    font-family:'苹方 粗体';
                 }
-                div.city_details{
-                    width:100%;
-                    font-size:.12rem;
+            }
+            div.city_details{
+                font-size:.12rem;
+                position:absolute;
+                bottom: .1rem;
+                left:.15rem;
+                color:#fff;
+                span{
+                    margin-right:.775rem;
                 }
             }
         }
