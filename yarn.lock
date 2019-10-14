@@ -1853,6 +1853,11 @@ ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
+antd-mobile-demo-data@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.npm.taobao.org/antd-mobile-demo-data/download/antd-mobile-demo-data-0.3.0.tgz#f275250bebdad308af481672635f8b90def34aed"
+  integrity sha1-8nUlC+va0wivSBZyY1+LkN7zSu0=
+
 antd-mobile@^2.3.1:
   version "2.3.1"
   resolved "https://registry.npm.taobao.org/antd-mobile/download/antd-mobile-2.3.1.tgz#04d8709c198eee27c3c41b903cb2ad77a16028e3"
@@ -1961,7 +1966,7 @@ array-includes@^3.0.3:
     define-properties "^1.1.2"
     es-abstract "^1.7.0"
 
-array-tree-filter@2.1.x, array-tree-filter@~2.1.0:
+array-tree-filter@2.1.x, array-tree-filter@^2.1.0, array-tree-filter@~2.1.0:
   version "2.1.0"
   resolved "https://registry.npm.taobao.org/array-tree-filter/download/array-tree-filter-2.1.0.tgz#873ac00fec83749f255ac8dd083814b4f6329190"
   integrity sha1-hzrAD+yDdJ8lWsjdCDgUtPYykZA=
