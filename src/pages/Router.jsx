@@ -9,6 +9,8 @@ import Classic from './home/Classic'
 
 
 import Edit from './profile/Edit'
+import MyOrder from './profile/MyOrder'
+
 
 
 
@@ -24,6 +26,7 @@ export default class MyRouter extends Component {
                     <Route path='/city' component={City} exact></Route>
                     <Route path='/classic' component={Classic} exact></Route>
                     <Route path='/edit' component={Edit} exact></Route>
+                    <Route path='/myorder' component={MyOrder} exact></Route>
                     <Route component={Page404} ></Route>
                 </Switch>
             </>

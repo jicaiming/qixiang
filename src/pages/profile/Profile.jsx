@@ -36,19 +36,19 @@ export default class Profile extends Component {
                 <ProfileOrder>
                     <h4>我的订单</h4>
                     <div>
-                        <div>
+                        <div onClick={()=> this.handleClickToMyOrder()}>
                             <img src={waitPay} alt="" />
                             <p>待付款</p>
                         </div>
-                        <div>
+                        <div onClick={()=> this.handleClickToMyOrder()}>
                             <img src={accountPaid} alt="" />
                             <p>已付款</p>
                         </div>
-                        <div>
+                        <div onClick={()=> this.handleClickToMyOrder()}>
                             <img src={finished} alt="" />
                             <p>已结束</p>
                         </div>
-                        <div>
+                        <div onClick={()=> this.handleClickToMyOrder()}>
                             <img src={allOrders} alt="" />
                             <p>全部订单</p>
                         </div>
@@ -80,6 +80,9 @@ export default class Profile extends Component {
 
     handleClickEdie() {
         this.props.history.push('/edit')
+    }
+    handleClickToMyOrder(){
+        this.props.history.push('/myorder')
     }
 }
 

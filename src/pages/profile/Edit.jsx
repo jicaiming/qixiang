@@ -1,53 +1,42 @@
 import React, { Component } from 'react'
 
 
-import { EditContainer, AddImgContainer, RadioContainer, UserContainer, CityContainer } from './StyleEdit'
+import { EditContainer, AddImgContainer, UserContainer, RadioContainer, CityContainer, ButtonContainer } from './StyleEdit'
 import Header from './components/Header'
 
-import { List, Radio, Picker, InputItem } from 'antd-mobile';
+import { List, ImagePicker, Radio, Picker, InputItem, Button } from 'antd-mobile';
 
 const data = [{
     url: 'https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg',
-    id: '2121',
+    id: '0',
 }];
 
 export default class Edit extends Component {
-    onChange = (value) => {
-        console.log('checkbox');
+    state = {
+        files: data,
+        userValue: 'wyp2259',
+        sexValue: 0,
+        provinceValue: ['02', '02-1', '02-1-1'],
+        companyValue: '上海王聪明有限公司'
+    }
+    onChangeImg = (files, type, index) => {
         this.setState({
-            value,
+            files,
+        });
+    }
+    onChangeSex = (value) => {
+        this.setState({
+            sexValue: value,
         });
     };
-
-    state = {
-        value: 0,
-        files: data,
-        selectable: true,
-        userValue: 'wyp2259',
-        provinceValue: ['02', '02-1', '02-1-1'],
-        companyValue:'上海王聪明有限公司'
+    onSubmit = () => {
+        console.log(this.state)
     }
-    // onChange = (files, type, index) => {
-    //     console.log(files, type, index);
-    //     this.setState({
-    //         files,
-    //     });
-    // }
-    onSegChange = (e) => {
-        const index = e.nativeEvent.selectedSegmentIndex;
-        this.setState({
-            multiple: index === 1,
-        });
-    }
-
     render() {
-        const { files } = this.state;
-        const { value } = this.state;
         const data = [
             { value: 0, label: '男' },
             { value: 1, label: '女' },
         ];
-
         const province = [
             {
                 label: '北京',
@@ -133,61 +122,62 @@ export default class Edit extends Component {
         return (
             <EditContainer>
                 <Header msg="个人设置"></Header>
-                <form >
-                    {/*action='/' method="post" enctype="multipart/form-data" */}
-                    <AddImgContainer>
-                        <span>
-                            头像
+                <AddImgContainer>
+                    <span>
+                        头像
                         </span>
-                        <span>
-                            ha'ha
+                    <ImagePicker
+                        files={this.state.files}
+                        onChange={this.onChangeImg}
+                        selectable={this.state.files.length < 1}
+                        length='1'
+                        accept="image/gif,image/jpeg,image/jpg,image/png"
+                    />
+                </AddImgContainer>
+                <UserContainer>
+                    <InputItem
+                        defaultValue={this.state.userValue}
+                        placeholder="请输入用户名"
+                        data-seed="logId"
+                        clear="ture"
+                        onBlur={v => this.setState({ userValue: v })}
+                    >用户名</InputItem>
+                </UserContainer>
+                <RadioContainer>
+                    <span>
+                        性别
                         </span>
-                        {/* <ImagePicker
-                            files={files}
-                            onChange={this.onChange}
-                            onImageClick={(index, fs) => console.log(index, fs)}
-                            selectable={files.length < 7}
-                            selectable={this.state.selectable}
-                            disableDelete='ture'
-                        /> */}
-                    </AddImgContainer>
-                    <UserContainer>
-                        <InputItem
-                            defaultValue={this.state.userValue}
-                            placeholder="请输入用户名"
-                            data-seed="logId"
-                        >用户名</InputItem>
-                    </UserContainer>
-                    <AddImgContainer>
-                        <span>
-                            性别
-                        </span>
-                        <RadioContainer>
-                            {data.map(i => (
-                                <Radio className="my-radio" key={i.value} checked={value === i.value} onChange={() => this.onChange(i.value)}>
-                                    {i.label}
-                                </Radio>
-                            ))}
-                        </RadioContainer>
-                    </AddImgContainer>
-                    <CityContainer>
-                        <Picker extra="请选择(可选)"
-                            data={province}
-                            title="请选择城市"
-                            value={this.state.provinceValue}
-                            onChange={v => this.setState({ provinceValue: v })}
-                        >
-                            <List.Item arrow="horizontal">活动范围</List.Item>
-                        </Picker>
-                    </CityContainer>
-                    <UserContainer>
-                        <InputItem
-                            defaultValue={this.state.companyValue}
-                            placeholder="请输入所在公司名"
-                            data-seed="logId"
-                        >公司</InputItem>
-                    </UserContainer>
-                </form>
+                    <div>
+                        {data.map(i => (
+                            <Radio className="my-radio" key={i.value} checked={this.state.sexValue === i.value} onChange={() => this.onChangeSex(i.value)}>
+                                {i.label}
+                            </Radio>
+                        ))}
+                    </div>
+                </RadioContainer>
+                <CityContainer>
+                    <Picker extra="请选择(可选)"
+                        data={province}
+                        title="请选择城市"
+                        value={this.state.provinceValue}
+                        onChange={v => this.setState({ provinceValue: v })}
+                    >
+                        <List.Item arrow="horizontal">活动范围</List.Item>
+                    </Picker>
+                </CityContainer>
+                <UserContainer>
+                    <InputItem
+                        defaultValue={this.state.companyValue}
+                        placeholder="请输入所在公司名"
+                        data-seed="logId"
+                        clear="ture"
+                        onBlur={v => this.setState({ companyValue: v })}
+                    >公司</InputItem>
+                </UserContainer>
+                <div style={{height:'0.13rem',background:'#F3F3F3'}}></div>
+                <ButtonContainer>
+                    <Button onClick={this.onSubmit} >确认</Button>
+                </ButtonContainer>
             </EditContainer>
         )
     }
