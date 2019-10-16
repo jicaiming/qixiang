@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-import { SelectContainer, PriceContainer } from '../StyledCategory'
+import { SelectContainer, PriceContainer } from './styled'
 
 import decreaseImg from 'assets/images/category/decrease.png'
 import increaseImg from 'assets/images/category/increase.png'

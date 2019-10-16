@@ -4,7 +4,7 @@ import { fromJS } from 'immutable'
 
 import { withRouter } from 'react-router-dom'
 
-import { PrimaryContainer } from '../StyledCategory'
+import PrimaryContainer from './Styled'
 
 class PrimaryClassification extends PureComponent {
   render() {
@@ -32,7 +32,6 @@ class PrimaryClassification extends PureComponent {
     this.refs[this.props.bigKind].className="active"
   }
   componentDidUpdate() {
-    // console.log(this.refs)
     const map = fromJS(this.refs)
     map.map((v, k) => {
       return v.className=""
@@ -42,7 +41,7 @@ class PrimaryClassification extends PureComponent {
   handleClick = function(e, kind){
     // console.log(kind)
     // console.log(this.props)
-    console.log(this)
+    // console.log(this)
     this.props.history.push(`${this.props.match.path}${kind}`)
   }
 }

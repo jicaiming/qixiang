@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-import { TimeBtnContainer } from '../StyledCategory'
+import { TimeBtnContainer } from './styled'
 
 export default class TimeBtn extends PureComponent {
   render() {

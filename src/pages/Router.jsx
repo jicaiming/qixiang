@@ -8,12 +8,16 @@ import City from './home/City'
 import Classic from './home/Classic'
 import ClassicDetails from './home/ClassicDetails'
 
+import SiteDetail from './category/views/components/SiteDetail/SiteDetail'
+
 export default class MyRouter extends Component {
     render() {
         return (
             <>
                 <Switch>
                     {/* <Route path='/details' component={Details} ></Route> */}
+                    
+                    <Route path='/category/site/detail' component={SiteDetail}></Route>
 
                     <Route path='/index' component={Index} ></Route>
                     <Redirect from='/' exact to='/index/home'></Redirect> 
