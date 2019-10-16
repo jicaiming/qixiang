@@ -12,7 +12,7 @@ const ClassicDetailsContainer = styled.div`
         >div.classic_son{
             height: 0;
             position: relative;
-            padding-bottom:485%;
+            padding-bottom:500%;
             img{
                 width:100%;
             }
