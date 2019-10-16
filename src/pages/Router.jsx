@@ -10,6 +10,13 @@ import ClassicDetails from './home/ClassicDetails'
 
 import SiteDetail from './category/views/components/SiteDetail/SiteDetail'
 
+
+import Edit from './profile/Edit'
+import MyOrder from './profile/MyOrder'
+
+
+
+
 export default class MyRouter extends Component {
     render() {
         return (
@@ -20,10 +27,15 @@ export default class MyRouter extends Component {
                     <Route path='/category/site/detail' component={SiteDetail}></Route>
 
                     <Route path='/index' component={Index} ></Route>
-                    <Redirect from='/' exact to='/index/home'></Redirect> 
+                    <Route path='/myorder' component={MyOrder}></Route>
                     <Route path='/city' component={City} exact></Route>
                     <Route path='/classic' component={Classic} exact></Route>
+<<<<<<< HEAD
                     <Route path='/classic/:type' component={ClassicDetails} exact></Route>
+=======
+                    <Route path='/edit' component={Edit} exact></Route>
+                    <Redirect from='/' exact to='/index/home'></Redirect> 
+>>>>>>> guangruixiao
                     <Route component={Page404} ></Route>
                 </Switch>
             </>
