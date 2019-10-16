@@ -22,11 +22,11 @@ export default class MyRouter extends Component {
                     {/* <Route path='/details' component={Details} ></Route> */}
 
                     <Route path='/index' component={Index} ></Route>
-                    <Redirect from='/' exact to='/index/home'></Redirect> 
+                    <Route path='/myorder' component={MyOrder}></Route>
                     <Route path='/city' component={City} exact></Route>
                     <Route path='/classic' component={Classic} exact></Route>
                     <Route path='/edit' component={Edit} exact></Route>
-                    <Route path='/myorder' component={MyOrder} exact></Route>
+                    <Redirect from='/' exact to='/index/home'></Redirect> 
                     <Route component={Page404} ></Route>
                 </Switch>
             </>
