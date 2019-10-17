@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
-import {CityContainer} from './StyledCity'
+import {    CityContainer,
+            CityAreaLiBorder
+        } from './StyledCity'
 import {HomeHeaderContainer} from 'components/StyledHomeHeader.js'
 
 import GuangZhou from 'assets/images/city/guangzhou.png'
@@ -15,6 +17,10 @@ import ShenZhenActive from 'assets/images/city/shenzhen_active.png'
 
 export default class City extends Component {
 
+    // state = {
+    //     active:'active'
+    // }
+    
     render() {
         return (
             <CityContainer>
@@ -36,9 +42,9 @@ export default class City extends Component {
                             <span>用户量：888</span><span>好评率：69%</span>
                         </div>
                         <ul className="city_area">
-                            <li className="active">广州市</li>
-                            <li>佛山市</li>
-                            <li className="last">东莞市</li>
+                            <CityAreaLiBorder className="active" onClick={() => this.handleClickArea('广州市')}>广州市</CityAreaLiBorder>
+                            <CityAreaLiBorder onClick={() => this.handleClickArea('佛山市')}>佛山市</CityAreaLiBorder>
+                            <CityAreaLiBorder className="last" onClick={() => this.handleClickArea('东莞市')}>东莞市</CityAreaLiBorder>
                         </ul>
                     </div>
                     <div className="city_item"  onClick={ () => this.handleClickCityItem()}>
@@ -54,9 +60,9 @@ export default class City extends Component {
                             <span>用户量：888</span><span>好评率：69%</span>
                         </div>
                         <ul className="city_area">
-                            <li className="active">徐汇区</li>
-                            <li>杨浦区</li>
-                            <li className="last">普陀区</li>
+                            <CityAreaLiBorder className="active" onClick={() => this.handleClickArea('徐汇区')}>徐汇区</CityAreaLiBorder>
+                            <CityAreaLiBorder onClick={() => this.handleClickArea('杨浦区')}>杨浦区</CityAreaLiBorder>
+                            <CityAreaLiBorder className="last" onClick={() => this.handleClickArea('普陀区')}>普陀区</CityAreaLiBorder>
                         </ul>
                     </div>
                     <div className="city_item"  onClick={ () => this.handleClickCityItem()}>
@@ -72,9 +78,9 @@ export default class City extends Component {
                             <span>用户量：888</span><span>好评率：69%</span>
                         </div>
                         <ul className="city_area">
-                            <li className="active">福田区</li>
-                            <li>南山区</li>
-                            <li className="last">罗湖区</li>
+                            <CityAreaLiBorder className="active" onClick={() => this.handleClickArea('福田区')}>福田区</CityAreaLiBorder>
+                            <CityAreaLiBorder onClick={() => this.handleClickArea('南山区')}>南山区</CityAreaLiBorder>
+                            <CityAreaLiBorder className="last" onClick={() => this.handleClickArea('罗湖区')}>罗湖区</CityAreaLiBorder>
                         </ul>
                     </div>
                 </section>
@@ -88,5 +94,8 @@ export default class City extends Component {
 
     handleClickCityItem(){
         // console.log(111)
+    }
+    handleClickArea(area){
+        console.log(area)
     }
 }

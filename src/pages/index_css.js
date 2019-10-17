@@ -11,9 +11,8 @@ const Container = styled.div`
 `
 const Main = styled.div`
     font-size : .14rem;
-    overflow: scroll;
     color: black;
-    overflow: scroll;
+    overflow:hidden;
     flex : 1;
 `
 

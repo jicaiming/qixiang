@@ -23,6 +23,7 @@ export default class ClassicDetails extends Component {
                         <img 
                             src={ data ? require(`assets/images/classic_case/classic${data}.png`) : require(`assets/images/classic_case/loading.gif`)} 
                             alt=""
+                            
                         />                            
                         <button className="customer_service" onClick={() => this.handleClickCustomerService()}>联系客服</button>
                     </div>
@@ -44,4 +45,5 @@ export default class ClassicDetails extends Component {
     handleClickCustomerService(){
         console.log('客服')
     }
+
 }
