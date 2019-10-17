@@ -5,28 +5,6 @@ const ClassicDetailsContainer = styled.div`
     display:flex;
     flex-direction:column;
     height:100%;
-    header{
-        height:.44rem;
-        width:100%;
-        background:#37C2BC;
-        position:relative;
-        color:#fff;
-        display:flex;
-        align-items:center;
-        i{
-            width:.4rem;
-            height:.44rem;
-            line-height:.44rem;
-            margin-left:.15rem;
-            position:absolute;
-        }
-        h4{
-            flex:1;
-            text-align:center;
-            font-size:.16rem;
-            font-weight:500;
-        }
-    }
     div.classic_wrapper{
         flex:1;
         overflow: hidden;
@@ -34,7 +12,7 @@ const ClassicDetailsContainer = styled.div`
         >div.classic_son{
             height: 0;
             position: relative;
-            padding-bottom:485%;
+            padding-bottom:500%;
             img{
                 width:100%;
             }

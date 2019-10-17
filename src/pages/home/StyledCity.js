@@ -2,28 +2,6 @@ import styled from 'styled-components'
 
 const CityContainer = styled.div`
     margin-top:.2rem;
-    header{
-        height:.44rem;
-        width:100%;
-        background:#37C2BC;
-        position:relative;
-        color:#fff;
-        display:flex;
-        align-items:center;
-        i{
-            width:.4rem;
-            height:.44rem;
-            line-height:.44rem;
-            margin-left:.15rem;
-            position:absolute;
-        }
-        h4{
-            flex:1;
-            text-align:center;
-            font-size:.16rem;
-            font-weight:500;
-        }
-    }
     section.city_container{
         width:100%;
         height:100%;
@@ -38,6 +16,9 @@ const CityContainer = styled.div`
                 padding-bottom:53.6%;
                 img{
                     width:100%;
+                }
+                .city_img_active{
+                    display:none;
                 }
             }
             div.city_name{
@@ -73,8 +54,40 @@ const CityContainer = styled.div`
                     margin-right:.775rem;
                 }
             }
+            ul.city_area{
+                position:absolute;
+                bottom: 0;
+                left: 0;
+                z-index:999;
+                color:#fff;
+                background:#37C2BC;
+                width:100%;
+                height:.75rem;
+                display:none;
+                li{
+                    flex:1;
+                    height:100%;
+                    line-height:.75rem;
+                    text-align:center;
+                    border-right:1px solid #089791;
+                }
+                li.active{
+                    background:#0C7E79;
+                }
+                li.last{
+                    border-right:none;
+                }
+            }
         }
-
+        div.city_item:hover ul.city_area{
+            display:flex;
+        }
+        div.city_item:hover div.city_img>.city_img_active{
+            display:inline-block;
+        }
+        div.city_item:hover div.city_img>img{
+            display:none;
+        }
     }
 `
 
