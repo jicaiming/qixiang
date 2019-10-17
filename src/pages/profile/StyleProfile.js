@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-// import border from 'components/border.js'
+import border from 'components/border.js'
 
 import bg from 'images/我的/bg.png'
 
@@ -47,14 +47,14 @@ const ProfileMessage = styled.div`
                 }
                 p:nth-of-type(2){
                     padding-top:0.115rem;
-                    font-weight:lighter;
+                    font-weight:300;
                     color:#4A4A4A;
                     font-size:0.12rem;
                     line-height:0.165rem;
                 }
                 p:nth-of-type(3){
                     padding-top:0.24rem;
-                    font-weight:lighter;
+                    font-weight:300;
                     color:#4A4A4A;
                     font-size:0.12rem;
                     line-height:0.165rem;
@@ -68,7 +68,7 @@ const ProfileOrder = styled.div`
     padding-top:0.63rem;
     h4{
         padding:0 0 0.15rem 0.15rem;
-        font-weight:lighter;
+        font-weight:300;
         color:#000;
         font-size:0.15rem;
         line-height:0.21rem;
@@ -89,7 +89,7 @@ const ProfileOrder = styled.div`
                 margin-top:0.04rem;
                 font-size:0.11rem;
                 line-height:0.15rem;
-                font-weight:lighter;
+                font-weight:300;
             }
         }
         div:nth-of-type(1){
@@ -117,7 +117,7 @@ const ProfileServe = styled.div`
      padding-top:0.22rem;
      h4{
         padding:0 0 0.165rem 0.15rem;
-        font-weight:lighter;
+        font-weight:300;
         color:#000;
         font-size:0.15rem;
         line-height:0.21rem;
@@ -129,27 +129,34 @@ const ProfileServe = styled.div`
 
 const ListItem = styled.div`
     margin:0 0.15rem;
+    padding-left:0.05rem;
     display:flex;
-    justify-content:center; 
+    justify-content:space-between; 
     align-items:center;
+    height:0.505rem;
 
     img:nth-of-type(1){
         width:0.3rem;
         height:0.3rem;
+        margin-right:0.15rem;
+    }
+    img:nth-of-type(2){
+        width:0.06rem;
+        height:0.11rem;
+    }
+    p{
+        flex:1;
+        font-size:0.13rem;
+        font-weight:300;
     }
 `
 
-// const ListItem = border({
-//     width: '0 0 1px 0',
-//     style: 'solid',
-//     color: '#cecece',
-//     comp: styled.div`
-//         margin:0 0.15rem;
-//     `
-// })
-
-
-
+const ListItemHaveBorder = border({
+    width: '1px 0',
+    style: 'solid',
+    color: '#cecece',
+    comp: ListItem
+})
 
 
 
@@ -157,5 +164,6 @@ export {
     ProfileMessage,
     ProfileOrder,
     ProfileServe,
-    ListItem
+    ListItem,
+    ListItemHaveBorder
 }
