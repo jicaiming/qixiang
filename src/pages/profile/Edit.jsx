@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 
-import { EditContainer, AddImgContainer, UserContainer, RadioContainer, CityContainer, ButtonContainer } from './StyleEdit'
 import Header from 'components/profile/Header'
+import { EditContainer, AddImgContainer, UserContainer, RadioContainer, CityContainer, ButtonContainer } from './StyleEdit'
 
 import { List, ImagePicker, Radio, Picker, InputItem, Button } from 'antd-mobile';
 

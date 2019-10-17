@@ -24,7 +24,7 @@ export default class Profile extends Component {
                             <img src={userPhoto} alt="" />
                         </div>
                         <div>
-                            <img src={edit} alt="" onClick={() => this.handleClickEdie()} />
+                            <img src={edit} alt="" onClick={() => this.handleClickTo('edit')} />
                             <div>
                                 <p>guangruixiao</p>
                                 <p>请添加活动区域</p>
@@ -57,17 +57,17 @@ export default class Profile extends Component {
                 <ProfileServe>
                     <h4>我的服务</h4>
                     <div>
-                        <ListItem>
+                        <ListItem onClick={() => this.handleClickTo('enterprise')}>
                             <img src={enterprise} alt="" />
                             <p>关于企业</p>
                             <img src={more} alt="" />
                         </ListItem>
-                        <ListItemHaveBorder>
+                        <ListItemHaveBorder  onClick={() => this.handleClickTo('notice')}>
                             <img src={notice} alt="" />
                             <p>公告</p>
                             <img src={more} alt="" />
                         </ListItemHaveBorder>
-                        <ListItem>
+                        <ListItem onClick={() => this.handleClickTo('set')}>
                             <img src={set} alt="" />
                             <p>设置</p>
                             <img src={more} alt="" />
@@ -78,13 +78,12 @@ export default class Profile extends Component {
         )
     }
 
-    handleClickEdie() {
-        this.props.history.push('/edit')
+    handleClickTo(r){
+        this.props.history.push(`/${r}`)
     }
     handleClickToMyOrder(i){
         this.props.history.push(`/myorder/${i}`)
-        // this.props.history.push(`/myorder`)
-        
+        // this.props.history.push(`/myorder`)    
     }
 }
 

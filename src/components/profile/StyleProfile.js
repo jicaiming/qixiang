@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import border from 'components/border.js'
 
 const HeaderContainer = styled.header`
         height:.44rem;
@@ -52,7 +53,62 @@ const OrderContainer = styled.div`
             }
         }
     }
+    div.service_charge, div.all_charge, div.btn_container{
+        margin-top:0.135rem;
+        display:flex;
+        justify-content:flex-end;
+        align-items:center;
+        span{
+            height:0.165rem;
+            line-height:0.165rem;
+            font-size:0.12rem;
+            color:#9B9B9B;
+        }
+        p{
+            height:0.165rem;
+            line-height:0.165rem;
+            text-align:right;
+            min-width:0.75rem;
+            span:nth-of-type(1){
+                margin-right:0.04rem;
+            }
+        }
+    }
+    div.all_charge{
+        margin-top:0.06rem;
+        span{
+            color:#4A4A4A;
+        }
+        p{
+            span:nth-of-type(1){         
+                color:#37C2BC;
+                font-size:0.19rem;
+            }
+        }
+    }
+    div.btn_container{
+        margin:0;
+        padding:0.165rem 0 0.2rem 0;
+    }
 `
+
+const MyButton = border({
+    width: '1px',
+    style: 'solid',
+    color: '',
+    radius: 16,
+    comp: styled.p` 
+        width:0.86rem!important;
+        height:0.31rem!important;
+        line-height:0.31rem!important;
+        text-align:center!important;
+        margin-left:0.135rem;
+        font-weight:400;
+        font-size:0.13rem;
+        color: ${(porps) => porps.color};
+    `
+})
+
 
 const OrderListContainer = styled.div`
     display:flex;
@@ -122,8 +178,53 @@ const OrderListContainer = styled.div`
     }
 `
 
+const NoticeItemContainer = styled.div`
+    height:0.67rem;
+    padding:0 0.15rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    >div{
+        display:flex;
+        justify-content:flex-start;
+        align-items:center;
+        img{
+            width:0.25rem;
+            height:0.25rem;
+        }
+        >div{
+            margin-left:0.15rem;
+            p:nth-of-type(1){
+                height:0.185rem;
+                line-height:0.185rem;
+                font-size:0.13rem;
+                font-weight:500;
+                color:#000;
+            }
+            p:nth-of-type(2){
+                margin-top:0.025rem;
+                height:0.14rem;
+                line-height:0.14rem;
+                font-size:0.1rem;
+                font-weight:300;
+                color:#000;
+            }
+        }
+    }
+    >p{
+        margin-top:-0.2rem;
+        height:0.125rem;
+        line-height:0.125rem;
+        font-size:0.09rem;
+        font-weight:300;
+        color:#9B9B9B;
+    }
+`
+
 export {
     HeaderContainer,
     OrderContainer,
-    OrderListContainer
+    OrderListContainer,
+    MyButton,
+    NoticeItemContainer
 }

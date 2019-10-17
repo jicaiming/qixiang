@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 
 import OrderList from './OrderList'
 
-import { OrderContainer } from './StyleProfile'
+import { OrderContainer, MyButton } from './StyleProfile'
 
 
 export default class Order extends Component {
     render() {
         return (
-            <OrderContainer>
+            <OrderContainer borderColor='#37C2BC'>
                 <div className="order_header">
                     <p>租车订单</p>
                     <div>
@@ -18,7 +18,18 @@ export default class Order extends Component {
                 </div>
                 <OrderList></OrderList>
                 <OrderList></OrderList>
-
+                <div className="service_charge">
+                    <span>服务费：</span>
+                    <p><span>350</span><span>元</span></p>
+                </div>
+                <div className="all_charge">
+                    <span>费用合计：</span>
+                    <p><span>12450</span><span>元</span></p>
+                </div>
+                <div className="btn_container">
+                    <MyButton>取消订单</MyButton>
+                    <MyButton color='#37C2BC'>联系客服</MyButton>
+                </div>
             </OrderContainer>
         )
     }
