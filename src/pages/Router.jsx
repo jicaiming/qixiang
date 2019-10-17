@@ -9,7 +9,7 @@ import Classic from './home/Classic'
 import ClassicDetails from './home/ClassicDetails'
 
 import SiteDetail from './category/views/components/SiteDetail/SiteDetail'
-// import Order from ' ./orders'
+import Order from './orders/Order'
 
 
 import Edit from './profile/Edit'
@@ -26,7 +26,7 @@ export default class MyRouter extends Component {
                     {/* <Route path='/details' component={Details} ></Route> */}
                     
                     <Route path='/category/site/detail' component={SiteDetail}></Route>
-                    {/* <Route path='/orders/order' component={}></Route> */}
+                    <Route path='/order' component={Order}></Route>
                     <Route path='/index' component={Index} ></Route>
                     <Route path='/myorder' component={MyOrder}></Route>
                     <Route path='/city' component={City} exact></Route>
