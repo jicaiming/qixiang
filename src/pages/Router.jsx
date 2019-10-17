@@ -30,12 +30,9 @@ export default class MyRouter extends Component {
                     <Route path='/myorder' component={MyOrder}></Route>
                     <Route path='/city' component={City} exact></Route>
                     <Route path='/classic' component={Classic} exact></Route>
-<<<<<<< HEAD
                     <Route path='/classic/:type' component={ClassicDetails} exact></Route>
-=======
                     <Route path='/edit' component={Edit} exact></Route>
                     <Redirect from='/' exact to='/index/home'></Redirect> 
->>>>>>> guangruixiao
                     <Route component={Page404} ></Route>
                 </Switch>
             </>
