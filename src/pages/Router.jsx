@@ -9,6 +9,7 @@ import Classic from './home/Classic'
 import ClassicDetails from './home/ClassicDetails'
 
 import SiteDetail from './category/views/components/SiteDetail/SiteDetail'
+// import Order from ' ./orders'
 
 
 import Edit from './profile/Edit'
@@ -25,17 +26,14 @@ export default class MyRouter extends Component {
                     {/* <Route path='/details' component={Details} ></Route> */}
                     
                     <Route path='/category/site/detail' component={SiteDetail}></Route>
-
+                    {/* <Route path='/orders/order' component={}></Route> */}
                     <Route path='/index' component={Index} ></Route>
                     <Route path='/myorder' component={MyOrder}></Route>
                     <Route path='/city' component={City} exact></Route>
                     <Route path='/classic' component={Classic} exact></Route>
-<<<<<<< HEAD
                     <Route path='/classic/:type' component={ClassicDetails} exact></Route>
-=======
                     <Route path='/edit' component={Edit} exact></Route>
                     <Redirect from='/' exact to='/index/home'></Redirect> 
->>>>>>> guangruixiao
                     <Route component={Page404} ></Route>
                 </Switch>
             </>
