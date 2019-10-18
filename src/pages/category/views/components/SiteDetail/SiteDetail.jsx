@@ -29,6 +29,12 @@ export default class SiteDetail extends PureComponent {
   handleBack() {
     this.props.history.goBack();
   }
+  handleClick() {
+    // console.log(this.props.history)
+    this.props.history.push('/order', {
+      kind: 'site'
+    })
+  }
   render() {
     return (
       <SiteDetailContainer>
@@ -42,7 +48,7 @@ export default class SiteDetail extends PureComponent {
         <DetailContainer
           content={this.state.content}
         ></DetailContainer>
-        <footer>
+        <footer onClick={()=>this.handleClick()}>
           立即预定
         </footer>
       </SiteDetailContainer>

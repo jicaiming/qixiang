@@ -24,31 +24,11 @@ class GoodsList extends PureComponent {
   constructor() {
     super()
     this.state = {
-      firstKind: 'car',
-      secondKind: 1,
       list: []
     }
   }
   componentDidMount() {
-    this.setState({
-      firstKind: this.props.history.location.pathname.split("/")[3]
-    })
-    this.props.history.listen(() => {
-      let path = this.props.history.location.pathname.split("/")
-      this.setState({
-        firstKind: path[3]
-      })
-      if (path.length === 5) {
-        this.setState({
-          secondKind: path[4]
-        })
-      } else {
-        this.setState({
-          secondKind: 1
-        })
-      }
-      // console.log(this.props)
-    })
+    // console.log(this.props)
     fetch('http://localhost:9000/data')
       .then(response => response.json())
       .then(result => {
@@ -62,7 +42,10 @@ class GoodsList extends PureComponent {
     if (this.state.list.length === 0) {
       return false
     }
-    let list = this.state.list[this.state.firstKind][this.state.secondKind]
+    let path = this.props.history.location.pathname.split("/")
+    let firstKind = path[3]
+    let secondKind = path[4] || 1
+    let list = this.state.list[firstKind][secondKind]
     switch (this.props.bigKind) {
       case 'car':
         return (
