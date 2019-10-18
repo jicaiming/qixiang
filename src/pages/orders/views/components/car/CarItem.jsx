@@ -4,9 +4,9 @@ import {withRouter} from 'react-router-dom'
 import {CarLi} from './styled'
 
 class CartItem extends PureComponent{
-    handleClickToTimer(){
-        console.log(1)
-        this.props.history.push('/timer')
+    handleClick(props){
+        console.log(props)
+        props.history.push('/timer')
     }
     render(){
         return (
@@ -22,7 +22,7 @@ class CartItem extends PureComponent{
                     辆</p>
                 <p className = "carRentData">
                     <span>选择租期</span>
-                    <span className ="carRight" onClick={this.handleClickToTimer.bind(this,this.props)}></span>
+                    <span className ="carRight" onClick={this.handleClick.bind(this,this.props)}></span>
                 </p>
             </CarLi>
         )
