@@ -6,7 +6,7 @@ import { TimeBtnActiveContainer } from './styled'
 class TimeBtnActive extends PureComponent {
   handleClick() {
     // console.log(this.props.history.location.pathname.split('/')[3])
-    console.log(this.props)
+    // console.log(this.props)
     let firstKind = this.props.history.location.pathname.split('/')[3]
     this.props.history.push('/order',{
       kind: firstKind
