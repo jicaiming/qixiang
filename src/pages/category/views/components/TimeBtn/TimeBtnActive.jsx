@@ -5,7 +5,6 @@ import { TimeBtnActiveContainer } from './styled'
 
 class TimeBtnActive extends PureComponent {
   handleClick() {
-    console.log(1)
     let firstKind = this.props.history.location.pathname.split('/')[3]
     if(firstKind === 'car')
     {

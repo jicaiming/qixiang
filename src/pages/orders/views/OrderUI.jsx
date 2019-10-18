@@ -18,7 +18,6 @@ import {OrderContainer} from './styledOrder'
 //     )
 // }
 class OrderUI extends PureComponent{
-    
     render(){
         return (
         <OrderContainer>
