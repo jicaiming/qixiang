@@ -28,7 +28,7 @@ export default class MyRouter extends Component {
                     
                     <Route path='/category/site/detail' component={SiteDetail}></Route>
                     {/* <Route path='/order/:id' component={Order} exact></Route> */}
-                    <Route path='/order' component={Order} exact></Route>
+                    <Route path='/order/:type' component={Order}></Route>
                     <Route path='/timer' component={Timer}></Route>
                     <Route path='/index' component={Index} ></Route>
                     <Route path='/myorder' component={MyOrder}></Route>

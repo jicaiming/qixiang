@@ -8,11 +8,10 @@ import SingleItem from './SingleItem'
 export default class CarSingleOrder extends PureComponent{
     componentDidMount(){
         let wrapper1 = document.querySelector('.singleWrapper')
-        let scroll  = new BScroll(wrapper1,{
+        new BScroll(wrapper1,{
             scrollY:true,
             mouseWheel:true
         })
-        console.log(scroll)
     }
     render(){
         return (
