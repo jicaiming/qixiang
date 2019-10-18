@@ -1,7 +1,13 @@
 import React , {PureComponent} from 'react'
+
+import {withRouter} from 'react-router-dom'
 import {CarLi} from './styled'
 
-export default class CartItem extends PureComponent{
+class CartItem extends PureComponent{
+    handleClickToTimer(){
+        console.log(1)
+        this.props.history.push('/timer')
+    }
     render(){
         return (
             <CarLi>
@@ -16,9 +22,11 @@ export default class CartItem extends PureComponent{
                     辆</p>
                 <p className = "carRentData">
                     <span>选择租期</span>
-                    <span className ="carRight"></span>
+                    <span className ="carRight" onClick={this.handleClickToTimer.bind(this,this.props)}></span>
                 </p>
             </CarLi>
         )
     }
 }
+
+export default withRouter(CartItem)
