@@ -1,19 +1,20 @@
 import React ,{PureComponent} from 'react'
 import {Button , Switch,Checkbox} from 'antd-mobile'
 import BScroll from 'better-scroll'
-
+import { withRouter } from 'react-router-dom'
 import {CarContainer,CarOrderItem,Devide,CarOrderDetail,CarOrderSubmit,ItemContainer} from './styled'
 
 import CarItem from './CarItem'
 import CarSingleOrder from './CarSingleOrder'
 
-export default class CarOrder extends PureComponent{
+class CarOrder extends PureComponent{
     componentDidMount() {
         let wrapper = document.querySelector('.bScrollWrapper')
         new BScroll(wrapper, {
           scrollY: true,
           mouseWheel:true
         })
+        console.log(this.props)
       }
     render(){
         return (
@@ -78,3 +79,5 @@ export default class CarOrder extends PureComponent{
         )
     }
 }
+
+export default withRouter(CarOrder)
