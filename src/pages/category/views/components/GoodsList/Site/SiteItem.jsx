@@ -5,7 +5,9 @@ import SiteContainer from './styled'
 class SiteItem extends PureComponent {
   handleClick = function(e, id){
     // console.log(this.props)
-    this.props.history.push("/order/site")
+    this.props.history.push("/category/site/detail",{
+      id
+    })
   }
   render() {
     return (

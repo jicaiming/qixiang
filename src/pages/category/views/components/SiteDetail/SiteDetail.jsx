@@ -31,9 +31,7 @@ export default class SiteDetail extends PureComponent {
   }
   handleClick() {
     // console.log(this.props.history)
-    this.props.history.push('/order', {
-      kind: 'site'
-    })
+    this.props.history.push('/order/site')
   }
   render() {
     return (
