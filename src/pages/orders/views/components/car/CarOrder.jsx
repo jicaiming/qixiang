@@ -7,7 +7,7 @@ import {CarContainer,CarOrderItem,Devide,CarOrderDetail,CarOrderSubmit,ItemConta
 import CarItem from './CarItem'
 import CarSingleOrder from './CarSingleOrder'
 
-import connect from '../../../../category/views/connect'
+import connect from '../../connect'
 
 
 class CarOrder extends PureComponent{
@@ -24,7 +24,8 @@ class CarOrder extends PureComponent{
         this.props.clearNum()
     }
     render(){
-        let {buyList} = this.props
+        let {buyList,total} = this.props.allData
+        console.log(this.props)
         return (
             <CarContainer>
                 <CarOrderItem className = 'bScrollWrapper'>
@@ -32,8 +33,7 @@ class CarOrder extends PureComponent{
                         {
                             buyList.map((value,index)=>(
                                 <CarItem key={index} value={value}></CarItem>
-                                )
-                               
+                                )  
                             )
                         }
                     </ItemContainer>
@@ -60,16 +60,16 @@ class CarOrder extends PureComponent{
                                 </div>
                                 <div className="service2">
                                     <span>
-                                    350
+                                    50
                                     </span>
                                     x
                                     <span>
-                                       7
+                                       {total}
                                     </span>
                                 </div>
                                 <div
                                     className="service3"
-                                ><span>2450</span>元</div>
+                                ><span>{total*50}</span>元</div>
                             </div>
                     </div>
                 </CarOrderDetail>

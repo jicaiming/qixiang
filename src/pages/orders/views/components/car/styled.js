@@ -45,7 +45,7 @@ const CarOrderDetail = styled.div`
             color:#9B9B9B;
             line-height:.28rem;
             >h2{
-                width:.72rem;
+                width:.9rem;
                 font-size:.18rem;
                 line-height:.28rem;
                 font-family:PingFangSC-Medium,PingFangSC;
@@ -84,7 +84,7 @@ const CarOrderDetail = styled.div`
             line-height:.28rem;
             >h2{
                 display:flex;
-                width:.72rem;
+                width:.9rem;
                 font-size:.18rem;
                 line-height:.28rem;
                 font-family:PingFangSC-Medium,PingFangSC;
@@ -207,7 +207,7 @@ display:flex;
 flex-direction:row;
 justify-content:space-between;
 >span{
-    width:.72rem;
+    width:.9rem;
     height:.17rem;
     font-size:.12rem;
     font-family:PingFangSC-Medium,PingFangSC;

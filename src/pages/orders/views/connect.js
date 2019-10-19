@@ -5,7 +5,7 @@ import {clearBuylist} from '../actionCreator'
 
 const mapStateToProps = (state) => {
     return {
-      buyList: state.getIn(['category', 'buyList'])
+      allData: state.getIn(['category', 'allData'])
     }
   }
 const mapDispatchToProps = (dispatch) =>{

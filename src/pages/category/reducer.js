@@ -22,11 +22,7 @@ export default (state=defaultState, action) => {
   // console.log(state.allData)
   switch(action.type) {
     case DECREASE_NUM:
-<<<<<<< HEAD
-      if (state.buyList.length === 0) {
-=======
       if (state.allData.buyList.length === 0) {
->>>>>>> xxp
         return {
           allData: {
             buyList: [],
@@ -42,13 +38,9 @@ export default (state=defaultState, action) => {
           return v
         }
       })
-<<<<<<< HEAD
-      newList = state.buyList.filter((v)=> v.count!==0)
-=======
       newList = state.allData.buyList.filter((v)=> v.count!==0)
       // console.log(newList)
       // console.log(calTotal(newList))
->>>>>>> xxp
       return {
         allData: {
           buyList: newList,
@@ -67,8 +59,6 @@ export default (state=defaultState, action) => {
         }
       })
       if (hasIt) {
-        // console.log(newList)
-        // console.log(calTotal(newList))
         return {
           allData: {
             buyList: newList,
@@ -76,7 +66,6 @@ export default (state=defaultState, action) => {
           }
         }
       } else {
-        // console.log(action.data.value)
         newList.push({
           ...action.data.value,
           count: 1
