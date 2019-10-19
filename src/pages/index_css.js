@@ -12,7 +12,11 @@ const Container = styled.div`
 const Main = styled.div`
     font-size : .14rem;
     color: black;
+<<<<<<< HEAD
     overflow:hidden;
+=======
+    overflow: hidden;
+>>>>>>> master
     flex : 1;
 `
 

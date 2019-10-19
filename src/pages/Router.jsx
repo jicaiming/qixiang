@@ -9,7 +9,8 @@ import Classic from './home/Classic'
 import ClassicDetails from './home/ClassicDetails'
 
 import SiteDetail from './category/views/components/SiteDetail/SiteDetail'
-// import Order from ' ./orders'
+import {Order} from './orders/index'
+import Timer from './timer/Timer'
 
 
 import Edit from './profile/Edit'
@@ -26,7 +27,9 @@ export default class MyRouter extends Component {
                     {/* <Route path='/details' component={Details} ></Route> */}
                     
                     <Route path='/category/site/detail' component={SiteDetail}></Route>
-                    {/* <Route path='/orders/order' component={}></Route> */}
+                    {/* <Route path='/order/:id' component={Order} exact></Route> */}
+                    <Route path='/order/:type' component={Order} exact></Route>
+                    <Route path='/timer' component={Timer} exact></Route>
                     <Route path='/index' component={Index} ></Route>
                     <Route path='/myorder' component={MyOrder}></Route>
                     <Route path='/city' component={City} exact></Route>

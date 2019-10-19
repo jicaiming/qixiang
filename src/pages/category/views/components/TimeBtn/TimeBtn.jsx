@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
-
+import {withRouter} from 'react-router-dom'
 import { TimeBtnContainer } from './styled'
 
-export default class TimeBtn extends PureComponent {
+class TimeBtn extends PureComponent {
   render() {
     return (
       <TimeBtnContainer>
@@ -13,3 +13,4 @@ export default class TimeBtn extends PureComponent {
     )
   }
 }
+export default withRouter(TimeBtn)

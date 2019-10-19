@@ -18,6 +18,9 @@ const SelectContainer = border({
         width: .21rem;
         height: .21rem;
       }
+      p {
+        white-space: nowrap;
+      }
     }
     h4 {
       font-size: .14rem;
