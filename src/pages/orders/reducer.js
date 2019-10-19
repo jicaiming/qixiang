@@ -1,15 +1,22 @@
 import {CLEAR_BUYLIST} from './actionTypes'
 import {ADD_TIME} from './actionTypes'
 
+
+// import store from 'store'
+
+// let allData = store.getState()
+// const defaultState = {
+//     ...allData
+//   }
 const defaultState = {
-    TimeList:[]
-  }
+    timeList:[]
+}
 
 export default (state = defaultState,action) =>{
     switch(action.type){
         case CLEAR_BUYLIST :
                 return {
-                    buyList: []
+                    allData: ''
                 }
 
         case ADD_TIME :

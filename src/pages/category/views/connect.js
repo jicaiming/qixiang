@@ -4,6 +4,7 @@ import { increaseNum, decreaseNum, clearNum } from '../actionCreator'
 
 const mapStateToProps = (state) => {
   // console.log(state.getIn(['category', 'buyList']))
+  console.log(state.get('category').allData.buyList)
   return {
     buyList: state.getIn(['category', 'allData', 'buyList'])
   }

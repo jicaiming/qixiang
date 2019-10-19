@@ -6,7 +6,7 @@ import {CarContainer,CarOrderItem,Devide,CarOrderDetail,CarOrderSubmit,ItemConta
 
 import CarItem from './CarItem'
 import CarSingleOrder from './CarSingleOrder'
-
+import store from 'store'
 import connect from '../../connect'
 
 
@@ -21,7 +21,8 @@ class CarOrder extends PureComponent{
         })
       }
     handleClick(){
-        this.props.clearNum()
+        console.log(store.getState())
+        this.props.clearBuylist()
     }
     render(){
         let {buyList,total} = this.props.allData
