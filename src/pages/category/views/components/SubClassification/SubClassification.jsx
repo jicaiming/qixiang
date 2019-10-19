@@ -14,17 +14,19 @@ class SubClassification extends PureComponent {
     this.handleClick = this.handleClick.bind(this)
   }
   componentDidMount() {
+    this.setState({
+      secondClass: this.props.history.location.pathname.split('/')[4]
+    })
     this.props.history.listen(() => {
-      // console.log(this.props.history.location)
-      if (this.props.history.location.pathname.split('/')[3] !== this.props.location.pathname.split('/')[3]){
-        this.setState({
-          secondClass: "1"
-        })
-      }
+      // console.log(this.props.history.location.pathname.split('/')[4])
+      this.setState({
+        secondClass: this.props.history.location.pathname.split('/')[4]
+      })
     })
   }
   render() {
     // console.log(this.state.secondClass)
+    // console.log(this.props.bigKind)
     switch (this.props.bigKind) {
       case 'car': 
         return (

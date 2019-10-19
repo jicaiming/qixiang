@@ -19,8 +19,10 @@ const TimeBtnContainer = styled.div`
 `
 
 const TimeBtnActiveContainer = styled(TimeBtnContainer)`
-  color: #fff;
-  background: #37C2BC;
+  > div {
+    color: #fff;
+    background: #37C2BC;
+  }
 `
 
 export {

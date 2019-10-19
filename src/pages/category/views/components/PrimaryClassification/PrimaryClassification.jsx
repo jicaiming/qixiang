@@ -6,6 +6,8 @@ import { withRouter } from 'react-router-dom'
 
 import PrimaryContainer from './Styled'
 
+import connect from '../../connect'
+
 class PrimaryClassification extends PureComponent {
   render() {
     // console.log(this.props)
@@ -13,15 +15,15 @@ class PrimaryClassification extends PureComponent {
       <PrimaryContainer>
         <div
           ref="car"
-          onClick={(e)=>this.handleClick(e, "/car")}
+          onClick={(e)=>this.handleClick(e, "/car/1")}
         >租车</div>
         <div
           ref="flower"
-          onClick={(e)=>this.handleClick(e, "/flower")}
+          onClick={(e)=>this.handleClick(e, "/flower/1")}
         >花卉</div>
         <div 
           ref="site"
-          onClick={(e)=>this.handleClick(e, "/site")}
+          onClick={(e)=>this.handleClick(e, "/site/1")}
         >场地预定</div>
       </PrimaryContainer>
     )
@@ -39,11 +41,10 @@ class PrimaryClassification extends PureComponent {
     this.refs[this.props.bigKind].className="active"
   }
   handleClick = function(e, kind){
-    // console.log(kind)
-    // console.log(this.props)
-    // console.log(this)
+    
+    this.props.clearNum();
     this.props.history.push(`${this.props.match.path}${kind}`)
   }
 }
 
-export default withRouter(PrimaryClassification)
+export default connect(withRouter(PrimaryClassification))
