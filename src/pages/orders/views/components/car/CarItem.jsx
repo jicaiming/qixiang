@@ -10,7 +10,7 @@ class CartItem extends PureComponent{
     render(){
         return (
             <CarLi>
-                <h2>丰田 凯美瑞</h2>
+                <h2>{this.props.value.name}</h2>
                 <p className = "carText">
                     <span>2.0自动 </span>
                     |

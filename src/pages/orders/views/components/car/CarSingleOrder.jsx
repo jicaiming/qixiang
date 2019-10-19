@@ -16,7 +16,7 @@ class CarSingleOrder extends PureComponent{
         })
     }
     render(){
-        let {buyList} = this.props
+        let {buyList} = this.props.allData
         return (
             <SingleOrder className = "singleWrapper">
                 <div>
