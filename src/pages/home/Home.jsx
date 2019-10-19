@@ -13,10 +13,14 @@ import HotServer from 'assets/images/home/hot_server.png'
 import HomeClassic1 from 'assets/images/classic_case/home_classic1.png'
 import HomeClassic2 from 'assets/images/classic_case/home_classic2.png'
 
+import Right from 'assets/images/icon/right.png'
+import Down from 'assets/images/icon/down.png'
+
 
 export default class Home extends Component {
     state = {
-        data: ['banner1', 'banner2', 'banner3']
+        data: ['banner1', 'banner2', 'banner3'],
+        imgHeight: 176,
     }
 
     render() {
@@ -24,23 +28,33 @@ export default class Home extends Component {
                 <HomeContainer className="bbb">
                     <header>
                         <div className="home_home">首页</div>
-                        <div className="area" onClick={ () => this.handleClickCity()}><span className='city'>上海市</span><span>徐汇区</span><i></i></div>
+                        <div className="home_area" onClick={ () => this.handleClickCity()}><span className='city'>上海市</span><span>徐汇区</span><img src={Down} alt=""/></div>
                     </header>
                     <div className="home_scroll">
                         <section className="home_banner">
                             <WingBlank>
                                 <Carousel
                                     dots={false}
+                                    infinite
                                     autoplay={true}
                                     autoplayInterval={1500}
-                                    >
+                                >
                                     {this.state.data.map(val => (
-                                        <img
-                                            src={require(`assets/images/home/${val}.png`)}
+                                        <a
                                             key={val}
-                                            alt=""
-                                            style={{ width: '100%', verticalAlign: 'top' }}
-                                        /> 
+                                            href="http://www.alipay.com"
+                                            style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+                                            >
+                                            <img
+                                                src={require(`assets/images/home/${val}.png`)}
+                                                alt=""
+                                                style={{ width: '100%', verticalAlign: 'top' }}
+                                                onLoad={() => {
+                                                    window.dispatchEvent(new Event('resize'));
+                                                    this.setState({ imgHeight: 'auto' });
+                                                }}
+                                            />
+                                        </a>
                                     ))}
                                 </Carousel>
                             </WingBlank>
@@ -58,7 +72,7 @@ export default class Home extends Component {
                                     <i></i>
                                     <h4>热门服务</h4>
                                 </div>
-                                <span>即将上新<i></i></span>
+                                <span>即将上新<img src={Right} alt=""/></span>
                             </div>
                             <ul className="hot_container">
                                 <li><div><img src={HotServer} alt=""/></div></li>
@@ -71,11 +85,11 @@ export default class Home extends Component {
                                     <i></i>
                                     <h4>经典案例</h4>
                                 </div>
-                                <span onClick={ () => this.handleClickMore()}>查看更多<i></i></span>
+                                <span onClick={ () => this.handleClickMore()}>查看更多<img src={Right} alt=""/></span>
                             </div>
                             <ul className="classic_container">
-                                <li><div><img src={HomeClassic1} alt=""/></div></li>
-                                <li><div><img src={HomeClassic2} alt=""/></div></li>
+                                <li onClick={() => this.handleClickHomeClassic1()}><div><img src={HomeClassic1} alt=""/></div></li>
+                                <li onClick={() => this.handleClickHomeClassic2()}><div><img src={HomeClassic2} alt=""/></div></li>
                             </ul>
                         </section>
                     </div>
@@ -104,6 +118,12 @@ export default class Home extends Component {
     }
     handleClickBusBigHall(){
         this.props.history.push('category/site/3')
+    }
+    handleClickHomeClassic1(){
+        this.props.history.push('/classic/classic1')
+    }
+    handleClickHomeClassic2(){
+        this.props.history.push('/classic/classic2')
     }
 
 }

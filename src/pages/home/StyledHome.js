@@ -18,9 +18,14 @@ const HomeContainer = styled.div`
         .home_home{
             color:#fff;
         }
-        .area{
+        .home_area{
             .city{
                 margin-right:.05rem;
+            }
+            img{
+                width:.1rem;
+                height:.06rem;
+                margin-left:.04rem;
             }
         }  
     }
@@ -30,14 +35,10 @@ const HomeContainer = styled.div`
         section.home_banner{
             padding:.12rem;
             div{
-                height:0;
-                position:relative;
-                padding-bottom:41.59544%;
                 border-radius:.1rem;
-                img{
-                    width:100%;
-                    border-radius:.1rem;
-                }
+            }
+            img{
+                border-radius:.1rem;
             }
         }
         ul.home_list{
@@ -64,6 +65,7 @@ const HomeContainer = styled.div`
                 display:flex;
                 justify-content:space-between;
                 margin-bottom:.1rem;
+                align-items:center;
                 div{
                     h4{
                         font-size:.16rem;
@@ -74,6 +76,11 @@ const HomeContainer = styled.div`
                 span{
                     color:#4A4A4A;
                     font-size:.12rem;
+                    img{
+                        width:.06rem;
+                        height:.1rem;
+                        margin-left:.07rem;
+                    }
                 }
             }
             .hot_container{

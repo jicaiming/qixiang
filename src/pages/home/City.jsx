@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 
-import {    CityContainer,
-            CityAreaLiBorder
-        } from './StyledCity'
+import {  CityContainer,CityAreaLiBorder } from './StyledCity'
 import {HomeHeaderContainer} from 'components/StyledHomeHeader.js'
 
 import GuangZhou from 'assets/images/city/guangzhou.png'
@@ -16,10 +14,11 @@ import ShenZhenActive from 'assets/images/city/shenzhen_active.png'
 
 
 export default class City extends Component {
-
-    // state = {
-    //     active:'active'
-    // }
+    state = {
+        active:'广州市',
+        // shanghai :'徐汇区',
+        // shenzhen :'福田区'
+    }
     
     render() {
         return (
@@ -42,9 +41,9 @@ export default class City extends Component {
                             <span>用户量：888</span><span>好评率：69%</span>
                         </div>
                         <ul className="city_area">
-                            <CityAreaLiBorder className="active" onClick={() => this.handleClickArea('广州市')}>广州市</CityAreaLiBorder>
-                            <CityAreaLiBorder onClick={() => this.handleClickArea('佛山市')}>佛山市</CityAreaLiBorder>
-                            <CityAreaLiBorder className="last" onClick={() => this.handleClickArea('东莞市')}>东莞市</CityAreaLiBorder>
+                            <CityAreaLiBorder className={this.state.active === "广州市" ? "active" : ""} onClick={() => this.handleClickArea('广州市')}>广州市</CityAreaLiBorder>
+                            <CityAreaLiBorder className={this.state.active === "佛山市" ? "active" : ""}  onClick={() => this.handleClickArea('佛山市')}>佛山市</CityAreaLiBorder>
+                            <CityAreaLiBorder className={this.state.active === "东莞市" ? "active last" : "last"}  onClick={() => this.handleClickArea('东莞市')}>东莞市</CityAreaLiBorder>
                         </ul>
                     </div>
                     <div className="city_item"  onClick={ () => this.handleClickCityItem()}>
@@ -60,9 +59,9 @@ export default class City extends Component {
                             <span>用户量：888</span><span>好评率：69%</span>
                         </div>
                         <ul className="city_area">
-                            <CityAreaLiBorder className="active" onClick={() => this.handleClickArea('徐汇区')}>徐汇区</CityAreaLiBorder>
-                            <CityAreaLiBorder onClick={() => this.handleClickArea('杨浦区')}>杨浦区</CityAreaLiBorder>
-                            <CityAreaLiBorder className="last" onClick={() => this.handleClickArea('普陀区')}>普陀区</CityAreaLiBorder>
+                            <CityAreaLiBorder className={this.state.active === "徐汇区" ? "active" : ""} onClick={() => this.handleClickArea('徐汇区','active')}>徐汇区</CityAreaLiBorder>
+                            <CityAreaLiBorder className={this.state.active === "杨浦区" ? "active" : ""} onClick={() => this.handleClickArea('杨浦区','active')}>杨浦区</CityAreaLiBorder>
+                            <CityAreaLiBorder className={this.state.active === "普陀区" ? "active last" : "last"} onClick={() => this.handleClickArea('普陀区','active')}>普陀区</CityAreaLiBorder>
                         </ul>
                     </div>
                     <div className="city_item"  onClick={ () => this.handleClickCityItem()}>
@@ -78,9 +77,9 @@ export default class City extends Component {
                             <span>用户量：888</span><span>好评率：69%</span>
                         </div>
                         <ul className="city_area">
-                            <CityAreaLiBorder className="active" onClick={() => this.handleClickArea('福田区')}>福田区</CityAreaLiBorder>
-                            <CityAreaLiBorder onClick={() => this.handleClickArea('南山区')}>南山区</CityAreaLiBorder>
-                            <CityAreaLiBorder className="last" onClick={() => this.handleClickArea('罗湖区')}>罗湖区</CityAreaLiBorder>
+                            <CityAreaLiBorder className={this.state.active === "福田区" ? "active" : ""} onClick={() => this.handleClickArea('福田区')}>福田区</CityAreaLiBorder>
+                            <CityAreaLiBorder className={this.state.active === "南山区" ? "active" : ""} onClick={() => this.handleClickArea('南山区')}>南山区</CityAreaLiBorder>
+                            <CityAreaLiBorder className={this.state.active === "罗湖区" ? "active last" : "last"}  onClick={() => this.handleClickArea('罗湖区')}>罗湖区</CityAreaLiBorder>
                         </ul>
                     </div>
                 </section>
@@ -96,6 +95,11 @@ export default class City extends Component {
         // console.log(111)
     }
     handleClickArea(area){
+        this.setState({
+            // guangzhou:area,
+            // shanghai:area,
+            active:area
+        })
         console.log(area)
     }
 }
