@@ -15,7 +15,7 @@ export default connect((props) => {
   // console.log(bigKind)
   // console.log(props)
   let hasGoods = false
-  if (props.buyList.length !== 0) {
+  if (props.buyList && props.buyList.length !== 0) {
     hasGoods = true
   } 
   return (
