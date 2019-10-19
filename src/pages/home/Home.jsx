@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 
 import { HomeContainer}  from './StyledHome'
+import { Carousel, WingBlank } from 'antd-mobile';
 
-// import Banner1 from 'assets/images/home/banner1.png'
-// import Banner2 from 'assets/images/home/banner2.jpg'
-import Banner3 from 'assets/images/home/banner3.jpg'
+
 
 import MPV from 'assets/images/home/mpv.png'
 import FieldFlower from 'assets/images/home/FieldFlower.png'
@@ -17,6 +16,10 @@ import HomeClassic2 from 'assets/images/classic_case/home_classic2.png'
 
 
 export default class Home extends Component {
+    state = {
+        data: ['banner1', 'banner2', 'banner3']
+    }
+
     render() {
         return (
             <div>
@@ -26,18 +29,29 @@ export default class Home extends Component {
                         <div className="area" onClick={ () => this.handleClickCity()}><span className='city'>上海市</span><span>徐汇区</span><i></i></div>
                     </header>
                     <section className="home_banner">
-                        <div>
-                            <img src={Banner3} alt=""/>
-                        </div>
+                        <WingBlank>
+                            <Carousel
+                                dots={false}
+                                >
+                                {this.state.data.map(val => (
+                                    <img
+                                        src={require(`assets/images/home/${val}.png`)}
+                                        key={val}
+                                        alt=""
+                                        style={{ width: '100%', verticalAlign: 'top' }}
+                                    /> 
+                                ))}
+                            </Carousel>
+                        </WingBlank>
                     </section>
-                    <ul className="list">
+                    <ul className="home_list">
                         <li><img src={MPV} alt=""/><span>商务车</span></li>
                         <li><img src={FieldFlower} alt=""/><span>场地花</span></li>
                         <li><img src={ConferenceHall} alt=""/><span>会议厅</span></li>
                         <li><img src={BusBooking} alt=""/><span>大巴预定</span></li>
                         <li><img src={BigHall} alt=""/><span>千人厅</span></li>
                     </ul>
-                    <section className="hot">
+                    <section className="home_hot">
                         <div className="hot_header">
                             <div>
                                 <i></i>
@@ -50,7 +64,7 @@ export default class Home extends Component {
                             <li><div><img src={HotServer} alt=""/></div></li>
                         </ul>
                     </section>
-                    <section className="classic">
+                    <section className="home_classic">
                         <div className="hot_header">
                             <div>
                                 <i></i>
@@ -78,4 +92,6 @@ export default class Home extends Component {
     handleClickMore(){
         this.props.history.push('/classic')
     }
+
+
 }

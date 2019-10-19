@@ -1,0 +1,105 @@
+{
+  "ret": [true],
+  "data": {
+    "car": {
+      "1": [
+        {
+          "id" : 1,
+          "name" : "丰田 凯美瑞",
+          "price" : 300,
+          "img" : "http://file16.zk71.com/File/CorpEditInsertImages/2017/10/31/shipin_3028_20171031155933.jpg"
+        },
+        {
+          "id" : 2,
+          "name" : "凯迪拉克 ATL-S",
+          "price" : 450,
+          "img" : "http://file16.zk71.com/File/CorpEditInsertImages/2017/10/31/shipin_3028_20171031155933.jpg"
+        }
+      ],
+      "2": [
+        {
+          "id" : 3,
+          "name" : "丰田 凯美瑞",
+          "price" : 300,
+          "img" : "http://file16.zk71.com/File/CorpEditInsertImages/2017/10/31/shipin_3028_20171031155933.jpg"
+        }
+      ],
+      "3": [
+        {
+          "id" : 4,
+          "name" : "凯迪拉克 ATL-S",
+          "price" : 450,
+          "img" : "http://file16.zk71.com/File/CorpEditInsertImages/2017/10/31/shipin_3028_20171031155933.jpg"
+        }
+      ]
+    },
+    "flower": {
+      "1": [
+        {
+          "id" : 5,
+          "name" : "芳华",
+          "price" : 60,
+          "img" : "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=397026132,2811220690&fm=26&gp=0.jpg"
+        },
+        {
+          "id" : 6,
+          "name" : "前程似锦--双层花架",
+          "price" : 90,
+          "img" : "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=397026132,2811220690&fm=26&gp=0.jpg"
+        }
+      ],
+      "2": [
+        {
+          "id" : 7,
+          "name" : "芳华1",
+          "price" : 300,
+          "img" : "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=397026132,2811220690&fm=26&gp=0.jpg"
+        }
+      ],
+      "3": [
+        {
+          "id" : 8,
+          "name" : "芳华2",
+          "price" : 450,
+          "img" : "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=397026132,2811220690&fm=26&gp=0.jpg"
+        }
+      ]
+    },
+    "site": {
+      "1": [
+        {
+          "id" : 9,
+          "name" : "上海富豪东亚酒店",
+          "detail" : "富豪厅 1楼",
+          "price" : 45800,
+          "img" : "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3841372738,2842049830&fm=26&gp=0.jpg"
+        },
+        {
+          "id" : 10,
+          "name" : "光大会展国际大酒店",
+          "detail" : "富豪厅 1楼",
+          "price" : 22000,
+          "img" : "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3841372738,2842049830&fm=26&gp=0.jpg"
+        }
+      ],
+      "2": [
+        {
+          "id" : 11,
+          "name" : "上海富豪东亚酒店",
+          "detail" : "富豪厅 1楼",
+          "price" : 45800,
+          "img" : "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3841372738,2842049830&fm=26&gp=0.jpg"
+        }
+      ],
+      "3": [
+        {
+          "id" : 12,
+          "name" : "光大会展国际大酒店",
+          "detail" : "富豪厅 1楼",
+          "price" : 22000,
+          "img" : "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3841372738,2842049830&fm=26&gp=0.jpg"
+        }
+      ]
+    }
+  }
+}

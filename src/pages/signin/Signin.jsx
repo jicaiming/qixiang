@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 
 import {SigninContent} from './StyleldIndex'
 
+import { Route  } from 'react-router-dom'
+
+import ChangePwd from './ChangePwd'
+
+
 export default class Signin extends Component {
     render() {
         return (
@@ -14,7 +19,11 @@ export default class Signin extends Component {
                 </div>
                 <p className='next'>下一步</p>
                 <p></p>
-                <button>忘记密码</button>
+                {/* <NavLink to='./ChangePwd'></NavLink> */}
+                {/* <Route path='/signin/changepwd 'component={ChangePwd} > */}
+                    <button>忘记密码</button>
+                {/* </Route> */}
+                
             </SigninContent>
 
         )
