@@ -7,7 +7,7 @@ import icon4 from 'assets/images/category/sites/场-详情/客服icon.png'
 
 class DetailContent extends PureComponent {
   componentDidMount() {
-    console.log(this.props.content)
+    // console.log(this.props.content)
   }
   render() {
     return (
@@ -15,9 +15,9 @@ class DetailContent extends PureComponent {
         <img className="img1" src={this.props.content.img} alt=""/>
         <div className="parameter">
           <div className="left">
-            <h2>上海衡山宾馆</h2>
-            <h2>百花厅 3楼</h2>
-            <h3>最多200人 | 面积380㎡</h3>
+            <h2>{this.props.content.name}</h2>
+            <h2>{this.props.content.address}</h2>
+            <h3>{this.props.content.instructions.split(' ')[0]} | {this.props.content.instructions.split(' ')[1]}</h3>
             <div className="place">
               <dl>
                 <dt>
@@ -41,7 +41,7 @@ class DetailContent extends PureComponent {
           </div>
           <div className="right">
             <p>价格</p>
-            <span>26000</span>
+            <span>{this.props.content.price}</span>
             <i>元</i>
             /天
             <div className="server">

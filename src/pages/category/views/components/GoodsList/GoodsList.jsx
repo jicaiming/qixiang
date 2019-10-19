@@ -39,6 +39,7 @@ class GoodsList extends PureComponent {
       })
   }
   render() {
+    // console.log(this.props)
     if (this.state.list.length === 0) {
       return false
     }

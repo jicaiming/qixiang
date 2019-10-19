@@ -12,10 +12,9 @@ export default class CarItem extends PureComponent {
         </div>
         <div className="info">
           <h2>{this.props.value.name}</h2>
-          <h3>2.0自动 | 三厢5座</h3>
+          <h3>{this.props.value.instructions.split(' ')[0]} | {this.props.value.instructions.split(' ')[1]}</h3>
           <SelectNum
-            price={this.props.value.price}
-            id={this.props.value.id}  
+            value={this.props.value}
           ></SelectNum>
         </div>
       </CarContainer>

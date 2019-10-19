@@ -1,39 +1,57 @@
 import { INCREASE_NUM, DECREASE_NUM, CLEAR_NUM } from './actionTypes'
 
 const defaultState = {
-  buyList: [
+  allData: {
+    buyList: [
 
-  ]
+    ],
+    total: 0
+  }
+}
+
+function calTotal(list) {
+  let total = 0
+  list.forEach(v => {
+    total += v.count
+  });
+  return total
 }
 
 export default (state=defaultState, action) => {
   // console.log(action.data)
   let newList = []
+  // console.log(state.allData)
   switch(action.type) {
     case DECREASE_NUM:
-      // console.log(state.buyList)
-      if (state.buyList.length === 0) {
+      if (state.allData.buyList.length === 0) {
         return {
-          buyList: state.buyList
+          allData: {
+            buyList: [],
+            total: 0
+          }
         }
       }
-      newList = state.buyList.map(function(v) {
-        if (v.id === action.data){
+      newList = state.allData.buyList.map(function(v) {
+        if (v.id === action.data.value.id){
           v.count --
           return v
         } else{
           return v
         }
       })
-      // console.log(state.buyList)
-      newList = state.buyList.filter((v)=> v.count!==0)
+      newList = state.allData.buyList.filter((v)=> v.count!==0)
+      // console.log(newList)
+      // console.log(calTotal(newList))
       return {
-        buyList: newList
+        allData: {
+          buyList: newList,
+          total: calTotal(newList)
+        }
       }
     case INCREASE_NUM:
       let hasIt = false
-      newList = state.buyList.map(function(v) {
-        if (v.id === action.data){
+      newList = state.allData.buyList.map(function(v) {
+        if (v.id === action.data.value.id){
           hasIt = true
           v.count ++
           return v
@@ -42,21 +60,35 @@ export default (state=defaultState, action) => {
         }
       })
       if (hasIt) {
+        // console.log(newList)
+        // console.log(calTotal(newList))
         return {
-          buyList: newList
+          allData: {
+            buyList: newList,
+            total: calTotal(newList)
+          }
         }
       } else {
+        // console.log(action.data.value)
         newList.push({
-          id: action.data,
+          ...action.data.value,
           count: 1
         })
+        // console.log(newList)
+        // console.log(calTotal(newList))
         return {
-          buyList: newList
+          allData: {
+            buyList: newList,
+            total: calTotal(newList)
+          }
         }
       }
     case CLEAR_NUM:
       return {
-        buyList: []
+        allData: {
+          buyList: [],
+          total: 0
+        }
       }
     default:
       return state
