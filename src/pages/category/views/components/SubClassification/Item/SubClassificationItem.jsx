@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react'
+import { withRouter } from 'react-router-dom'
 
-export default class SubClassificationItem extends PureComponent {
+class SubClassificationItem extends PureComponent {
   render() {
+    // console.log(this.props)
     return <div
       tag = {this.props.tag}
       className = {
@@ -12,3 +14,5 @@ export default class SubClassificationItem extends PureComponent {
     </div>
   }
 }
+
+export default withRouter(SubClassificationItem)

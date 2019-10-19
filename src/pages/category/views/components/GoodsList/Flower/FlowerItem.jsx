@@ -23,7 +23,10 @@ export default class FlowerItem extends PureComponent {
                     ></i>
                   </h2>
                   <h3>粉色桔梗1扎半，绿色啊啊啊啊啊啊</h3>
-                  <SelectNum price={this.props.value.price}></SelectNum>
+                  <SelectNum
+                    price={this.props.value.price}
+                    id={this.props.value.id}  
+                  ></SelectNum>
                 </div>
               </FlowerContainer>
             )
