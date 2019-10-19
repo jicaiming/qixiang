@@ -7,23 +7,35 @@ import {CarContainer,CarOrderItem,Devide,CarOrderDetail,CarOrderSubmit,ItemConta
 import CarItem from './CarItem'
 import CarSingleOrder from './CarSingleOrder'
 
+import connect from '../../../../category/views/connect'
+
+
 class CarOrder extends PureComponent{
+    
     componentDidMount() {
         let wrapper = document.querySelector('.bScrollWrapper')
         new BScroll(wrapper, {
           scrollY: true,
+          click:true,
           mouseWheel:true
         })
-        console.log(this.props)
       }
+    handleClick(){
+        this.props.clearNum()
+    }
     render(){
+        let {buyList} = this.props
         return (
             <CarContainer>
                 <CarOrderItem className = 'bScrollWrapper'>
                     <ItemContainer>
-                        <CarItem></CarItem>
-                        <CarItem></CarItem>
-                        <CarItem></CarItem>
+                        {
+                            buyList.map((value,index)=>(
+                                <CarItem key={index} value={value}></CarItem>
+                                )
+                               
+                            )
+                        }
                     </ItemContainer>
                 </CarOrderItem>
                 <Devide></Devide>
@@ -71,7 +83,7 @@ class CarOrder extends PureComponent{
                         <Checkbox></Checkbox>
                         <p>我已阅读并同意<span>《企享科技有限公司服务协议》</span>和<span>《企享科技租车合同》</span>的所有条例。</p>
                     </div>
-                    <Button className="submitBtn">
+                    <Button className="submitBtn" onClick={this.handleClick.bind(this)}>
                         请选择租用时间
                     </Button>
                 </CarOrderSubmit>
@@ -80,4 +92,4 @@ class CarOrder extends PureComponent{
     }
 }
 
-export default withRouter(CarOrder)
+export default connect(withRouter(CarOrder))

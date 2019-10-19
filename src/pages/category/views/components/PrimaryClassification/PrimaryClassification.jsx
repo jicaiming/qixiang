@@ -41,10 +41,7 @@ class PrimaryClassification extends PureComponent {
     this.refs[this.props.bigKind].className="active"
   }
   handleClick = function(e, kind){
-    // console.log(kind)
-    // console.log(this.props)
-    // console.log(this)
-    // console.log(this)
+    
     this.props.clearNum();
     this.props.history.push(`${this.props.match.path}${kind}`)
   }

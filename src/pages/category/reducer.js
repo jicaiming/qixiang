@@ -7,11 +7,9 @@ const defaultState = {
 }
 
 export default (state=defaultState, action) => {
-  // console.log(action.data)
   let newList = []
   switch(action.type) {
     case DECREASE_NUM:
-      // console.log(state.buyList)
       if (state.buyList.length === 0) {
         return {
           buyList: state.buyList
@@ -25,7 +23,6 @@ export default (state=defaultState, action) => {
           return v
         }
       })
-      // console.log(state.buyList)
       newList = state.buyList.filter((v)=> v.count!==0)
       return {
         buyList: newList

@@ -5,7 +5,7 @@ import {CarLi} from './styled'
 
 class CartItem extends PureComponent{
     handleClickToTimer(){
-        this.props.history.push('/timer')
+        console.log(1)
     }
     render(){
         return (
@@ -17,11 +17,11 @@ class CartItem extends PureComponent{
                     <span> 三厢5座</span></p>
                 <p className = "carText">
                     已选
-                    <span> {this.props.value.count} </span>
+                    <span> 5 </span>
                     辆</p>
                 <p className = "carRentData">
                     <span>选择租期</span>
-                    <span className ="carRight" onClick={this.handleClickToTimer.bind(this)}></span>
+                    <span className ="carRight" onClick={()=>{this.handleClickToTimer()}}></span>
                 </p>
             </CarLi>
         )
