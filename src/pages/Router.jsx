@@ -10,7 +10,7 @@ import ClassicDetails from './home/ClassicDetails'
 
 import SiteDetail from './category/views/components/SiteDetail/SiteDetail'
 import {Order} from './orders/index'
-import Timer from './timer/Timer'
+import Timer from './timer/time'
 
 
 import Edit from './profile/Edit'

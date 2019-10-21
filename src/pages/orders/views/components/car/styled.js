@@ -173,6 +173,7 @@ const CarOrderSubmit = styled.div`
         line-height:.14rem;
         display:flex;
         flex-direction:row;
+        
         >p{
             padding-left:.12rem;
             >span{
@@ -180,10 +181,28 @@ const CarOrderSubmit = styled.div`
             }
         }
     }
+    .am-checkbox.am-checkbox-checked .am-checkbox-inner {
+        border-color: #37C2BC;
+        background: #37C2BC;
+    }
     .submitBtn{
         width:3.45rem;
         height:.50rem;
         background:rgba(155,155,155,1);
+        border-radius:.10rem;
+        font-size:.19rem;
+        font-family:PingFangSC-Regular,PingFangSC;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        line-height:.27rem;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .submitBtnActive{
+        width:3.45rem;
+        height:.50rem;
+        background:#37C2BC;
         border-radius:.10rem;
         font-size:.19rem;
         font-family:PingFangSC-Regular,PingFangSC;
@@ -216,8 +235,8 @@ justify-content:space-between;
     line-height:.17rem;
 }
 .carContent2{
-    width:2.15rem;
-    padding:0 .4rem;
+    width:2rem;
+    padding:0 .25rem;
     height:.17rem;
     font-size:.12rem;
     font-family:PingFangSC-Regular,PingFangSC;
@@ -321,6 +340,13 @@ const MaskContainer = styled.div`
     }
   }
 `
+
+const ChooseData = styled.span`
+
+`
+const ShowData = styled.span`
+
+`
 export {
     CarContainer,
     CarOrderItem,
@@ -331,5 +357,7 @@ export {
     ItemContainer,
     SingleOrder,
     SingleItemContainer,
-    MaskContainer
+    MaskContainer,
+    ChooseData,
+    ShowData
 }

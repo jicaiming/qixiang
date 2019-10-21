@@ -1,5 +1,4 @@
 import React,{PureComponent}  from 'react'
-// import React  from 'react'
 import {withRouter} from 'react-router-dom'
 import {OrderHeader1 ,OrderMain1}from './components/common/common'
 
