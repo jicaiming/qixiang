@@ -14,11 +14,7 @@ import MyOrder from './profile/MyOrder'
 import Enterprise from './profile/Enterprise'
 import Notice from './profile/Notice'
 import Set from './profile/Set'
-
-
-
-
-
+import LicenseAgreement from './profile/LicenseAgreement'
 
 
 
@@ -37,6 +33,7 @@ export default class MyRouter extends Component {
                     <Route path='/enterprise' component={Enterprise}></Route>
                     <Route path='/notice' component={Notice}></Route>
                     <Route path='/set' component={Set}></Route>
+                    <Route path='/license' component={LicenseAgreement}></Route>
                     <Redirect from='/' exact to='/index/home'></Redirect> 
                     <Route component={Page404} ></Route>
                 </Switch>

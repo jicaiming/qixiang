@@ -8,7 +8,7 @@ export default class Notice extends Component {
     render() {
         return (
             <NoticeContainer>
-                <Header msg="公告"></Header>
+                <Header msg="公告" handleClick={this.handleClickback}></Header>
                 <main>
                     <NoticeItem>
                     </NoticeItem>
@@ -16,5 +16,10 @@ export default class Notice extends Component {
                 </main>
             </NoticeContainer>
         )
+    }
+    handleClickback() {
+        //定义函数传给子组件，不能再使用this.props.history;不懂的话解开this打印一遍
+        // console.log(this)
+        this.history.goBack()
     }
 }

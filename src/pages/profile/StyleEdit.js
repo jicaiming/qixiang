@@ -146,18 +146,6 @@ const CityContainer = border({
 `
 })
 
-const ButtonContainer = styled.div`
-    margin: 0.5rem;
-    .am-button{
-        background:#37C2BC;
-        span{
-            font-size:0.18rem;
-            font-weight:600;
-            color:#fff;
-        }
-    }
-`
-
 export {
     EditContainer,
     // HeaderContainer,
@@ -165,5 +153,4 @@ export {
     AddImgContainer,
     UserContainer,
     CityContainer,
-    ButtonContainer
 }

@@ -2,9 +2,13 @@ import React, { Component } from 'react'
 
 
 import Header from 'components/profile/Header'
-import { EditContainer, AddImgContainer, UserContainer, RadioContainer, CityContainer, ButtonContainer } from './StyleEdit'
+import MyButton from 'components/profile/Button'
 
-import { List, ImagePicker, Radio, Picker, InputItem, Button } from 'antd-mobile';
+import { EditContainer, AddImgContainer, UserContainer, RadioContainer, CityContainer} from './StyleEdit'
+
+
+
+import { List, ImagePicker, Radio, Picker, InputItem} from 'antd-mobile';
 
 const data = [{
     url: 'https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg',
@@ -18,19 +22,6 @@ export default class Edit extends Component {
         sexValue: 0,
         provinceValue: ['02', '02-1', '02-1-1'],
         companyValue: '上海王聪明有限公司'
-    }
-    onChangeImg = (files, type, index) => {
-        this.setState({
-            files,
-        });
-    }
-    onChangeSex = (value) => {
-        this.setState({
-            sexValue: value,
-        });
-    };
-    onSubmit = () => {
-        console.log(this.state)
     }
     render() {
         const data = [
@@ -121,7 +112,7 @@ export default class Edit extends Component {
         ];
         return (
             <EditContainer>
-                <Header msg="个人设置"></Header>
+                <Header msg="个人设置" handleClick={this.handleClickback}></Header>
                 <AddImgContainer>
                     <span>
                         头像
@@ -175,10 +166,26 @@ export default class Edit extends Component {
                     >公司</InputItem>
                 </UserContainer>
                 <div style={{height:'0.13rem',background:'#F3F3F3'}}></div>
-                <ButtonContainer>
-                    <Button onClick={this.onSubmit} >确认</Button>
-                </ButtonContainer>
+                    <MyButton msg='确认' onClick={this.onSubmit}></MyButton>
             </EditContainer>
         )
+    }
+    handleClickback() {
+        //定义函数传给子组件，不能再使用this.props.history;不懂的话解开this打印一遍
+        // console.log(this)
+        this.history.goBack()
+    }
+    onChangeImg = (files, type, index) => {
+        this.setState({
+            files,
+        });
+    }
+    onChangeSex = (value) => {
+        this.setState({
+            sexValue: value,
+        });
+    };
+    onSubmit = () => {
+        console.log(this.state)
     }
 }

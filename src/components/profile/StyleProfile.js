@@ -221,10 +221,25 @@ const NoticeItemContainer = styled.div`
     }
 `
 
+const ButtonContainer = styled.div`
+    margin:1rem 0.5rem 0;
+    .am-button{
+        background:#37C2BC;
+        span{
+            font-size:0.18rem;
+            font-weight:600;
+            color:#fff;
+        }
+    }
+`
+
+
+
 export {
     HeaderContainer,
     OrderContainer,
     OrderListContainer,
     MyButton,
-    NoticeItemContainer
+    NoticeItemContainer,
+    ButtonContainer
 }

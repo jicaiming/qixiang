@@ -15,7 +15,7 @@ export default class MyOrder extends Component {
         let { match } = this.props
         return (
             <MyOrderContainer>
-                <Header msg="我的订单"></Header>
+                <Header msg="我的订单" handleClick={this.handleClickback}></Header>
                 <NavContainer>
                     <NavLink to={`${match.path}/allOrders`}>
                         <div className={this.props.location.pathname === `${match.path}/allOrders` ? "active" : ""}>
@@ -47,6 +47,11 @@ export default class MyOrder extends Component {
                 </MainContainer>
             </MyOrderContainer>
         )
+    }
+    handleClickback() {
+        //定义函数传给子组件，不能再使用this.props.history;不懂的话解开this打印一遍
+        // console.log(this)
+        this.history.push('/index/profile')
     }
 }
 

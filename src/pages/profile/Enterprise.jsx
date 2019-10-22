@@ -9,7 +9,7 @@ export default class Enterprise extends Component {
     render() {
         return (
             <EnterpriseContainer>
-                <Header msg="关于企业"></Header>
+                <Header msg="关于企业" handleClick={this.handleClickback}></Header>
                 <main>
                     <div>
                         <img src={logo} alt=""/>
@@ -23,5 +23,10 @@ export default class Enterprise extends Component {
                 </main>
             </EnterpriseContainer>
         )
+    }
+    handleClickback() {
+        //定义函数传给子组件，不能再使用this.props.history;不懂的话解开this打印一遍
+        // console.log(this)
+        this.history.goBack()
     }
 }
