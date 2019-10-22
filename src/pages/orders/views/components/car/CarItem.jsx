@@ -31,18 +31,18 @@ class CartItem extends PureComponent{
                 startTime = value.sTime
                 sTime = new Date(startTime)
                 sY = sTime.getFullYear()
-                sM = sTime.getMonth()
+                sM = sTime.getMonth()+1
                 sD = sTime.getDate()
                 sDay = sTime.getDay()
                 endTime = value.eTime
                 eTime = new Date(endTime)
                 eY = eTime.getFullYear()
-                eM = eTime.getMonth()
+                eM = eTime.getMonth()+1
                 eD = eTime.getDate()
                 eDay = eTime.getDay()
                 
             }
-            if(value.dayCount !== 0&&value.id ===this.props.value.id){
+            if(value.dayCount !== 0&&value.id === this.props.value.id){
                 hasTime = true
             }
         })
@@ -52,19 +52,21 @@ class CartItem extends PureComponent{
             <CarLi>
                 <h2>{this.props.value.name}</h2>
                 <p className = "carText">
-                    <span>2.0自动 </span>
+                    <span>{this.props.value.instructions.split(' ')[0]} </span>
                     |
-                    <span> 三厢5座</span></p>
+                    <span>   {this.props.value.instructions.split(' ')[1]}</span>
+                </p>
                 <p className = "carText">
                     已选
                     <span> {this.props.value.count} </span>
                     辆</p>
                 <p className = "carRentData">
                 {
-                    
                     !hasTime
                     ? <ChooseData>选择租期</ChooseData>
-                    : <ShowData>{sY+'年'+(1+sM)+'月'+sD+'日'+'('+'周'+sDay+')'+' 至 '+ eY+'年'+(1+eM)+'月'+eD+'日'+'('+'周'+eDay+')'+'       共计'+dayCount+'天'}</ShowData>
+                    : <ShowData>
+                        {sY}年{sM}月{sD}日(周{sDay}) 至 {eY}年{eM}月{eD}日(周{eDay})       共计{dayCount}天      
+                    </ShowData>
                 }
                     
                     <span className ="carRight" onClick={this.handleClickToTimer.bind(this)}></span>
