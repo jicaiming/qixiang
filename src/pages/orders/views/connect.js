@@ -1,17 +1,22 @@
 import {connect} from 'react-redux'
-import {clearBuylist} from '../actionCreator'
+import {clearNum} from '../../category/actionCreator'
+import {clearTimeList} from '../../timer/actionCreator'
 
 
 
 const mapStateToProps = (state) => {
     return {
-      allData: state.getIn(['category', 'allData'],['order','timeList'])
+      allData: state.getIn(['category', 'allData']),
+      timeList:state.getIn(['time','timeList'])
     }
   }
 const mapDispatchToProps = (dispatch) =>{
   return {
-    clearBuylist(){
-      dispatch(clearBuylist())
+    clearNum(){
+      dispatch(clearNum())
+    },
+    clearTimeList (){
+      dispatch(clearTimeList())
     }
   }
 }

@@ -3,6 +3,7 @@ import toRight from 'assets/images/icon/toRight.png'
 import issue from 'assets/images/icon/详情-问号.png'
 
 const CarContainer = styled.div`
+    position:relative;
     background:white;
     height:100%;
     width:100%;
@@ -45,7 +46,7 @@ const CarOrderDetail = styled.div`
             color:#9B9B9B;
             line-height:.28rem;
             >h2{
-                width:.72rem;
+                width:.9rem;
                 font-size:.18rem;
                 line-height:.28rem;
                 font-family:PingFangSC-Medium,PingFangSC;
@@ -84,7 +85,7 @@ const CarOrderDetail = styled.div`
             line-height:.28rem;
             >h2{
                 display:flex;
-                width:.72rem;
+                width:.9rem;
                 font-size:.18rem;
                 line-height:.28rem;
                 font-family:PingFangSC-Medium,PingFangSC;
@@ -97,29 +98,7 @@ const CarOrderDetail = styled.div`
                 background:red;
             }
         }
-        .serviceContent{
-            flex: 1;
-            display:flex;
-            flex-direction:row;
-            align-items:center;
-            .service1{
-                width:.92rem;
-                display:flex;
-                flex-direction:row;
-                height:.17rem;
-                font-size:.12rem;
-                font-family:PingFangSC-Medium,PingFangSC;
-                font-weight:500;
-                color:rgba(74,74,74,1);
-                line-height:.17rem;
-                .issue{
-                    width:.16rem;
-                    height:.16rem;
-                    background:url(${issue});
-                    background-size:100%;
-                    margin:0 .05rem;
-                }
-            }
+        
             .service2{
                 width:1.75rem;
                 padding:0 .2rem;
@@ -173,6 +152,7 @@ const CarOrderSubmit = styled.div`
         line-height:.14rem;
         display:flex;
         flex-direction:row;
+        
         >p{
             padding-left:.12rem;
             >span{
@@ -180,10 +160,28 @@ const CarOrderSubmit = styled.div`
             }
         }
     }
+    .am-checkbox.am-checkbox-checked .am-checkbox-inner {
+        border-color: #37C2BC;
+        background: #37C2BC;
+    }
     .submitBtn{
         width:3.45rem;
         height:.50rem;
         background:rgba(155,155,155,1);
+        border-radius:.10rem;
+        font-size:.19rem;
+        font-family:PingFangSC-Regular,PingFangSC;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        line-height:.27rem;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .submitBtnActive{
+        width:3.45rem;
+        height:.50rem;
+        background:#37C2BC;
         border-radius:.10rem;
         font-size:.19rem;
         font-family:PingFangSC-Regular,PingFangSC;
@@ -207,7 +205,8 @@ display:flex;
 flex-direction:row;
 justify-content:space-between;
 >span{
-    width:.72rem;
+    overflow-x:scroll;
+    width:.9rem;
     height:.17rem;
     font-size:.12rem;
     font-family:PingFangSC-Medium,PingFangSC;
@@ -216,8 +215,8 @@ justify-content:space-between;
     line-height:.17rem;
 }
 .carContent2{
-    width:2.15rem;
-    padding:0 .4rem;
+    width:2rem;
+    padding:0 .25rem;
     height:.17rem;
     font-size:.12rem;
     font-family:PingFangSC-Regular,PingFangSC;
@@ -250,7 +249,7 @@ const CarLi = styled.li`
         line-height:.25rem;
     }
     .carText{
-        width:.96rem;
+       
         height:.17rem;
         font-size:.12rem;
         font-family:PingFangSC-Regular,PingFangSC;
@@ -282,7 +281,78 @@ const ItemContainer = styled.div`
     display:flex;
     flex-direction:column ;
 `
+
+const MaskContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > div {
+    width:2.67rem;
+    height:auto;
+    background:rgba(255,255,255,1);
+    border-radius:0.15rem;
+    padding: .19rem .37rem 0;
+    img {
+      width: 1.93rem;
+      height: 2.1rem;
+      margin-bottom: .11rem;
+    }
+    h2 {
+      font-size:0.17rem;
+      font-family:PingFangSC-Medium,PingFangSC;
+      font-weight:500;
+      color:rgba(74,74,74,1);
+      line-height:0.24rem;
+    }
+    p {
+      font-size:0.14rem;
+      font-family:PingFangSC-Regular,PingFangSC;
+      font-weight:400;
+      color:rgba(155,155,155,1);
+      line-height:0.17rem;
+    }
+  }
+`
+
+const ChooseData = styled.span`
+
+`
+const ShowData = styled.span`
+
+`
+
+const ServiceFee = styled.div`
+flex: 1;
+display:flex;
+flex-direction:row;
+align-items:center;
+.service1{
+    width:.92rem;
+    display:flex;
+    flex-direction:row;
+    height:.17rem;
+    font-size:.12rem;
+    font-family:PingFangSC-Medium,PingFangSC;
+    font-weight:500;
+    color:rgba(74,74,74,1);
+    line-height:.17rem;
+    .issue{
+        width:.16rem;
+        height:.16rem;
+        background:url(${issue});
+        background-size:100%;
+        margin:0 .05rem;
+    }
+`
 export {
+    ServiceFee,
     CarContainer,
     CarOrderItem,
     Devide,
@@ -291,5 +361,8 @@ export {
     CarLi,
     ItemContainer,
     SingleOrder,
-    SingleItemContainer
+    SingleItemContainer,
+    MaskContainer,
+    ChooseData,
+    ShowData
 }

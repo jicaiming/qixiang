@@ -70,8 +70,6 @@ export default (state=defaultState, action) => {
           ...action.data.value,
           count: 1
         })
-        // console.log(newList)
-        // console.log(calTotal(newList))
         return {
           allData: {
             buyList: newList,
