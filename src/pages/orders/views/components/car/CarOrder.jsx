@@ -66,13 +66,13 @@ class CarOrder extends PureComponent {
         }
         console.log(data)
         
-        // axios({
-        //     method: 'post',
-        //     url: '/api/commitOrder',
-        //     params:data
-        // }).then(res => {
-        //     console.log(res.data)
-        // })
+        axios({
+            method: 'post',
+            url: '/api/commitOrder',
+            params:data
+        }).then(res => {
+            console.log(res.data)
+        })
         // axios.post('/api/commitOrder',data).then(function(res){
         //     console.log(res)
         // })
