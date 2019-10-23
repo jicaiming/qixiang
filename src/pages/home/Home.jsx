@@ -21,6 +21,8 @@ export default class Home extends Component {
     state = {
         data: ['banner1', 'banner2', 'banner3'],
         imgHeight: 176,
+        city:'上海',
+        area:'徐汇区'
     }
 
     render() {
@@ -28,7 +30,7 @@ export default class Home extends Component {
                 <HomeContainer className="bbb">
                     <header>
                         <div className="home_home">首页</div>
-                        <div className="home_area" onClick={ () => this.handleClickCity()}><span className='city'>上海市</span><span>徐汇区</span><img src={Down} alt=""/></div>
+                        <div className="home_area" onClick={ () => this.handleClickCity()}><span className='city'>{this.state.city}</span><span>{this.state.area}</span><img src={Down} alt=""/></div>
                     </header>
                     <div className="home_scroll">
                         <section className="home_banner">
@@ -42,7 +44,7 @@ export default class Home extends Component {
                                     {this.state.data.map(val => (
                                         <a
                                             key={val}
-                                            href="http://www.alipay.com"
+                                            href="http://www.baidu.com"
                                             style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
                                             >
                                             <img
@@ -124,6 +126,12 @@ export default class Home extends Component {
     }
     handleClickHomeClassic2(){
         this.props.history.push('/classic/classic2')
+    }
+    componentDidMount(){
+        this.setState({
+            area:localStorage.getItem('area') || '徐汇区',
+            city:localStorage.getItem('city') || '上海'
+        })
     }
 
 }
