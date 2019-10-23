@@ -14,5 +14,6 @@ module.exports = override(
     ['components']: path.resolve(__dirname, 'src/components'),
     ['utils']: path.resolve(__dirname, 'src/utils'),
     ['pages']: path.resolve(__dirname, 'src/pages'),
+    ['store']: path.resolve(__dirname,'src/store')
   })
 )

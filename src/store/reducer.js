@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux-immutable'
-import {reducer as cart } from 'pages/order/index'
 import category from 'pages/category/reducer'
+import time from 'pages/timer/reducer'
 
 export default combineReducers({
-    cart,
-    category
+    category,
+    time
 })

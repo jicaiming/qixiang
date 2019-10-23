@@ -22,10 +22,9 @@ export default class FlowerItem extends PureComponent {
                       onClick={() => value.changeStatus(true)}
                     ></i>
                   </h2>
-                  <h3>粉色桔梗1扎半，绿色啊啊啊啊啊啊</h3>
+                  <h3>{this.props.value.instructions}</h3>
                   <SelectNum
-                    price={this.props.value.price}
-                    id={this.props.value.id}  
+                    value={this.props.value}
                   ></SelectNum>
                 </div>
               </FlowerContainer>
