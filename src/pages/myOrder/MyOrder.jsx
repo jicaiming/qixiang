@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, NavLink } from 'react-router-dom'
 
-import http from 'utils/http'
+import http from 'utils/xgrhttp'
 
 import Header from 'components/profile/Header'
 import { MyOrderContainer, NavContainer, MainContainer } from './StyleMyOrder'

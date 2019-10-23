@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import http from 'utils/xgrhttp'
+
 import Header from 'components/profile/Header'
 import MyButton from 'components/profile/Button'
 
@@ -7,112 +9,47 @@ import { EditContainer, AddImgContainer, UserContainer, RadioContainer, CityCont
 
 import { List, ImagePicker, Radio, Picker, InputItem } from 'antd-mobile';
 
+import cities from './city.json'
+
 const data = [{
     url: 'https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg',
     id: '0',
 }];
+
+const sex = [
+    { value: '男', label: '男' },
+    { value: '女', label: '女' },
+];
+
+const province = cities.map((value) => {
+    return {
+        label: value.Name,
+        value: value.Name,
+        children: value.Citys.map((value) => {
+            return {
+                label: value.Name,
+                value: value.Name,
+                children: value.Areas.map((value) => {
+                    return {
+                        label: value.Name,
+                        value: value.Name,
+                    }
+                })
+            }
+
+        })
+    }
+})
 
 export default class Edit extends Component {
     state = {
         files: data,
         userValue: 'wyp2259',
         sexValue: '男',
-        provinceValue: ['浙江', '杭州', '西湖区'],
+        provinceValue: ['北京市', '北京市', '海淀区'],
         companyValue: '上海王聪明有限公司'
     }
     render() {
-        const data = [
-            { value: '男', label: '男' },
-            { value: '女', label: '女' },
-        ];
-        const province = [
-            {
-                label: '北京',
-                value: '北京',
-                children: [
-                    {
-                        label: '北京市',
-                        value: '北京市',
-                        children: [
-                            {
-                                label: '东城区',
-                                value: '东城区',
-                            },
-                            {
-                                label: '西城区',
-                                value: '西城区',
-                            },
-                            {
-                                label: '崇文区',
-                                value: '崇文区',
-                            },
-                            {
-                                label: '宣武区',
-                                value: '宣武区',
-                            },
-                        ],
-                    }
-                ],
-            },
-            {
-                label: '浙江',
-                value: '浙江',
-                children: [
-                    {
-                        label: '杭州',
-                        value: '杭州',
-                        children: [
-                            {
-                                label: '西湖区',
-                                value: '西湖区',
-                            },
-                            {
-                                label: '上城区',
-                                value: '上城区',
-                            },
-                            {
-                                label: '江干区',
-                                value: '江干区',
-                            },
-                            {
-                                label: '下城区',
-                                value: '下城区',
-                            },
-                        ],
-                    },
-                    {
-                        label: '宁波',
-                        value: '宁波',
-                        children: [
-                            {
-                                label: 'xx区',
-                                value: 'xx区',
-                            },
-                            {
-                                label: 'yy区',
-                                value: 'yy区',
-                            },
-                        ],
-                    },
-                    {
-                        label: '温州',
-                        value: '温州',
-                    },
-                    {
-                        label: '嘉兴',
-                        value: '嘉兴',
-                    },
-                    {
-                        label: '湖州',
-                        value: '湖州',
-                    },
-                    {
-                        label: '绍兴',
-                        value: '绍兴',
-                    },
-                ],
-            },
-        ];
         return (
             <EditContainer>
                 <Header msg="个人设置" handleClick={this.handleClickback}></Header>
@@ -142,7 +79,7 @@ export default class Edit extends Component {
                         性别
                         </span>
                     <div>
-                        {data.map(i => (
+                        {sex.map(i => (
                             <Radio className="my-radio" key={i.value} checked={this.state.sexValue === i.value} onChange={() => this.onChangeSex(i.value)}>
                                 {i.label}
                             </Radio>
@@ -150,7 +87,8 @@ export default class Edit extends Component {
                     </div>
                 </RadioContainer>
                 <CityContainer>
-                    <Picker extra="请选择(可选)"
+                    <Picker
+                        extra="请选择(可选)"
                         data={province}
                         title="请选择城市"
                         value={this.state.provinceValue}
@@ -188,7 +126,118 @@ export default class Edit extends Component {
             sexValue: value,
         });
     };
-    onSubmit = () => {
+    onSubmit = async () => {
         console.log(this.state)
+        // let result = await http.post({
+        //     url: 'https://mobile.ant.design/components/picker-cn/',
+        //     data: this.state
+        // })
+        // let haha = await http.get({url:''})
+    }
+    async componentDidMount() {
+        // let chushizhi = await http.get({url:''})
+        // console.log(province)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const province = [
+        //     {
+        //         label: '北京',
+        //         value: '北京',
+        //         children: [
+        //             {
+        //                 label: '北京市',
+        //                 value: '北京市',
+        //                 children: [
+        //                     {
+        //                         label: '东城区',
+        //                         value: '东城区',
+        //                     },
+        //                     {
+        //                         label: '西城区',
+        //                         value: '西城区',
+        //                     },
+        //                     {
+        //                         label: '崇文区',
+        //                         value: '崇文区',
+        //                     },
+        //                     {
+        //                         label: '宣武区',
+        //                         value: '宣武区',
+        //                     },
+        //                 ],
+        //             }
+        //         ],
+        //     },
+        //     {
+        //         label: '浙江',
+        //         value: '浙江',
+        //         children: [
+        //             {
+        //                 label: '杭州',
+        //                 value: '杭州',
+        //                 children: [
+        //                     {
+        //                         label: '西湖区',
+        //                         value: '西湖区',
+        //                     },
+        //                     {
+        //                         label: '上城区',
+        //                         value: '上城区',
+        //                     },
+        //                     {
+        //                         label: '江干区',
+        //                         value: '江干区',
+        //                     },
+        //                     {
+        //                         label: '下城区',
+        //                         value: '下城区',
+        //                     },
+        //                 ],
+        //             },
+        //             {
+        //                 label: '宁波',
+        //                 value: '宁波',
+        //                 children: [
+        //                     {
+        //                         label: 'xx区',
+        //                         value: 'xx区',
+        //                     },
+        //                     {
+        //                         label: 'yy区',
+        //                         value: 'yy区',
+        //                     },
+        //                 ],
+        //             },
+        //             {
+        //                 label: '温州',
+        //                 value: '温州',
+        //             },
+        //             {
+        //                 label: '嘉兴',
+        //                 value: '嘉兴',
+        //             },
+        //             {
+        //                 label: '湖州',
+        //                 value: '湖州',
+        //             },
+        //             {
+        //                 label: '绍兴',
+        //                 value: '绍兴',
+        //             },
+        //         ],
+        //     },
+        // ];
