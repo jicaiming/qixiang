@@ -7,12 +7,12 @@ const Container = styled.div`
     flex-direction : column;
     height : 100%;
     width: 100%;
+    position: relative;
 `
 const Main = styled.div`
     font-size : .14rem;
-    overflow: scroll;
     color: black;
-    overflow: scroll;
+    overflow: hidden;
     flex : 1;
 `
 

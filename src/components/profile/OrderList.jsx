@@ -25,4 +25,7 @@ export default class OrderList extends Component {
             </OrderListContainer>
         )
     }
+    componentDidMount(){
+        // console.log(this)
+    }
 }

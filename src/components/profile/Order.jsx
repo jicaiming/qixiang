@@ -16,8 +16,7 @@ export default class Order extends Component {
                         <p>待付款</p>
                     </div>
                 </div>
-                <OrderList></OrderList>
-                <OrderList></OrderList>
+                <OrderList list={this.props.list}></OrderList>
                 <div className="service_charge">
                     <span>服务费：</span>
                     <p><span>350</span><span>元</span></p>
@@ -32,5 +31,8 @@ export default class Order extends Component {
                 </div>
             </OrderContainer>
         )
+    }
+    componentDidMount(){
+        // console.log(this)
     }
 }

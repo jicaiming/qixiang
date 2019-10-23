@@ -1,28 +1,7 @@
 import styled from 'styled-components'
 
 const ClassicContainer = styled.div`
-    header{
-        height:.44rem;
-        width:100%;
-        background:#37C2BC;
-        position:relative;
-        color:#fff;
-        display:flex;
-        align-items:center;
-        i{
-            width:.4rem;
-            height:.44rem;
-            line-height:.44rem;
-            margin-left:.15rem;
-            position:absolute;
-        }
-        h4{
-            flex:1;
-            text-align:center;
-            font-size:.16rem;
-            font-weight:500;
-        }
-    }
+    margin-top:.2rem;
     section.classic_container{
         margin-top:.15rem;
         ul{
@@ -34,7 +13,6 @@ const ClassicContainer = styled.div`
                     height:0;
                     position:relative;
                     padding-bottom:31.30435%;
-                    background-color: olive; 
                     border-radius:.1rem;
                     img{
                         width:100%;

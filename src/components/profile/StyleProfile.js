@@ -233,6 +233,24 @@ const ButtonContainer = styled.div`
     }
 `
 
+const NoneContainer = styled.div`
+    height:100%;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    img{
+        width:1.2rem;
+        height:1.45rem;   
+    }
+    p{
+        margin:0.325rem 0  1rem;
+        color:#37C2BC;
+        font-size:0.14rem;
+        line-height:0.2rem;
+    }
+`
 
 
 export {
@@ -241,5 +259,6 @@ export {
     OrderListContainer,
     MyButton,
     NoticeItemContainer,
-    ButtonContainer
+    ButtonContainer,
+    NoneContainer
 }
