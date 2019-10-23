@@ -59,7 +59,7 @@ const RegisterContent = styled.div `
     line-height:.5rem;
     border-radius:5px;
     margin:10px auto;
-    background:#9b9b9b;
+    /* background:#9b9b9b; */
     text-align:center;
     font-size:18px;
     color:#fff;
