@@ -81,7 +81,7 @@ export default class Register extends Component {
     }
     render() {
         const bck1 = { background:'#9b9b9b'}
-        const bck2 = { background:'green'}
+        // const bck2 = { background:'green'}
         return (
             <RegisterContent>
                 <div className='username'>
