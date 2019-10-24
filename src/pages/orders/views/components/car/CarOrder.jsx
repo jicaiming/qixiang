@@ -56,10 +56,11 @@ class CarOrder extends PureComponent {
                 }
             })
         })
+        let cartList1 = encodeURL(cartList.toString())
        
         let data = {
             orderId:orderId ,
-            cartList:cartList,
+            cartList:cartList1,
             isHasServiceFee :serviceFee,
             orderAmount: this.state.totalCost
         }
@@ -75,8 +76,7 @@ class CarOrder extends PureComponent {
             url: '/api/commitOrder',
             params:JSON.stringify(data),
             header:{
-                'Content-Type':'application/json',
-                'CharSet':'utf-8'
+                'Content-Type': 'application/json;charset=utf-8'
             }
         }).then(res => {
             console.log(res.data)
