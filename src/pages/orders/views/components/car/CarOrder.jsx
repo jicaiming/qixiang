@@ -73,7 +73,11 @@ class CarOrder extends PureComponent {
         axios({
             method: 'post',
             url: '/api/commitOrder',
-            params:JSON.stringify(data)
+            params:JSON.stringify(data),
+            header:{
+                'Content-Type':'application/json',
+                'CharSet':'utf-8'
+            }
         }).then(res => {
             console.log(res.data)
         })
