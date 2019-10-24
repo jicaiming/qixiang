@@ -7,12 +7,12 @@ import icon4 from 'assets/images/category/sites/场-详情/客服icon.png'
 
 class DetailContent extends PureComponent {
   componentDidMount() {
-    // console.log(this.props.content)
+    console.log(this.props.content)
   }
   render() {
     return (
       <ContentContainer>
-        <img className="img1" src={this.props.content.img} alt=""/>
+        <img className="img1" src={this.props.content.imageurl} alt=""/>
         <div className="parameter">
           <div className="left">
             <h2>{this.props.content.name}</h2>

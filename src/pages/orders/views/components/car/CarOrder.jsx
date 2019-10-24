@@ -42,6 +42,10 @@ class CarOrder extends PureComponent {
             delete value.img 
             delete value.name 
             delete value.price
+            delete value.firstclassid
+            delete value.secondclassid 
+            delete value.inventory
+            delete value.imageurl
         })
         let timeList = this.props.timeList
         let serviceFee = total*50
@@ -69,7 +73,7 @@ class CarOrder extends PureComponent {
         axios({
             method: 'post',
             url: '/api/commitOrder',
-            params:data
+            params:JSON.stringify(data)
         }).then(res => {
             console.log(res.data)
         })

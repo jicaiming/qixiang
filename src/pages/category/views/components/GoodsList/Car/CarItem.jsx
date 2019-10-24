@@ -8,7 +8,7 @@ export default class CarItem extends PureComponent {
     return (
       <CarContainer>
         <div className="pic">
-          <img src={this.props.value.img} alt=""/>
+          <img src={this.props.value.imageurl} alt=""/>
         </div>
         <div className="info">
           <h2>{this.props.value.name}</h2>

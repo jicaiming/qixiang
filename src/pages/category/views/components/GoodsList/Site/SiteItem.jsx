@@ -15,7 +15,7 @@ class SiteItem extends PureComponent {
         onClick={(e)=>this.handleClick(e, this.props.value)}
       >
         <div className="pic">
-          <img src={this.props.value.img} alt=""/>
+          <img src={this.props.value.imageurl} alt=""/>
         </div>
         <div className="info">
           <h2>{this.props.value.name}</h2>
