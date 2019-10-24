@@ -4,17 +4,13 @@ import Order from 'components/profile/Order'
 import None from 'components/profile/None'
 
 export default class WaitPay extends Component {
-    state={
-        is: false
-    }
     render() {
         return (
             <>
-                {this.state.is ? (<Order list={this.props.list}></Order>) : (<None></None>)}
+                {this.props.list.length ? (this.props.list.map((value, index) => {
+                    return <Order list={value} key={value.orderMaster.orderId}></Order>
+                })) : (<None></None>)}
             </>
         )
-    }
-    componentDidMount(){
-        // console.log(this)
     }
 }

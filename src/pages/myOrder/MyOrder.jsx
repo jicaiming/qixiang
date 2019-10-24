@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Route, NavLink } from 'react-router-dom'
+import _ from 'lodash'
 
 import http from 'utils/xgrhttp'
 
@@ -14,7 +15,10 @@ import AllOrders from './components/AllOrders'  //全部订单
 
 export default class MyOrder extends Component {
     state = {
-        list: []
+        list: [],
+        waitPayList: [],
+        accountPaidList: [],
+        finishedList: []
     }
     render() {
         let { match } = this.props
@@ -45,10 +49,10 @@ export default class MyOrder extends Component {
 
                 </NavContainer>
                 <MainContainer>
-                    <Route path={`${match.path}/waitPay`} render={(props) => <WaitPay {...props} list={this.state} />} ></Route>
-                    <Route path={`${match.path}/accountPaid`} render={(props) => <AccountPaid {...props} list={this.state} />} ></Route>
-                    <Route path={`${match.path}/finished`} render={(props) => <Finished {...props} list={this.state} />} ></Route>
-                    <Route path={`${match.path}/allOrders`} render={(props) => <AllOrders {...props} list={this.state} />} ></Route>
+                    <Route path={`${match.path}/waitPay`} render={(props) => <WaitPay {...props} list={this.state.waitPayList} />} ></Route>
+                    <Route path={`${match.path}/accountPaid`} render={(props) => <AccountPaid {...props} list={this.state.accountPaidList} />} ></Route>
+                    <Route path={`${match.path}/finished`} render={(props) => <Finished {...props} list={this.state.finishedList} />} ></Route>
+                    <Route path={`${match.path}/allOrders`} render={(props) => <AllOrders {...props} list={this.state.list} />} ></Route>
                 </MainContainer>
             </MyOrderContainer>
         )
@@ -59,17 +63,28 @@ export default class MyOrder extends Component {
         this.history.push('/index/profile')
     }
     async componentDidMount() {
-        // let result = await http.get({url:''})
-        this.setState({
-            list: ['xiaoguangrui']
+        let result = (await http.post1({
+            url: '/api/listOrder',
+            data: {
+                uid: 1
+            }
+        })).data.orderDTOS
+
+        let waitPayList = _.filter(result, (value, index) => {
+            return value.orderMaster.orderStatus === 0
         })
-        // this.setState(()=>{
-        //     return {
-        //         list:['xiaoguangrui']
-        //     }
-        // },()=>{
-        //     console.log(this.state.list)
-        // })
-        // console.log(this.state.list)
+        let accountPaidList = _.filter(result, (value, index) => {
+            return value.orderMaster.orderStatus === 1
+        })
+        let finishedList = _.filter(result, (value, index) => {
+            return value.orderMaster.orderStatus === 2
+        })
+
+        this.setState({
+            list: result,
+            waitPayList,
+            accountPaidList,
+            finishedList
+        })
     }
 }
