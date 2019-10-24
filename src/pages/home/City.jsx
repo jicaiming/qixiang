@@ -103,5 +103,6 @@ export default class City extends Component {
         localStorage.setItem('area',area)
         localStorage.setItem('city',city)
         console.log(area)
+        this.props.history.goBack()
     }
 }
