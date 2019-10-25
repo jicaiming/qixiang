@@ -7,4 +7,10 @@ module.exports = function(app) {
       changeOrigin: true
     })
   );
+  app.use(
+    proxy('/api1',{
+      target:'http://10.9.20.224',
+      changeOrigin:true
+    })
+  )
 };

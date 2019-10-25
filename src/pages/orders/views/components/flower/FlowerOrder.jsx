@@ -7,7 +7,7 @@ import { CarContainer, CarOrderItem, Devide, CarOrderDetail, CarOrderSubmit, Ite
 import CarItem from './CarItem'
 import CarSingleOrder from './CarSingleOrder'
 import connect from '../../connect'
-import axios from 'axios' 
+import http from 'utils/http'
 
 
 class FlowerOrder extends PureComponent {
@@ -42,8 +42,32 @@ class FlowerOrder extends PureComponent {
             delete value.img 
             delete value.name 
             delete value.price
+            delete value.firstclassid
+            delete value.secondclassid 
+            delete value.inventory
+            delete value.imageurl
         })
         let timeList = this.props.timeList
+        console.log(timeList)
+        timeList.map((value,index)=>{
+            let startDate1 = new Date(value.startDate)
+            let createYear = startDate1.getFullYear()
+            let createMonth = startDate1.getMonth()
+            let startDate = startDate1.getDate()
+            value.startDate = createYear+'-'+createMonth+'-'+startDate
+            let endDate1 = new Date(value.endDate)
+            let endYear = endDate1.getFullYear()
+            let endMonth = endDate1.getMonth()
+            let endDate = endDate1.getDate()
+            value.endDate = endYear+'-'+endMonth+'-'+endDate
+        })
+        // timeList.map((value,index)=>{
+        //     // delete value.startDate 
+        //     // delete value.endDate
+        //     value.startDate = value.startDate.toString()
+        //     value.endDate = value.endDate.toString()
+        // })
+        console.log(timeList)
         let serviceFee = total*50
         cartList.map((value,index)=>{
             timeList.map((v,i)=>{
@@ -52,29 +76,35 @@ class FlowerOrder extends PureComponent {
                 }
             })
         })
+        cartList.forEach((value,index)=>{
+            if(value.dayCount === 0){
+                cartList.splice(1,index)
+            }
+        })
        
         let data = {
+            uid: 1,
             orderId:orderId ,
-            cartList:cartList,
+            cartList:JSON.stringify(cartList),
             isHasServiceFee :serviceFee,
             orderAmount: this.state.totalCost
         }
         if (this.state.isChecked === true) {
             this.props.clearNum()
             this.props.clearTimeList()
+            this.props.history.goBack()
         }
         console.log(data)
-        
-        // axios({
-        //     method: 'post',
-        //     url: '/api/commitOrder',
-        //     params:data
-        // }).then(res => {
-        //     console.log(res.data)
+        // http.http({
+        //     method:'post',
+        //     url:'/api/commitOrder',
+        //     data:data,
         // })
-        // axios.post('/api/commitOrder',data).then(function(res){
-        //     console.log(res)
-        // })
+        http.post({
+                method:'post',
+                url:'/api/commitOrder',
+                data:data,
+            })
     }
     handleClickAgreement() {
         this.setState({
@@ -89,6 +119,7 @@ class FlowerOrder extends PureComponent {
     render() {
         let { buyList, total } = this.props.allData
         let timeList = this.props.timeList
+        console.log(timeList)
         let totalFee = 0
         buyList.forEach((value, index) => {
             timeList.forEach((v, i) => {
@@ -144,7 +175,7 @@ class FlowerOrder extends PureComponent {
                             this.state.isSwitch === true
                                 ? <ServiceFee>
                                     <div className="service1">
-                                        <span >精选花卉底泥</span>
+                                        <span >安全保障险</span>
                                         <span className="issue" ></span>
                                     </div>
                                     <div className="service2">
@@ -158,7 +189,7 @@ class FlowerOrder extends PureComponent {
                                     </div>
                                     <div
                                         className="service3"
-                                    ><span>{total * 20}</span>元</div>
+                                    ><span>{total * 50}</span>元</div>
                                 </ServiceFee>
                                 : ''
                         }
