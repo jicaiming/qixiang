@@ -18,22 +18,23 @@ import more from 'images/我的/更多.png'
 
 export default class Profile extends Component {
     state = {
-        list: ''
+        list: []
     }
     render() {
+        const list = this.state.list
         return (
             <>
                 <ProfileMessage>
                     <div>
                         <div>
-                            <img src={userPhoto} alt="" />
+                            <img src={list.pic ? list.pic : userPhoto} alt="" />
                         </div>
                         <div>
                             <img src={edit} alt="" onClick={() => this.handleClickTo('edit')} />
                             <div>
-                                <p>guangruixiao</p>
-                                <p>请添加活动区域</p>
-                                <p>请添加公司信息</p>
+                                <p>{list.username}</p>
+                                <p>{list.address ? list.address : '请添加活动区域'}</p>
+                                <p>{list.company ? list.company : '请添加公司信息'}</p>
                             </div>
                         </div>
                     </div>
@@ -83,20 +84,17 @@ export default class Profile extends Component {
         )
     }
     async componentDidMount() {
-        // let res = await http.get({url:''})
-        // let result = await http.post({
-        //     url: '',
-        //     data: {
-        //         username: this.username,
-        //         password: this.password
-        //     }
-        // })
-        // let result = await http.get({
-        //     url: '/api/users/isSignin',
-        //     headers: {
-        //       'X-Access-token': localStorage.getItem('X-Access-Token')
-        //     }
-        //   })
+        let result = (await http.post1({
+            url: '/api/findUserMsg',
+            data: {
+                uid: 1
+            }
+        })).data
+        this.setState({
+            list: result
+        }, () => {
+            console.log(this.state.list)
+        })
     }
     handleClickTo(r) {
         this.props.history.push(`/${r}`)

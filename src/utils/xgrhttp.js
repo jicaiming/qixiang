@@ -13,7 +13,7 @@ export default {
       method: 'POST',
       params: data,
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       }
     })
       .then(result => result)

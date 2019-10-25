@@ -11,6 +11,8 @@ import { List, ImagePicker, Radio, Picker, InputItem } from 'antd-mobile';
 
 import cities from './city.json'
 
+import userPhoto from 'images/我的/我的-头像.png'
+
 const sex = [
     { value: '男', label: '男' },
     { value: '女', label: '女' },
@@ -39,44 +41,13 @@ const province = cities.map((value) => {
 export default class Edit extends Component {
     state = {
         pic: [{
-            url: 'https://zos.alipayobjects.com/rmsportal/PZUUCKTRIHWiZSY.jpeg',
+            url: userPhoto,
             id: '0',
         }],
-        username: 'guangruixiao',
-        sex: '男',
-        address: ['北京市', '北京市', '海淀区'],
-        company: '上海王聪明有限公司'
-    }
-    async componentDidMount() {
-        let result = (await http.post1({
-            url: '/api/findUserMsg',
-            data: {
-                uid: 1
-            }
-        })).data
-        this.setState({
-            pic: result.pic ? [{
-                url: result.pic,
-                id: '0',
-            }] : [],
-            username: result.username,
-            sex: result.sex,
-            address: result.address.split[''],
-            company: result.company
-        },()=>{
-            // console.log(this.state)
-        })
-        // console.log(result.username)
-
-        let hah = (await http.post1({
-            url: '/api/register',
-            data: {
-                username: 1,
-                password:2,
-                
-            }
-        })).data
-        console.log(hah)
+        username: '',
+        sex: '',
+        address: '',
+        company: ''
     }
 
     render() {
@@ -156,15 +127,48 @@ export default class Edit extends Component {
         });
     };
     onSubmit = async () => {
-        let result = await http.post2({
+        console.log({
+            uid: '1',
+            ...this.state,
+            pic: this.state.pic[0].url,
+            address: JSON.stringify(this.state.address)
+        })
+        let result = await http.post1({
             url: '/api/saveuser',
             data: {
                 uid: '1',
-                ...this.state
+                ...this.state,
+                pic: this.state.pic[0].url,
+                address: this.state.address ? this.state.address.toString() : null
             }
         })
         // console.log(result)
         // console.log(this.state)
         // let haha = await http.get({url:''})
     }
+    async componentDidMount() {
+        let result = (await http.post1({
+            url: '/api/findUserMsg',
+            data: {
+                uid: 1
+            }
+        })).data
+        this.setState({
+            pic: result.pic ? [{
+                url: result.pic,
+                id: '0',
+            }] : [{
+                url: userPhoto,
+                id: '0',
+            }],
+            username: result.username,
+            sex: result.sex,
+            address: null,
+            company: result.company
+        }, () => {
+            // console.log(this.state)
+        })
+        // console.log(result.username)
+    }
+
 }

@@ -38,6 +38,11 @@ const NavContainer = border({
 
 const MainContainer = styled.div`
     flex:1;
+    height:100%;
+`
+
+const Container = styled.div`
+    height:100%;
     overflow:scroll;
 `
 
@@ -45,4 +50,5 @@ export {
     MyOrderContainer,
     NavContainer,
     MainContainer,
+    Container
 }
