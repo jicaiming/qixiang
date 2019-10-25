@@ -1,0 +1,112 @@
+import styled from 'styled-components'
+
+const HomeContainer = styled.div`
+    margin-top:.2rem;
+    header{
+        height:.44rem;
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+        color:#fff;
+        background:#37C2BC;
+        align-items:center;
+        font-size:.16rem; 
+        padding:0 .15rem;
+        .home_home{
+            color:#fff;
+        }
+        .area{
+            .city{
+                margin-right:.05rem;
+            }
+        }  
+    }
+    section.home_banner{
+        padding:.12rem;
+        div{
+            height:0;
+            position:relative;
+            padding-bottom:41.59544%;
+            border-radius:.1rem;
+            img{
+                width:100%;
+                border-radius:.1rem;
+            }
+        }
+    }
+    ul.home_list{
+        display:flex;
+        justify-content:center;
+        padding: 0 .25rem;
+        margin-bottom:.38rem;
+        li{
+            flex:1;
+            text-align:center;
+            img{
+                width:.45rem;
+                height:.45rem;
+            }   
+            span{
+                display:inline-block;
+            }
+        }
+    }
+    section{
+        padding: 0 .15rem;  
+        .hot_header{
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:.1rem;
+            div{
+                h4{
+                    font-size:.16rem;
+                    color:#000;
+                    font-weight:500;
+                }
+            }
+            span{
+                color:#4A4A4A;
+                font-size:.12rem;
+            }
+        }
+        .hot_container{
+            display:flex;
+            justify-content:space-between;         
+            li{
+                width:1.675rem;
+                div{
+                    height:0;
+                    position:relative;
+                    padding-bottom:44.1791%; 
+                    border-radius:.1rem;
+                    img{
+                        width:100%;
+                    }                
+                }
+            }
+        }
+    }
+
+    .home_classic{
+        margin-top:.38rem;
+        .classic_container{    
+            li{
+                width:100%;
+                margin-bottom:.15rem;
+                div{
+                    height:0;
+                    position:relative;
+                    padding-bottom:31.30435%;
+                    border-radius:.1rem;
+                    img{
+                        width:100%;
+                    }                
+                }
+            }
+        }
+    }
+
+`
+export {
+    HomeContainer
+}
