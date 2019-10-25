@@ -7,9 +7,7 @@ import { CarContainer, CarOrderItem, Devide, CarOrderDetail, CarOrderSubmit, Ite
 import CarItem from './CarItem'
 import CarSingleOrder from './CarSingleOrder'
 import connect from '../../connect'
-import axios from 'axios' 
 import http from 'utils/http'
-import qs from 'querystring'
 
 
 class CarOrder extends PureComponent {

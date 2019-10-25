@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import border from 'components/border.js'
 
 const CityContainer = styled.div`
     margin-top:.2rem;
@@ -64,13 +65,6 @@ const CityContainer = styled.div`
                 width:100%;
                 height:.75rem;
                 display:none;
-                li{
-                    flex:1;
-                    height:100%;
-                    line-height:.75rem;
-                    text-align:center;
-                    border-right:1px solid #089791;
-                }
                 li.active{
                     background:#0C7E79;
                 }
@@ -91,6 +85,22 @@ const CityContainer = styled.div`
     }
 `
 
+const CityAreaLi = styled.li`
+    flex:1;
+    height:100%;
+    line-height:.75rem;
+    text-align:center;
+    /* border-right:1px solid #089791; */
+`
+
+const CityAreaLiBorder = border({
+    width: '0 1px',
+    style: 'solid',
+    color: '#089791',
+    comp: CityAreaLi
+})
+
 export {
-    CityContainer
+    CityContainer,
+    CityAreaLiBorder
 }

@@ -22,5 +22,6 @@ export default {
             // data:data?qs.stringify(data):'',
             params:data
         }).then(result=>result.data)
+        
     }
 }
