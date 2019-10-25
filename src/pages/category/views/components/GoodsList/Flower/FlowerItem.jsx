@@ -12,7 +12,7 @@ export default class FlowerItem extends PureComponent {
             return (
               <FlowerContainer>
                 <div className="pic">
-                  <img src={this.props.value.img} alt=""/>
+                  <img src={this.props.value.imageurl} alt=""/>
                 </div>
                 <div className="info">
                   <h2>
