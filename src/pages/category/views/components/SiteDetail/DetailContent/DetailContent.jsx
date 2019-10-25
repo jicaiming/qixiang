@@ -7,7 +7,6 @@ import icon4 from 'assets/images/category/sites/场-详情/客服icon.png'
 
 class DetailContent extends PureComponent {
   componentDidMount() {
-    console.log(this.props.content)
   }
   render() {
     return (

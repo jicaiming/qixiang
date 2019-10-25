@@ -48,7 +48,6 @@ class SiteOrder extends PureComponent {
             delete value.imageurl
         })
         let timeList = this.props.timeList
-        console.log(timeList)
         timeList.map((value,index)=>{
             let startDate1 = new Date(value.startDate)
             let createYear = startDate1.getFullYear()
@@ -67,7 +66,6 @@ class SiteOrder extends PureComponent {
         //     value.startDate = value.startDate.toString()
         //     value.endDate = value.endDate.toString()
         // })
-        console.log(timeList)
         let serviceFee = total*50
         cartList.map((value,index)=>{
             timeList.map((v,i)=>{
@@ -94,7 +92,6 @@ class SiteOrder extends PureComponent {
             this.props.clearTimeList()
             this.props.history.goBack()
         }
-        console.log(data)
         // http.http({
         //     method:'post',
         //     url:'/api/commitOrder',
@@ -119,7 +116,6 @@ class SiteOrder extends PureComponent {
     render() {
         let { buyList, total } = this.props.allData
         let timeList = this.props.timeList
-        console.log(timeList)
         let totalFee = 0
         buyList.forEach((value, index) => {
             timeList.forEach((v, i) => {

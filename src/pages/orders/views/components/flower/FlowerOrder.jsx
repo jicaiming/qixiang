@@ -67,7 +67,6 @@ class FlowerOrder extends PureComponent {
         //     value.startDate = value.startDate.toString()
         //     value.endDate = value.endDate.toString()
         // })
-        console.log(timeList)
         let serviceFee = total*50
         cartList.map((value,index)=>{
             timeList.map((v,i)=>{
@@ -94,7 +93,6 @@ class FlowerOrder extends PureComponent {
             this.props.clearTimeList()
             this.props.history.goBack()
         }
-        console.log(data)
         // http.http({
         //     method:'post',
         //     url:'/api/commitOrder',
@@ -119,7 +117,6 @@ class FlowerOrder extends PureComponent {
     render() {
         let { buyList, total } = this.props.allData
         let timeList = this.props.timeList
-        console.log(timeList)
         let totalFee = 0
         buyList.forEach((value, index) => {
             timeList.forEach((v, i) => {

@@ -7,6 +7,8 @@ import Page404 from './Page404'
 import City from './home/City'
 import Classic from './home/Classic'
 import ClassicDetails from './home/ClassicDetails'
+import Login from '../pages/signin/Signin'
+import Register from '../pages/signin/Register'
 
 import SiteDetail from './category/views/components/SiteDetail/SiteDetail'
 import {Order} from './orders/index'
@@ -42,6 +44,11 @@ export default class MyRouter extends Component {
                     <Route path='/notice' component={Notice}></Route>
                     <Route path='/set' component={Set}></Route>
                     <Route path='/license' component={LicenseAgreement}></Route>
+
+                    {/* <Route path='/login' component={Login}></Route>
+                    <Route path='/register' component={Register}></Route>
+                    <Redirect from='/' exact to='/register'></Redirect>  */}
+
                     <Redirect from='/' exact to='/index/home'></Redirect> 
                     <Route component={Page404} ></Route>
                 </Switch>
