@@ -16,7 +16,8 @@ export default class OrderList extends Component {
                             <div>
                                 <p>{value.categoryName}</p>
                                 <p>{value.instructions}</p>
-                                <p>{value.createDate.slice(5,7)}月{value.createDate.slice(8,10)}日 至 {value.endDate.slice(5,7)}月{value.endDate.slice(8,10)}日</p>
+                                <p>{value.createDate ? value.createDate.slice(5, 7) : ''}月{value.createDate ? value.createDate.slice(8, 10) : ''}日 至
+                                {value.createDate ? value.createDate.slice(5, 7) : ''}月{value.createDate ? value.createDate.slice(8, 10) : ''}日</p>
                             </div>
                             <div>
                                 <p><span>{value.categoryPrice}</span>元</p>

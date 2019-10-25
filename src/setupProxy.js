@@ -5,6 +5,8 @@ module.exports = function(app) {
     proxy("/api", {
       target: "http://39.107.252.189:8080",//跨域地址
       changeOrigin: true
-    })
+    }),
   );
 };
+
+

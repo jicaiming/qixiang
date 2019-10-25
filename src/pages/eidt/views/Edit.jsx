@@ -7,7 +7,7 @@ import MyButton from 'components/profile/Button'
 
 import { EditContainer, AddImgContainer, UserContainer, RadioContainer, CityContainer } from './StyleEdit'
 
-import { List, ImagePicker, Radio, Picker, InputItem } from 'antd-mobile';
+import { List, ImagePicker, Radio, Picker, InputItem, Toast } from 'antd-mobile';
 
 import cities from './city.json'
 
@@ -17,6 +17,8 @@ const sex = [
     { value: '男', label: '男' },
     { value: '女', label: '女' },
 ];
+
+let hasError = false
 
 const province = cities.map((value) => {
     return {
@@ -47,7 +49,8 @@ export default class Edit extends Component {
         username: '',
         sex: '',
         address: '',
-        company: ''
+        company: '',
+        // hasError: true
     }
 
     render() {
@@ -72,7 +75,13 @@ export default class Edit extends Component {
                         placeholder="请输入用户名"
                         data-seed="logId"
                         clear="true"
-                        onChange={v => this.setState({ username: v })}
+                        onChange={this.onChangeUserName}
+                        error={hasError}
+                        onErrorClick={() => {
+                            if (hasError) {
+                                Toast.info('用户名不能为空');
+                            }
+                        }}
                     >用户名</InputItem>
                 </UserContainer>
                 <RadioContainer>
@@ -116,6 +125,23 @@ export default class Edit extends Component {
         // console.log(this)
         this.history.goBack()
     }
+    onChangeUserName = (v) => {
+        console.log(hasError)
+        if (v == '') {
+            hasError = true
+        } else {
+            hasError = false
+        }
+        //   else {
+        //     this.setState({
+        //       hasError: false,
+        //     });
+        //   }
+        //   this.setState({
+        //     value,
+        //   });
+        this.setState({ username: v })
+    }
     onChangeImg = (pic, type, index) => {
         this.setState({
             pic,
@@ -127,24 +153,28 @@ export default class Edit extends Component {
         });
     };
     onSubmit = async () => {
-        console.log({
-            uid: '1',
-            ...this.state,
-            pic: this.state.pic[0].url,
-            address: JSON.stringify(this.state.address)
-        })
-        let result = await http.post1({
-            url: '/api/saveuser',
-            data: {
+        if (hasError) {
+            Toast.info('用户名不能为空');
+            // alert('用户名不能为空')
+        } else {
+            console.log({
                 uid: '1',
                 ...this.state,
-                pic: this.state.pic[0].url,
-                address: this.state.address ? this.state.address.toString() : null
-            }
-        })
-        // console.log(result)
-        // console.log(this.state)
-        // let haha = await http.get({url:''})
+                pic: this.state.pic.length == 0 ? '' : this.state.pic[0].url,
+                address: this.state.address ? this.state.address.toString() : null,
+            })
+            let result = await http.post2({
+                url: '/api/saveuser',
+                data: {
+                    uid: '1',
+                    ...this.state,
+                    pic: this.state.pic.length == 0 ? '' : this.state.pic[0].url,
+                    address: this.state.address ? this.state.address.toString() : null,
+                }
+            })
+            // alert('修改成功')            
+        }
+
     }
     async componentDidMount() {
         let result = (await http.post1({
@@ -153,6 +183,7 @@ export default class Edit extends Component {
                 uid: 1
             }
         })).data
+        // console.log(result.address.split(' ').slice(0, -1))
         this.setState({
             pic: result.pic ? [{
                 url: result.pic,
@@ -163,7 +194,7 @@ export default class Edit extends Component {
             }],
             username: result.username,
             sex: result.sex,
-            address: null,
+            address: result.address.split(' ').slice(0, -1),
             company: result.company
         }, () => {
             // console.log(this.state)
