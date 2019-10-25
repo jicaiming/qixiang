@@ -20,7 +20,7 @@ export default {
             method,
             url,
             // data:data?qs.stringify(data):'',
-            data
+            params:data
         }).then(result=>result.data)
     }
 }
