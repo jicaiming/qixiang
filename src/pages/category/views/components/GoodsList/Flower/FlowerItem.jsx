@@ -19,7 +19,7 @@ export default class FlowerItem extends PureComponent {
                     {this.props.value.name}
                     <i
                       className="right"
-                      onClick={() => value.changeStatus(true)}
+                      onClick={() => value.changeStatus(true, this.props)}
                     ></i>
                   </h2>
                   <h3>{this.props.value.instructions}</h3>

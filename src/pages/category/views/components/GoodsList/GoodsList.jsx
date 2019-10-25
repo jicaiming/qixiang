@@ -40,8 +40,11 @@ class GoodsList extends PureComponent {
         break
       case 'site': 
         firstKind =  3
+        break
+      default :
+        firstKind = 1
     }
-    let secondKind = path[4] || 1
+    // let secondKind = path[4] || 1
     // console.log(firstKind,secondKind)
     fetch(`/api/category`)
       .then(response => response.json())
@@ -68,12 +71,17 @@ class GoodsList extends PureComponent {
         break
       case 'site': 
         firstKind =  3
+        break
+      default :
+        firstKind = 1
     }
-    let secondKind = path[4] || 1
+    let secondKind = Number(path[4]) || 1
     // console.log(firstKind,secondKind)
     let list = this.state.list
     let nowList = list.filter((v, i) => {
-      return (v.firstclassid==firstKind)&&(v.secondclassid==secondKind)
+      // console.log(v.firstclassid,firstKind)
+      // console.log(v.secondclassid,secondKind)
+      return (v.firstclassid===firstKind)&&(v.secondclassid===secondKind)
     })
     // console.log(nowList)
     switch (this.props.bigKind) {
