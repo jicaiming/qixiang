@@ -3,10 +3,7 @@ import toRight from 'assets/images/icon/toRight.png'
 import issue from 'assets/images/icon/详情-问号.png'
 
 const CarContainer = styled.div`
-<<<<<<< HEAD
     position:relative;
-=======
->>>>>>> guangruixiao
     background:white;
     height:100%;
     width:100%;
@@ -101,33 +98,7 @@ const CarOrderDetail = styled.div`
                 background:red;
             }
         }
-<<<<<<< HEAD
         
-=======
-        .serviceContent{
-            flex: 1;
-            display:flex;
-            flex-direction:row;
-            align-items:center;
-            .service1{
-                width:.92rem;
-                display:flex;
-                flex-direction:row;
-                height:.17rem;
-                font-size:.12rem;
-                font-family:PingFangSC-Medium,PingFangSC;
-                font-weight:500;
-                color:rgba(74,74,74,1);
-                line-height:.17rem;
-                .issue{
-                    width:.16rem;
-                    height:.16rem;
-                    background:url(${issue});
-                    background-size:100%;
-                    margin:0 .05rem;
-                }
-            }
->>>>>>> guangruixiao
             .service2{
                 width:1.75rem;
                 padding:0 .2rem;
@@ -234,10 +205,7 @@ display:flex;
 flex-direction:row;
 justify-content:space-between;
 >span{
-<<<<<<< HEAD
     overflow-x:scroll;
-=======
->>>>>>> guangruixiao
     width:.9rem;
     height:.17rem;
     font-size:.12rem;
@@ -281,11 +249,7 @@ const CarLi = styled.li`
         line-height:.25rem;
     }
     .carText{
-<<<<<<< HEAD
        
-=======
-        width:.96rem;
->>>>>>> guangruixiao
         height:.17rem;
         font-size:.12rem;
         font-family:PingFangSC-Regular,PingFangSC;
@@ -363,7 +327,6 @@ const ChooseData = styled.span`
 const ShowData = styled.span`
 
 `
-<<<<<<< HEAD
 
 const ServiceFee = styled.div`
 flex: 1;
@@ -390,9 +353,6 @@ align-items:center;
 `
 export {
     ServiceFee,
-=======
-export {
->>>>>>> guangruixiao
     CarContainer,
     CarOrderItem,
     Devide,

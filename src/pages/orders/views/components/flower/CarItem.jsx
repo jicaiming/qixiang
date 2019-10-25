@@ -28,7 +28,6 @@ class CartItem extends PureComponent{
         timeList.forEach((value,index)=>{
             if(value.id === this.props.value.id){
                 dayCount = value.dayCount
-<<<<<<< HEAD
                 startTime = value.startDate
                 sTime = new Date(startTime)
                 sY = sTime.getFullYear()
@@ -39,27 +38,11 @@ class CartItem extends PureComponent{
                 eTime = new Date(endTime)
                 eY = eTime.getFullYear()
                 eM = eTime.getMonth()+1
-=======
-                startTime = value.sTime
-                sTime = new Date(startTime)
-                sY = sTime.getFullYear()
-                sM = sTime.getMonth()
-                sD = sTime.getDate()
-                sDay = sTime.getDay()
-                endTime = value.eTime
-                eTime = new Date(endTime)
-                eY = eTime.getFullYear()
-                eM = eTime.getMonth()
->>>>>>> guangruixiao
                 eD = eTime.getDate()
                 eDay = eTime.getDay()
                 
             }
-<<<<<<< HEAD
             if(value.dayCount !== 0&&value.id === this.props.value.id){
-=======
-            if(value.dayCount !== 0&&value.id ===this.props.value.id){
->>>>>>> guangruixiao
                 hasTime = true
             }
         })
@@ -69,34 +52,21 @@ class CartItem extends PureComponent{
             <CarLi>
                 <h2>{this.props.value.name}</h2>
                 <p className = "carText">
-<<<<<<< HEAD
                     <span>{this.props.value.instructions.split(' ')[0]} </span>
                     |
                     <span>   {this.props.value.instructions.split(' ')[1]}</span>
                 </p>
-=======
-                    <span>2.0自动 </span>
-                    |
-                    <span> 三厢5座</span></p>
->>>>>>> guangruixiao
                 <p className = "carText">
                     已选
                     <span> {this.props.value.count} </span>
                     辆</p>
                 <p className = "carRentData">
                 {
-<<<<<<< HEAD
                     !hasTime
                     ? <ChooseData>选择租期</ChooseData>
                     : <ShowData>
                         {sY}年{sM}月{sD}日(周{sDay}) 至 {eY}年{eM}月{eD}日(周{eDay})       共计{dayCount}天      
                     </ShowData>
-=======
-                    
-                    !hasTime
-                    ? <ChooseData>选择租期</ChooseData>
-                    : <ShowData>{sY+'年'+(1+sM)+'月'+sD+'日'+'('+'周'+sDay+')'+' 至 '+ eY+'年'+(1+eM)+'月'+eD+'日'+'('+'周'+eDay+')'+'       共计'+dayCount+'天'}</ShowData>
->>>>>>> guangruixiao
                 }
                     
                     <span className ="carRight" onClick={this.handleClickToTimer.bind(this)}></span>
@@ -107,8 +77,4 @@ class CartItem extends PureComponent{
 }
 
 // export default withRouter(CartItem)
-<<<<<<< HEAD
 export default connect(withRouter(CartItem))
-=======
-export default connect(withRouter(CartItem))
->>>>>>> guangruixiao

@@ -12,11 +12,6 @@ import connect from './connect'
 
 export default connect((props) => {
   let bigKind = props.location.pathname.split('/')[3]
-<<<<<<< HEAD
-=======
-  // console.log(bigKind)
-  // console.log(props)
->>>>>>> guangruixiao
   let hasGoods = false
   if (props.buyList && props.buyList.length !== 0) {
     hasGoods = true

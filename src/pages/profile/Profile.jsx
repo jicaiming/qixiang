@@ -85,7 +85,7 @@ export default class Profile extends Component {
     }
     async componentDidMount() {
         let result = (await http.post1({
-            url: '/api/findUserMsg',
+            url: 'http://39.107.252.189:8080/api/findUserMsg',
             data: {
                 uid: 1
             }

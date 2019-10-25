@@ -65,16 +65,6 @@ const CityContainer = styled.div`
                 width:100%;
                 height:.75rem;
                 display:none;
-<<<<<<< HEAD
-=======
-                li{
-                    flex:1;
-                    height:100%;
-                    line-height:.75rem;
-                    text-align:center;
-                    border-right:1px solid #089791;
-                }
->>>>>>> guangruixiao
                 li.active{
                     background:#0C7E79;
                 }

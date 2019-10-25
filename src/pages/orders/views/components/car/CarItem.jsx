@@ -28,21 +28,13 @@ class CartItem extends PureComponent{
         timeList.forEach((value,index)=>{
             if(value.id === this.props.value.id){
                 dayCount = value.dayCount
-<<<<<<< HEAD
                 startTime = value.startDate
-=======
-                startTime = value.sTime
->>>>>>> guangruixiao
                 sTime = new Date(startTime)
                 sY = sTime.getFullYear()
                 sM = sTime.getMonth()+1
                 sD = sTime.getDate()
                 sDay = sTime.getDay()
-<<<<<<< HEAD
                 endTime = value.endDate
-=======
-                endTime = value.eTime
->>>>>>> guangruixiao
                 eTime = new Date(endTime)
                 eY = eTime.getFullYear()
                 eM = eTime.getMonth()+1

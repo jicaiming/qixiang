@@ -4,10 +4,6 @@ import { HomeContainer}  from './StyledHome'
 import { Carousel, WingBlank } from 'antd-mobile';
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> guangruixiao
 import MPV from 'assets/images/home/mpv.png'
 import FieldFlower from 'assets/images/home/FieldFlower.png'
 import ConferenceHall from 'assets/images/home/ConferenceHall.png'
@@ -17,7 +13,6 @@ import HotServer from 'assets/images/home/hot_server.png'
 import HomeClassic1 from 'assets/images/classic_case/home_classic1.png'
 import HomeClassic2 from 'assets/images/classic_case/home_classic2.png'
 
-<<<<<<< HEAD
 import Right from 'assets/images/icon/right.png'
 import Down from 'assets/images/icon/down.png'
 
@@ -28,12 +23,6 @@ export default class Home extends Component {
         imgHeight: 176,
         city:'上海',
         area:'徐汇区'
-=======
-
-export default class Home extends Component {
-    state = {
-        data: ['banner1', 'banner2', 'banner3']
->>>>>>> guangruixiao
     }
 
     render() {
@@ -43,7 +32,6 @@ export default class Home extends Component {
                         <div className="home_home">首页</div>
                         <div className="home_area" onClick={ () => this.handleClickCity()}><span className='city'>{this.state.city}</span><span>{this.state.area}</span><img src={Down} alt=""/></div>
                     </header>
-<<<<<<< HEAD
                     <div className="home_scroll">
                         <section className="home_banner">
                             <WingBlank>
@@ -107,58 +95,6 @@ export default class Home extends Component {
                             </ul>
                         </section>
                     </div>
-=======
-                    <section className="home_banner">
-                        <WingBlank>
-                            <Carousel
-                                dots={false}
-                                >
-                                {this.state.data.map(val => (
-                                    <img
-                                        src={require(`assets/images/home/${val}.png`)}
-                                        key={val}
-                                        alt=""
-                                        style={{ width: '100%', verticalAlign: 'top' }}
-                                    /> 
-                                ))}
-                            </Carousel>
-                        </WingBlank>
-                    </section>
-                    <ul className="home_list">
-                        <li><img src={MPV} alt=""/><span>商务车</span></li>
-                        <li><img src={FieldFlower} alt=""/><span>场地花</span></li>
-                        <li><img src={ConferenceHall} alt=""/><span>会议厅</span></li>
-                        <li><img src={BusBooking} alt=""/><span>大巴预定</span></li>
-                        <li><img src={BigHall} alt=""/><span>千人厅</span></li>
-                    </ul>
-                    <section className="home_hot">
-                        <div className="hot_header">
-                            <div>
-                                <i></i>
-                                <h4>热门服务</h4>
-                            </div>
-                            <span>即将上新<i></i></span>
-                        </div>
-                        <ul className="hot_container">
-                            <li><div><img src={HotServer} alt=""/></div></li>
-                            <li><div><img src={HotServer} alt=""/></div></li>
-                        </ul>
-                    </section>
-                    <section className="home_classic">
-                        <div className="hot_header">
-                            <div>
-                                <i></i>
-                                <h4>经典案例</h4>
-                            </div>
-                            <span onClick={() => this.handleClickMore()}>查看更多<i></i></span>
-                        </div>
-                        <ul className="classic_container">
-                            <li><div><img src={HomeClassic1} alt=""/></div></li>
-                            <li><div><img src={HomeClassic2} alt=""/></div></li>
-                        </ul>
-                    </section>
-
->>>>>>> guangruixiao
                 </HomeContainer>
         )
     }
@@ -170,7 +106,6 @@ export default class Home extends Component {
     handleClickMore(){
         this.props.history.push('/classic')
     }
-<<<<<<< HEAD
     handleClickMPV(){
         this.props.history.push('category/car/1')
     }
@@ -198,8 +133,5 @@ export default class Home extends Component {
             city:localStorage.getItem('city') || '上海'
         })
     }
-=======
-
->>>>>>> guangruixiao
 
 }

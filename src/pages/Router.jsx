@@ -7,19 +7,10 @@ import Page404 from './Page404'
 import City from './home/City'
 import Classic from './home/Classic'
 import ClassicDetails from './home/ClassicDetails'
-<<<<<<< HEAD
 
 import SiteDetail from './category/views/components/SiteDetail/SiteDetail'
 import {Order} from './orders/index'
 import Timer from './timer/time'
-=======
->>>>>>> guangruixiao
-
-import SiteDetail from './category/views/components/SiteDetail/SiteDetail'
-import {Order} from './orders/index'
-import Timer from './timer/time'
-
-
 
 import Edit from './eidt/eidt'
 import MyOrder from './myOrder/MyOrder'
