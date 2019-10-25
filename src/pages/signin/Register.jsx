@@ -54,6 +54,9 @@
 import React, { Component } from 'react'
 
 import { RegisterContent } from './StyleldIndex'
+import { sign } from 'crypto';
+import Signin from './Signin';
+import axios from 'axios'
 
 export default class Register extends Component {
     constructor(props) {
@@ -80,16 +83,16 @@ export default class Register extends Component {
         });
     }
     render() {
-        const bck1 = { background:'#9b9b9b'}
+        const bck1 = { background: '#9b9b9b' }
         // const bck2 = { background:'green'}
         return (
             <RegisterContent>
                 <div className='username'>
-                    <span>用户名</span> <input type="text" name="username" placeholder="7位字母或数字组合" onChange={this.handleInputChange} value={this.state.username}
+                    <span>用户名</span> <input type="text" name="username" placeholder="请输入用户名" onChange={this.handleInputChange} value={this.state.username}
                     />
                 </div>
                 <div className='pwd'>
-                    <span>密码</span> <input type="text" name="password" placeholder="6位字母或数字组合" value={this.state.password}
+                    <span>密码</span> <input type="text" name="password" placeholder="请输入密码" value={this.state.password}
                         onChange={this.handleInputChange} />
                 </div>
                 <div className='pwds'>
@@ -110,7 +113,7 @@ export default class Register extends Component {
             </RegisterContent>
         )
     }
-    handleClick() {
+    handleClick = async () => {
         if (this.state.username === "") {
             alert('用户名不能为空')
         } else if (this.state.password === "") {
@@ -122,21 +125,23 @@ export default class Register extends Component {
         } else if (this.state.request === "") {
             alert('请输入密码答案')
         } else {
-            console.log(this)
- 
+            // console.log(this)    
+
             let mes = {
                 username: this.state.username,
                 password: this.state.password,
                 question: this.state.question,
                 request: this.state.request
             }
-            fetch("/api/register", {
+            await axios({
+                url: "/api/register",
                 headers: {
-                    'Accept': 'application/json',
+                    // 'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
                 method: "POST",
-                body: JSON.stringify(mes)
+                params: mes
+                // body: JSON.stringify(mes)
             })
                 .then(
                     function (res) { return res.json() }

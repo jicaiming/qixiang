@@ -27,10 +27,10 @@ export default class Signin extends Component {
         return (
             <SigninContent>
                 <div className='username'>
-                    <span>用户名</span> <input type="text" name="username" placeholder="7位字母或数字组合" onChange={this.handleInputChange} value={this.state.username} />
+                    <span>用户名</span> <input type="text" name="username" placeholder="请输入用户名" onChange={this.handleInputChange} value={this.state.username} />
                 </div>
                 <div className='pwd'>
-                    <span>密码</span> <input type="text" name="password" placeholder="7位字母或数字组合" onChange={this.handleInputChange} value={this.state.password} />
+                    <span>密码</span> <input type="text" name="password" placeholder="请输入密码" onChange={this.handleInputChange} value={this.state.password} />
                 </div>
                 {/* <Link to="/index/home"><p className='next'>登录</p></Link> */}
                 <p className='next' onClick={this.handleClick}>登录</p>
@@ -55,7 +55,7 @@ export default class Signin extends Component {
             }
             fetch("/api/login", {
                 headers: {
-                    'Accept': 'application/json',
+                    // 'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
                 method: "POST",
