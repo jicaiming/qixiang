@@ -1,61 +1,8 @@
-// import React, { Component } from 'react'
-
-// import { RegisterContent } from './StyleldIndex'
-
-// export default class Register extends Component {
-//     constructor(props){
-//         super(props)
-
-//         this.input = React.createRef();
-//         this.handleClick=this.handleClick.bind(this)
-//         // this.state = {
-//         //     user: '',
-//         //     pwd: '',
-//         //     repeatpwd:'',
-//         //     select:'',
-//         //     ask:''
-//         // }
-//     }
-//     render() {
-//         return (
-//             <RegisterContent>
-//                 <form onSubmit={this.handleClick}>
-//                 <div className='username'>
-//                     <span>用户名</span> <input type="text" placeholder="7位字母或数字组合" ref={this.input}/>
-//                 </div>
-//                 <div className='pwd'>
-//                     <span>密码</span> <input type="text" placeholder="6位字母或数字组合" ref={this.pass}/>
-//                 </div>
-//                 <div className='pwds'>
-//                     <span>确认密码</span> <input type="text" placeholder="" ref={this.input} />
-//                 </div>
-//                 <div className='select'>
-//                     <input type="text" placeholder="选择密保问题" ref={this.input}/>
-//                 </div>
-//                 <div className='ask'>
-//                     <input type="text"placeholder="输入密保的答案" ref={this.input}/>
-//                 </div>
-//                 <input type="submit" value="Submit" />
-//                 {/* <p onClick={this.handleClick}>注册</p> */}
-//                 </form>
-//             </RegisterContent>
-//         )
-//     }
-//     handleClick(event){
-//         alert('A name was submitted: ' + this.input.current.value);
-//     event.preventDefault();
-//     }
-//     handleUser(){
-//         console.log(this.refs.uIn.value)
-//     }
-// }
-
-
 import React, { Component } from 'react'
 
 import { RegisterContent } from './StyleldIndex'
-import { sign } from 'crypto';
-import Signin from './Signin';
+// import { sign } from 'crypto';
+// import Signin from './Signin';
 import axios from 'axios'
 
 export default class Register extends Component {
@@ -67,7 +14,7 @@ export default class Register extends Component {
             password: '',
             repassword: '',
             question: '',
-            request: ''
+            ask: ''
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -82,12 +29,30 @@ export default class Register extends Component {
             [name]: value
         });
     }
+    handleBlur(e){
+        this.setState({
+            username:e.target.value
+        })
+        axios({
+            url:'/api/registerusername',
+            method:'post',
+            data:this.state.username
+        }).then(res=>{
+            console.log(res.data)
+            if(res.data === false)
+            {alert('用户名重复')}
+            if(res.data === true)
+            {alert('用户名输入成功')}
+        })
+    }
     render() {
         const bck1 = { background: '#9b9b9b' }
         // const bck2 = { background:'green'}
         return (
             <RegisterContent>
-                <div className='username'>
+                <div className='username' onBlur ={(e)=>{
+                    this.handleBlur(e)
+                }}>
                     <span>用户名</span> <input type="text" name="username" placeholder="请输入用户名" onChange={this.handleInputChange} value={this.state.username}
                     />
                 </div>
@@ -104,7 +69,7 @@ export default class Register extends Component {
                         onChange={this.handleInputChange} />
                 </div>
                 <div className='ask'>
-                    <input type="text" placeholder="输入密保的答案" name="request" value={this.state.request}
+                    <input type="text" placeholder="输入密保的答案" name="ask" value={this.state.ask}
                         onChange={this.handleInputChange} />
                 </div>
                 {/* <input type="submit" value="Submit" /> */}
@@ -115,15 +80,15 @@ export default class Register extends Component {
     }
     handleClick = async () => {
         if (this.state.username === "") {
-            alert('用户名不能为空')
+            return 
         } else if (this.state.password === "") {
-            alert('密码不能为空')
+            return
         } else if (this.state.repassword === "") {
-            alert('请确认密码')
+            return
         } else if (this.state.question === "") {
-            alert('请填写密保问题')
-        } else if (this.state.request === "") {
-            alert('请输入密码答案')
+            return 
+        } else if (this.state.ask === "") {
+            return
         } else {
             // console.log(this)    
 
@@ -131,7 +96,7 @@ export default class Register extends Component {
                 username: this.state.username,
                 password: this.state.password,
                 question: this.state.question,
-                request: this.state.request
+                ask: this.state.ask
             }
             await axios({
                 url: "/api/register",
@@ -140,13 +105,15 @@ export default class Register extends Component {
                     'Content-Type': 'application/json'
                 },
                 method: "POST",
-                params: mes
+                data: mes
                 // body: JSON.stringify(mes)
             })
                 .then(
-                    function (res) { return res.json() }
+                    function (res) { return res }
                 ).then((res) => {
-                    console.log(res)
+                    if(res.data === true){
+                        alert('注册成功')
+                    }
                 }).catch(function (res) { console.log(res) })
         }
     }

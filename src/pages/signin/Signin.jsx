@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 
 import { SigninContent } from './StyleldIndex'
 
-export default class Signin extends Component {
+import axios from 'axios'
+
+import {withRouter}  from 'react-router-dom'
+
+ class Signin extends Component {
     constructor(props) {
         super(props)
 
@@ -36,15 +40,12 @@ export default class Signin extends Component {
                 <p className='next' onClick={this.handleClick}>登录</p>
                 <p></p>
                 <button >忘记密码</button>
-
-
             </SigninContent>
-
         )
     }
 
 
-    handleClick() {
+    handleClick = async() => {
         if (this.state.username === "" || this.state.password === "") {
             alert('用户或密码不能为空')
             return false
@@ -53,24 +54,28 @@ export default class Signin extends Component {
                 username: this.state.username,
                 password: this.state.password,
             }
-            fetch("/api/login", {
+            await axios("/api/login", {
                 headers: {
                     // 'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/json'
                 },
                 method: "POST",
-                body: JSON.stringify(mes)
+                data: mes
             })
                 .then(
-                    function (res) { return res.json() }
+                    function (res) { return res }  
                 ).then((res) => {
                     console.log(res)
+                    if(res.data === false){
+                        alert('用户名和密码错误')
+                    }else{
+                        console.log(this.props.history.push('/index/home'))
+                    }
                 }).catch(function (res) { console.log(res) })
-            
         }
     }
 }
-
+export default withRouter (Signin)
 
 
 
