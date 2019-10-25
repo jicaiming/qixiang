@@ -8,7 +8,8 @@ import CarItem from './CarItem'
 import CarSingleOrder from './CarSingleOrder'
 import connect from '../../connect'
 import axios from 'axios' 
-import post from 'utils/http'
+import http from 'utils/http'
+import qs from 'querystring'
 
 
 class CarOrder extends PureComponent {
@@ -59,8 +60,10 @@ class CarOrder extends PureComponent {
         })
        
         let data = {
+            uid: 1,
             orderId:orderId ,
-            cartList:cartList,
+            cartList:JSON.stringify(cartList),
+            // cartList:cartList,
             isHasServiceFee :serviceFee,
             orderAmount: this.state.totalCost
         }
@@ -70,22 +73,33 @@ class CarOrder extends PureComponent {
             this.props.history.goBack()
         }
         console.log(data)
-        setTimeout(() => {
-            axios({
+        http.http({
+            method:'post',
             url:'/api/commitOrder',
-            method:'POST',
-            params:JSON.stringify(data),
-            headers:'Content-type:application/json'
-
-        }).then(res=>{
-            console.log(res.data)
+            data:data,
         })
-        }, 0);
+        // setTimeout(() => {
+        //     axios({
+        //     url:'/api1/commitOrder',
+        //     data:qs.stringify(data),
+        //     method:'POST',
+        //     headers:{
+        //         'Content-Type':'multipart/form-data'
+        //     }
+        // }).then(res=>{
+        //     console.log(res.data)
+        // })
+        // }, 0);
         
         // axios({
-        //     method: 'post',
+        //     method: 'POST',
         //     url: '/api/commitOrder',
-        //     params:JSON.stringify(data)
+        //     // params:JSON.stringify(data)
+        //     // data:qs.stringify(data),
+        //     data:data,
+        //     headers:{
+        //         'Content-Type':'application/json'
+        //     }
         // }).then(res => {
         //     console.log(res.data)
         // })

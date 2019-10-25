@@ -1,4 +1,5 @@
 import axios from 'axios'
+import qs from 'querystring'
 
 export default {
     get : (url)=>{
@@ -8,9 +9,18 @@ export default {
        return axios({
             url,
             method:'POST',
-            data
+            data,
+            
         }).then((result)=>{
             return result
         })
+    },
+    http:({method,url,data})=>{
+        return axios({
+            method,
+            url,
+            // data:data?qs.stringify(data):'',
+            data
+        }).then(result=>result.data)
     }
 }
