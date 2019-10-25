@@ -1,8 +1,7 @@
 import React,{Component} from 'react'
 
 import OrderUI from './OrderUI'
-
-
+import connect from './connect'
 
 class Order extends Component{
     render(){
@@ -11,4 +10,4 @@ class Order extends Component{
         )
     }
 }
-export default Order
+export default connect(Order)

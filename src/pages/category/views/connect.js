@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { increaseNum, decreaseNum, clearNum } from '../actionCreator'
 
 const mapStateToProps = (state) => {
-  // console.log(state.getIn(['category', 'buyList']))
+  
   return {
     buyList: state.getIn(['category', 'allData', 'buyList'])
   }

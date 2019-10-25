@@ -29,7 +29,21 @@ class GoodsList extends PureComponent {
   }
   componentDidMount() {
     // console.log(this.props)
-    fetch('http://localhost:9000/data')
+    let path = this.props.history.location.pathname.split("/")
+    let firstKind = path[3]
+    switch(firstKind){
+      case 'car': 
+        firstKind =  1
+        break
+      case 'flower': 
+        firstKind =  2
+        break
+      case 'site': 
+        firstKind =  3
+    }
+    let secondKind = path[4] || 1
+    // console.log(firstKind,secondKind)
+    fetch(`/api/category`)
       .then(response => response.json())
       .then(result => {
         this.setState({
@@ -45,14 +59,29 @@ class GoodsList extends PureComponent {
     }
     let path = this.props.history.location.pathname.split("/")
     let firstKind = path[3]
+    switch(firstKind){
+      case 'car': 
+        firstKind =  1
+        break
+      case 'flower': 
+        firstKind =  2
+        break
+      case 'site': 
+        firstKind =  3
+    }
     let secondKind = path[4] || 1
-    let list = this.state.list[firstKind][secondKind]
+    // console.log(firstKind,secondKind)
+    let list = this.state.list
+    let nowList = list.filter((v, i) => {
+      return (v.firstclassid==firstKind)&&(v.secondclassid==secondKind)
+    })
+    // console.log(nowList)
     switch (this.props.bigKind) {
       case 'car':
         return (
           <ListContainer>
             {
-              list.map((value, index) => (
+              nowList.map((value, index) => (
                 <CarItem key={index} value={value}></CarItem>
               ))
             }
@@ -62,7 +91,7 @@ class GoodsList extends PureComponent {
         return (
           <ListContainer>
             {
-              list.map((value, index) => (
+              nowList.map((value, index) => (
                 <FlowerItem key={index} value={value}></FlowerItem>
               ))
             }
@@ -72,7 +101,7 @@ class GoodsList extends PureComponent {
         return (
           <ListContainer>
             {
-              list.map((value, index) => (
+              nowList.map((value, index) => (
                 <SiteItem key={index} value={value}></SiteItem>
               ))
             }
