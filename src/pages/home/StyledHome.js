@@ -2,9 +2,12 @@ import styled from 'styled-components'
 
 const HomeContainer = styled.div`
     margin-top:.2rem;
+<<<<<<< HEAD
     display:flex;
     flex-direction:column;
     height:95%;
+=======
+>>>>>>> guangruixiao
     header{
         height:.44rem;
         width:100%;
@@ -22,13 +25,29 @@ const HomeContainer = styled.div`
             .city{
                 margin-right:.05rem;
             }
+<<<<<<< HEAD
             img{
                 width:.1rem;
                 height:.06rem;
                 margin-left:.04rem;
+=======
+        }  
+    }
+    section.home_banner{
+        padding:.12rem;
+        div{
+            height:0;
+            position:relative;
+            padding-bottom:41.59544%;
+            border-radius:.1rem;
+            img{
+                width:100%;
+                border-radius:.1rem;
+>>>>>>> guangruixiao
             }
         }  
     }
+<<<<<<< HEAD
     .home_scroll{
         flex:1;
         overflow: scroll;
@@ -42,6 +61,28 @@ const HomeContainer = styled.div`
             }
         }
         ul.home_list{
+=======
+    ul.home_list{
+        display:flex;
+        justify-content:center;
+        padding: 0 .25rem;
+        margin-bottom:.38rem;
+        li{
+            flex:1;
+            text-align:center;
+            img{
+                width:.45rem;
+                height:.45rem;
+            }   
+            span{
+                display:inline-block;
+            }
+        }
+    }
+    section{
+        padding: 0 .15rem;  
+        .hot_header{
+>>>>>>> guangruixiao
             display:flex;
             justify-content:center;
             padding: 0 .25rem;
@@ -59,6 +100,7 @@ const HomeContainer = styled.div`
                 }
             }
         }
+<<<<<<< HEAD
         section{
             padding: 0 .15rem;  
             .hot_header{
@@ -97,6 +139,21 @@ const HomeContainer = styled.div`
                             width:100%;
                         }                
                     }
+=======
+        .hot_container{
+            display:flex;
+            justify-content:space-between;         
+            li{
+                width:1.675rem;
+                div{
+                    height:0;
+                    position:relative;
+                    padding-bottom:44.1791%; 
+                    border-radius:.1rem;
+                    img{
+                        width:100%;
+                    }                
+>>>>>>> guangruixiao
                 }
             }
         }
@@ -120,6 +177,7 @@ const HomeContainer = styled.div`
             }
         }
     }
+
 `
 
 export {

@@ -7,7 +7,11 @@ import { CarContainer, CarOrderItem, Devide, CarOrderDetail, CarOrderSubmit, Ite
 import CarItem from './CarItem'
 import CarSingleOrder from './CarSingleOrder'
 import connect from '../../connect'
+<<<<<<< HEAD
 import http from 'utils/http'
+=======
+import axios from 'axios' 
+>>>>>>> guangruixiao
 
 
 class CarOrder extends PureComponent {
@@ -15,8 +19,12 @@ class CarOrder extends PureComponent {
         super()
         this.state = {
             isChecked: true,
+<<<<<<< HEAD
             isSwitch: false,
             totalCost : 0
+=======
+            isSwitch: false
+>>>>>>> guangruixiao
         }
     }
 
@@ -33,6 +41,7 @@ class CarOrder extends PureComponent {
         let orderId = date+'1'+Math.floor((Math.random()*100000)+1)
         let {total} = this.props.allData
         let cartList = this.props.allData.buyList
+<<<<<<< HEAD
         
 
 
@@ -69,6 +78,11 @@ class CarOrder extends PureComponent {
         // })
         console.log(timeList)
         let serviceFee = total*50
+=======
+        let timeList = this.props.timeList
+        let serviceFee = total*50
+        let orderType = this.props.match.params.type
+>>>>>>> guangruixiao
         cartList.map((value,index)=>{
             timeList.map((v,i)=>{
                 if(v.id === value.id){
@@ -76,6 +90,7 @@ class CarOrder extends PureComponent {
                 }
             })
         })
+<<<<<<< HEAD
         cartList.forEach((value,index)=>{
             if(value.dayCount === 0){
                 cartList.splice(1,index)
@@ -88,10 +103,30 @@ class CarOrder extends PureComponent {
             cartList:JSON.stringify(cartList),
             isHasServiceFee :serviceFee,
             orderAmount: this.state.totalCost
+=======
+        let totalCost = 0
+        cartList.forEach((value, index) => {
+            timeList.forEach((v, i) => {
+                if (value.id === v.id) {
+                    totalCost += value.price * value.count * v.dayCount
+                }
+            })
+        })
+        if (this.state.isSwitch === true) {
+            totalCost += total * 50
+        }
+        let data = {
+            orderID:orderId ,
+            isHasServiceFee :serviceFee,
+            cartList : cartList,
+            orderAmount: totalCost,
+            orderType: orderType
+>>>>>>> guangruixiao
         }
         if (this.state.isChecked === true) {
             this.props.clearNum()
             this.props.clearTimeList()
+<<<<<<< HEAD
             this.props.history.goBack()
         }
         console.log(data)
@@ -105,6 +140,21 @@ class CarOrder extends PureComponent {
                 url:'/api/commitOrder',
                 data:data,
             })
+=======
+        }
+        console.log(data)
+        
+        axios({
+            method: 'post',
+            url: '/api/commitOrder',
+            params:data
+        }).then(res => {
+            console.log(res.data)
+        })
+        // axios.post('/api/commitOrder',data).then(function(res){
+        //     console.log(res)
+        // })
+>>>>>>> guangruixiao
     }
     handleClickAgreement() {
         this.setState({
@@ -117,6 +167,7 @@ class CarOrder extends PureComponent {
         })
     }
     render() {
+<<<<<<< HEAD
         let { buyList, total } = this.props.allData
         let timeList = this.props.timeList
         console.log(timeList)
@@ -125,14 +176,29 @@ class CarOrder extends PureComponent {
             timeList.forEach((v, i) => {
                 if (value.id === v.id) {
                     totalFee += value.price * value.count * v.dayCount
+=======
+        console.log(this.props)
+        let { buyList, total } = this.props.allData
+        let timeList = this.props.timeList
+        let totalCost = 0
+        buyList.forEach((value, index) => {
+            timeList.forEach((v, i) => {
+                if (value.id === v.id) {
+                    totalCost += value.price * value.count * v.dayCount
+>>>>>>> guangruixiao
                 }
             })
         })
         if (this.state.isSwitch === true) {
+<<<<<<< HEAD
             totalFee += total * 50
             
         }
         this.setState({totalCost : totalFee})
+=======
+            totalCost += total * 50
+        }
+>>>>>>> guangruixiao
         let timeSelected = true
         this.props.timeList.forEach((value, index) => {
             if (value.dayCount !== 0) {
@@ -176,7 +242,11 @@ class CarOrder extends PureComponent {
                                 ? <ServiceFee>
                                     <div className="service1">
                                         <span >安全保障险</span>
+<<<<<<< HEAD
                                         <span className="issue" ></span>
+=======
+                                        <span className="issue"></span>
+>>>>>>> guangruixiao
                                     </div>
                                     <div className="service2">
                                         <span>
@@ -200,7 +270,11 @@ class CarOrder extends PureComponent {
                 <CarOrderSubmit>
                     <div className="submit1">
                         <span>租金合计</span>
+<<<<<<< HEAD
                         <div><span>{this.state.totalCost}</span>元</div>
+=======
+                        <div><span>{totalCost}</span>元</div>
+>>>>>>> guangruixiao
                     </div>
                     <div className="submit2">
                         <Checkbox
@@ -231,3 +305,25 @@ class CarOrder extends PureComponent {
 }
 
 export default connect(withRouter(CarOrder))
+<<<<<<< HEAD
+=======
+
+
+// {
+//     orderId :xxx,
+//     cartList:[
+//         {
+//             goodsId:xxx, 商品id
+//             startTime:xxx,  开始时间
+//             endTime:xxx,  结束时间
+//             dayCount:xxx,  租用天数
+//             totalCost:xxx   该商品的费用  就是天数*该商品的单价*选购数量
+//         },
+//         {
+
+//         }
+//     ],
+//     totalcost, 该订单的总费用 
+//     isHasServiceFee:true, 是否含有服务费
+// }
+>>>>>>> guangruixiao

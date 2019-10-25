@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import http from 'utils/xgrhttp'
+
 import { ProfileMessage, ProfileOrder, ProfileServe, ListItem, ListItemHaveBorder } from './StyleProfile.js'
 import userPhoto from 'images/我的/我的-头像.png'
 import edit from 'images/我的/我的-编辑icon.png'
@@ -15,20 +17,24 @@ import more from 'images/我的/更多.png'
 
 
 export default class Profile extends Component {
+    state = {
+        list: []
+    }
     render() {
+        const list = this.state.list
         return (
             <>
                 <ProfileMessage>
                     <div>
                         <div>
-                            <img src={userPhoto} alt="" />
+                            <img src={list.pic ? list.pic : userPhoto} alt="" />
                         </div>
                         <div>
-                            <img src={edit} alt="" onClick={() => this.handleClickEdie()} />
+                            <img src={edit} alt="" onClick={() => this.handleClickTo('edit')} />
                             <div>
-                                <p>guangruixiao</p>
-                                <p>请添加活动区域</p>
-                                <p>请添加公司信息</p>
+                                <p>{list.username}</p>
+                                <p>{list.address ? list.address : '请添加活动区域'}</p>
+                                <p>{list.company ? list.company : '请添加公司信息'}</p>
                             </div>
                         </div>
                     </div>
@@ -36,19 +42,19 @@ export default class Profile extends Component {
                 <ProfileOrder>
                     <h4>我的订单</h4>
                     <div>
-                        <div onClick={()=> this.handleClickToMyOrder('waitPay')}>
+                        <div onClick={() => this.handleClickToMyOrder('waitPay')}>
                             <img src={waitPay} alt="" />
                             <p>待付款</p>
                         </div>
-                        <div onClick={()=> this.handleClickToMyOrder('accountPaid')}>
+                        <div onClick={() => this.handleClickToMyOrder('accountPaid')}>
                             <img src={accountPaid} alt="" />
                             <p>已付款</p>
                         </div>
-                        <div onClick={()=> this.handleClickToMyOrder('finished')}>
+                        <div onClick={() => this.handleClickToMyOrder('finished')}>
                             <img src={finished} alt="" />
                             <p>已结束</p>
                         </div>
-                        <div onClick={()=> this.handleClickToMyOrder('allOrders')}>
+                        <div onClick={() => this.handleClickToMyOrder('allOrders')}>
                             <img src={allOrders} alt="" />
                             <p>全部订单</p>
                         </div>
@@ -57,17 +63,17 @@ export default class Profile extends Component {
                 <ProfileServe>
                     <h4>我的服务</h4>
                     <div>
-                        <ListItem>
+                        <ListItem onClick={() => this.handleClickTo('enterprise')}>
                             <img src={enterprise} alt="" />
                             <p>关于企业</p>
                             <img src={more} alt="" />
                         </ListItem>
-                        <ListItemHaveBorder>
+                        <ListItemHaveBorder onClick={() => this.handleClickTo('notice')}>
                             <img src={notice} alt="" />
                             <p>公告</p>
                             <img src={more} alt="" />
                         </ListItemHaveBorder>
-                        <ListItem>
+                        <ListItem onClick={() => this.handleClickTo('set')}>
                             <img src={set} alt="" />
                             <p>设置</p>
                             <img src={more} alt="" />
@@ -77,14 +83,25 @@ export default class Profile extends Component {
             </>
         )
     }
-
-    handleClickEdie() {
-        this.props.history.push('/edit')
+    async componentDidMount() {
+        let result = (await http.post1({
+            url: '/api/findUserMsg',
+            data: {
+                uid: 1
+            }
+        })).data
+        this.setState({
+            list: result
+        }, () => {
+            console.log(this.state.list)
+        })
     }
-    handleClickToMyOrder(i){
+    handleClickTo(r) {
+        this.props.history.push(`/${r}`)
+    }
+    handleClickToMyOrder(i) {
         this.props.history.push(`/myorder/${i}`)
-        // this.props.history.push(`/myorder`)
-        
+        // this.props.history.push(`/myorder`)    
     }
 }
 
