@@ -44,6 +44,9 @@ const MainContainer = styled.div`
 const Container = styled.div`
     height:100%;
     overflow:scroll;
+    div:last-child{
+        margin-bottom:0.15rem;
+    }
 `
 
 export {
