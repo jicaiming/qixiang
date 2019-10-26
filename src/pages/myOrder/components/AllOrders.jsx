@@ -11,7 +11,7 @@ export default class AllOrders extends Component {
             <Container>
                 {this.props.list.length ? (
                     this.props.list.map((value, index) => {
-                        return <Order list={value} key={value.orderMaster.orderId}></Order>
+                        return <Order onClick={this.props.onClick} list={value} key={value.orderMaster.orderId}></Order>
                     })
                 ) :
                     (<None></None>)}
