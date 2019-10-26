@@ -5,18 +5,14 @@ import issue from 'assets/images/icon/详情-问号.png'
 const CarContainer = styled.div`
     position:relative;
     background:white;
-<<<<<<< HEAD
     overflow:scroll;
     height:100%;
-=======
-    // height:100%;
->>>>>>> c214c78a2c513909b6474b52b976d1d135ed102a
     width:100%;
     display:flex;
     flex-direction:column;
 `
 const CarOrderItem = styled.ul`
-    height:2.24rem;
+    flex:1;
     width:100%;
     overflow:hidden;
     display:flex;
@@ -133,7 +129,7 @@ const CarOrderDetail = styled.div`
 `
 const CarOrderSubmit = styled.div`
     padding: .15rem;
-    flex : 1;
+    height:1.58rem;
     width:100%;
     display:flex;
     flex-direction:column;
