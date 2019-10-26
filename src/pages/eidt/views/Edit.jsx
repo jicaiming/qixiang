@@ -50,7 +50,6 @@ export default class Edit extends Component {
         sex: '',
         address: '',
         company: '',
-        // hasError: true
     }
 
     render() {
@@ -127,7 +126,7 @@ export default class Edit extends Component {
     }
     onChangeUserName = (v) => {
         console.log(hasError)
-        if (v == '') {
+        if (v === '') {
             hasError = true
         } else {
             hasError = false

@@ -4,8 +4,14 @@ import border from 'components/border.js'
 import bg from 'images/我的/bg.png'
 
 
+
+const ProfileContainer = styled.div`
+   margin-top:0.2rem;
+   height:100%;
+   overflow:scroll;
+`
+
 const ProfileMessage = styled.div`
-   padding-top:0.2rem;
     >div{
         height:1.58rem;
         background:#37C2BC;
@@ -162,6 +168,7 @@ const ListItemHaveBorder = border({
 
 
 export {
+    ProfileContainer,
     ProfileMessage,
     ProfileOrder,
     ProfileServe,

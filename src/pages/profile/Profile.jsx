@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import http from 'utils/xgrhttp'
 
-import { ProfileMessage, ProfileOrder, ProfileServe, ListItem, ListItemHaveBorder } from './StyleProfile.js'
+import { ProfileContainer, ProfileMessage, ProfileOrder, ProfileServe, ListItem, ListItemHaveBorder } from './StyleProfile.js'
 import userPhoto from 'images/我的/我的-头像.png'
 import edit from 'images/我的/我的-编辑icon.png'
 
@@ -23,7 +23,7 @@ export default class Profile extends Component {
     render() {
         const list = this.state.list
         return (
-            <>
+            <ProfileContainer>
                 <ProfileMessage>
                     <div>
                         <div>
@@ -80,7 +80,7 @@ export default class Profile extends Component {
                         </ListItem>
                     </div>
                 </ProfileServe>
-            </>
+            </ProfileContainer>
         )
     }
     async componentDidMount() {
