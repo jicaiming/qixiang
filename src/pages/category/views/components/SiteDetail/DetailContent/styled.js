@@ -3,6 +3,8 @@ import styled from 'styled-components'
 const ContentContainer = styled.div`
   flex: 1;
   padding: .23rem .15rem 0;
+  height: 100%;
+  overflow: auto;
   .img1{
     margin-bottom: .13rem;
     width: 100%;

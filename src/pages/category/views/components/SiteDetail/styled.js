@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import leftBack from 'assets/images/icon/left-back.png'
 
 const SiteDetailContainer = styled.div`
-  padding-top: .2rem;
   height: 100%;
   display: flex;
   flex-direction: column;
