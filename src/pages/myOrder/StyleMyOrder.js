@@ -4,9 +4,10 @@ import border from 'components/border.js'
 
 
 const MyOrderContainer = styled.div`
+    margin-top:0.2rem;
     height:100%;
     display:flex;
-    flex-flow: column;
+    flex-direction:column;
 `
 
 const NavContainer = border({
@@ -44,6 +45,9 @@ const MainContainer = styled.div`
 const Container = styled.div`
     height:100%;
     overflow:scroll;
+    div:last-child{
+        margin-bottom:0.15rem;
+    }
 `
 
 export {

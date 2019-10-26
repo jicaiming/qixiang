@@ -16,7 +16,7 @@ class Category extends PureComponent {
         return (
             <div 
                 style={{
-                    height: '100%',
+                    height: '100%'
                 }}
             >
                 <Switch>

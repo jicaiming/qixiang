@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
+import {MessageContainer} from './StyledMessage'
+import {HomeHeaderContainer} from 'components/StyledHomeHeader.js'
 
 export default class Message extends Component {
     render() {
         return (
-            <div>
-                <h1>Message</h1>
-            </div>
+            <MessageContainer>
+                <HomeHeaderContainer>
+                    <h4>消息中心</h4>
+                </HomeHeaderContainer>
+            </MessageContainer>
         )
     }
 }

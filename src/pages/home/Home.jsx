@@ -44,7 +44,7 @@ export default class Home extends Component {
                                     {this.state.data.map(val => (
                                         <a
                                             key={val}
-                                            href="http://www.baidu.com"
+                                            href="###"
                                             style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
                                             >
                                             <img

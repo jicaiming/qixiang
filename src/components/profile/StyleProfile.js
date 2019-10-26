@@ -163,9 +163,11 @@ const OrderListContainer = styled.div`
                 padding-top:0.06rem;
                 position: relative;;
                 span{
+                    text-align:right;
+                    width:auto;
                     position: absolute;
                     top:-0.06rem;
-                    left:-0.44rem;
+                    right:0.17rem;
                     height:0.35rem;
                     font-size:0.25rem;
                     font-weight:400;

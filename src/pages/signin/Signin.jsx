@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 
 import { SigninContent } from './StyleldIndex'
 
-import axios from 'axios'
-
 import {withRouter}  from 'react-router-dom'
 
  class Signin extends Component {

@@ -28,59 +28,61 @@ export default class City extends Component {
                     <h4>选择城市</h4>
                 </HomeHeaderContainer>
                 <section className="city_container">
-                    <div className="city_item" onClick={ () => this.handleClickCityItem()}>
-                        <div className="city_img">
-                            <img src={GuangZhou} alt="" />
-                            <img src={GuangZhouActive} alt="" className="city_img_active"/>
+                    <div className="city_warpper">
+                        <div className="city_item" onClick={ () => this.handleClickCityItem()}>
+                            <div className="city_img">
+                                <img src={GuangZhou} alt="" />
+                                <img src={GuangZhouActive} alt="" className="city_img_active"/>
+                            </div>
+                            <div className="city_name">
+                                <h4>广州</h4>
+                                <span>GuangZhou</span>
+                            </div>
+                            <div className="city_details">
+                                <span>用户量：888</span><span>好评率：69%</span>
+                            </div>
+                            <ul className="city_area">
+                                <CityAreaLiBorder className={this.state.active === "广州市" ? "active" : ""} onClick={() => this.handleClickArea('广州市','广州')}>广州市</CityAreaLiBorder>
+                                <CityAreaLiBorder className={this.state.active === "佛山市" ? "active" : ""}  onClick={() => this.handleClickArea('佛山市','广州')}>佛山市</CityAreaLiBorder>
+                                <CityAreaLiBorder className={this.state.active === "东莞市" ? "active last" : "last"}  onClick={() => this.handleClickArea('东莞市','广州')}>东莞市</CityAreaLiBorder>
+                            </ul>
                         </div>
-                        <div className="city_name">
-                            <h4>广州</h4>
-                            <span>GuangZhou</span>
+                        <div className="city_item"  onClick={ () => this.handleClickCityItem()}>
+                            <div className="city_img">
+                                <img src={ShangHai} alt="" />
+                                <img src={ShangHaiActive} alt="" className="city_img_active"/>
+                            </div>
+                            <div className="city_name">
+                                <h4>上海</h4>
+                                <span>ShangHai</span>
+                            </div>
+                            <div className="city_details">
+                                <span>用户量：888</span><span>好评率：69%</span>
+                            </div>
+                            <ul className="city_area">
+                                <CityAreaLiBorder className={this.state.active === "徐汇区" ? "active" : ""} onClick={() => this.handleClickArea('徐汇区','上海')}>徐汇区</CityAreaLiBorder>
+                                <CityAreaLiBorder className={this.state.active === "杨浦区" ? "active" : ""} onClick={() => this.handleClickArea('杨浦区','上海')}>杨浦区</CityAreaLiBorder>
+                                <CityAreaLiBorder className={this.state.active === "普陀区" ? "active last" : "last"} onClick={() => this.handleClickArea('普陀区','上海')}>普陀区</CityAreaLiBorder>
+                            </ul>
                         </div>
-                        <div className="city_details">
-                            <span>用户量：888</span><span>好评率：69%</span>
+                        <div className="city_item"  onClick={ () => this.handleClickCityItem()}>
+                            <div className="city_img">
+                                <img src={ShenZhen} alt="" />
+                                <img src={ShenZhenActive} alt="" className="city_img_active"/>
+                            </div>
+                            <div className="city_name">
+                                <h4>深圳</h4>
+                                <span>ShenZhen</span>
+                            </div>
+                            <div className="city_details">
+                                <span>用户量：888</span><span>好评率：69%</span>
+                            </div>
+                            <ul className="city_area">
+                                <CityAreaLiBorder className={this.state.active === "福田区" ? "active" : ""} onClick={() => this.handleClickArea('福田区','深圳')}>福田区</CityAreaLiBorder>
+                                <CityAreaLiBorder className={this.state.active === "南山区" ? "active" : ""} onClick={() => this.handleClickArea('南山区','深圳')}>南山区</CityAreaLiBorder>
+                                <CityAreaLiBorder className={this.state.active === "罗湖区" ? "active last" : "last"}  onClick={() => this.handleClickArea('罗湖区','深圳')}>罗湖区</CityAreaLiBorder>
+                            </ul>
                         </div>
-                        <ul className="city_area">
-                            <CityAreaLiBorder className={this.state.active === "广州市" ? "active" : ""} onClick={() => this.handleClickArea('广州市','广州')}>广州市</CityAreaLiBorder>
-                            <CityAreaLiBorder className={this.state.active === "佛山市" ? "active" : ""}  onClick={() => this.handleClickArea('佛山市','广州')}>佛山市</CityAreaLiBorder>
-                            <CityAreaLiBorder className={this.state.active === "东莞市" ? "active last" : "last"}  onClick={() => this.handleClickArea('东莞市','广州')}>东莞市</CityAreaLiBorder>
-                        </ul>
-                    </div>
-                    <div className="city_item"  onClick={ () => this.handleClickCityItem()}>
-                        <div className="city_img">
-                            <img src={ShangHai} alt="" />
-                            <img src={ShangHaiActive} alt="" className="city_img_active"/>
-                        </div>
-                        <div className="city_name">
-                            <h4>上海</h4>
-                            <span>ShangHai</span>
-                        </div>
-                        <div className="city_details">
-                            <span>用户量：888</span><span>好评率：69%</span>
-                        </div>
-                        <ul className="city_area">
-                            <CityAreaLiBorder className={this.state.active === "徐汇区" ? "active" : ""} onClick={() => this.handleClickArea('徐汇区','上海')}>徐汇区</CityAreaLiBorder>
-                            <CityAreaLiBorder className={this.state.active === "杨浦区" ? "active" : ""} onClick={() => this.handleClickArea('杨浦区','上海')}>杨浦区</CityAreaLiBorder>
-                            <CityAreaLiBorder className={this.state.active === "普陀区" ? "active last" : "last"} onClick={() => this.handleClickArea('普陀区','上海')}>普陀区</CityAreaLiBorder>
-                        </ul>
-                    </div>
-                    <div className="city_item"  onClick={ () => this.handleClickCityItem()}>
-                        <div className="city_img">
-                            <img src={ShenZhen} alt="" />
-                            <img src={ShenZhenActive} alt="" className="city_img_active"/>
-                        </div>
-                        <div className="city_name">
-                            <h4>深圳</h4>
-                            <span>ShenZhen</span>
-                        </div>
-                        <div className="city_details">
-                            <span>用户量：888</span><span>好评率：69%</span>
-                        </div>
-                        <ul className="city_area">
-                            <CityAreaLiBorder className={this.state.active === "福田区" ? "active" : ""} onClick={() => this.handleClickArea('福田区','深圳')}>福田区</CityAreaLiBorder>
-                            <CityAreaLiBorder className={this.state.active === "南山区" ? "active" : ""} onClick={() => this.handleClickArea('南山区','深圳')}>南山区</CityAreaLiBorder>
-                            <CityAreaLiBorder className={this.state.active === "罗湖区" ? "active last" : "last"}  onClick={() => this.handleClickArea('罗湖区','深圳')}>罗湖区</CityAreaLiBorder>
-                        </ul>
                     </div>
                 </section>
             </CityContainer>

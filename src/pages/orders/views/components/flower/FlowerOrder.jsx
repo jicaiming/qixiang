@@ -91,7 +91,7 @@ class FlowerOrder extends PureComponent {
         if (this.state.isChecked === true) {
             this.props.clearNum()
             this.props.clearTimeList()
-            this.props.history.goBack()
+            this.props.history.push('/myorder')
         }
         // http.http({
         //     method:'post',
