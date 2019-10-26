@@ -8,6 +8,7 @@ import CarItem from './CarItem'
 import CarSingleOrder from './CarSingleOrder'
 import connect from '../../connect'
 import axios from 'axios' 
+import post from 'utils/http'
 
 
 class CarOrder extends PureComponent {
@@ -69,18 +70,25 @@ class CarOrder extends PureComponent {
             this.props.history.goBack()
         }
         console.log(data)
-        
-        axios({
-            method: 'post',
-            url: '/api/commitOrder',
+        setTimeout(() => {
+            axios({
+            url:'/api/commitOrder',
+            method:'POST',
             params:JSON.stringify(data),
-            header:{
-                'Content-Type':'application/json',
-                'CharSet':'utf-8'
-            }
-        }).then(res => {
+            headers:'Content-type:application/json'
+
+        }).then(res=>{
             console.log(res.data)
         })
+        }, 0);
+        
+        // axios({
+        //     method: 'post',
+        //     url: '/api/commitOrder',
+        //     params:JSON.stringify(data)
+        // }).then(res => {
+        //     console.log(res.data)
+        // })
         // axios.post('/api/commitOrder',data).then(function(res){
         //     console.log(res)
         // })
@@ -200,7 +208,6 @@ class CarOrder extends PureComponent {
                             >
                                 立即预定
                     </Button>
-
                     }
                 </CarOrderSubmit>
             </CarContainer>
