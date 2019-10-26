@@ -148,7 +148,7 @@ export default class Edit extends Component {
             Toast.info('用户名不能为空');
         } else {
             console.log({
-                uid: '1',
+                uid: 1,
                 ...this.state,
                 pic: this.state.pic.length == 0 ? '' : this.state.pic[0].url,
                 address: this.state.address ? this.state.address.toString() : null,
@@ -156,7 +156,7 @@ export default class Edit extends Component {
             await http.post1({
                 url: 'http://39.107.252.189:8080/api/saveuser',
                 data: {
-                    uid: '1',
+                    uid: 1,
                     ...this.state,
                     pic: this.state.pic.length == 0 ? '' : this.state.pic[0].url,
                     address: this.state.address ? this.state.address.toString() : null,
