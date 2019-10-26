@@ -5,6 +5,7 @@ import issue from 'assets/images/icon/详情-问号.png'
 const CarContainer = styled.div`
     position:relative;
     background:white;
+    overflow:scroll;
     height:100%;
     width:100%;
     display:flex;
