@@ -3,11 +3,16 @@ import border from 'components/border.js'
 
 const CityContainer = styled.div`
     margin-top:.2rem;
+    height:98%;
+    display:flex;
+    flex-direction:column;
     section.city_container{
         width:100%;
-        height:100%;
+        /* height:100%; */
         display:flex;
+        flex:1;
         flex-direction:column;
+        overflow: scroll;
         div.city_item{
             flex:1;
             position: relative;
