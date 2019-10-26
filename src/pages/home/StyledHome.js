@@ -120,6 +120,7 @@ const HomeContainer = styled.div`
             }
         }
     }
+
 `
 
 export {

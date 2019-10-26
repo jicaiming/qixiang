@@ -8,6 +8,7 @@ class Mask extends PureComponent {
       <MaskConsumer>
         {
           (value) => {
+            // console.log(value)
             function bindClick(e) {
               // console.log(value)
               // console.log(e.target.className.indexOf('container'))
@@ -16,15 +17,16 @@ class Mask extends PureComponent {
               }
             }
             if (value.isShowMask){
+              // console.log(value)
               return (
                 <MaskContainer
                   onClick={(e) => bindClick(e)}
                   className="container"
                 >
                   <div>
-                    <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=397026132,2811220690&fm=26&gp=0.jpg" alt=""/>
-                    <h2>芳华</h2>
-                    <p>花型：粉百合1枝，卡罗拉玫瑰2枝，绿桔梗5朵，尤加利叶5枝。</p>
+                    <img src={value.nowFlower.imageurl} alt=""/>
+                    <h2>{value.nowFlower.name}</h2>
+                    <p>花型：{value.nowFlower.instructions}</p>
                   </div>
                 </MaskContainer>
               )
