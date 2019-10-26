@@ -68,10 +68,12 @@ export default class Register extends Component {
             headers: {
                 'Content-Type': 'application/json'
             }
-        }).then(function(res){
-            console.log(res.data)
+        }).then((res) => {
+            // console.log(res.data)
+            // console.log(this.props)
             if(res.data){
                 alert('注册成功！')
+                this.props.history.push('/login')
             } else {
                 alert('验证码错误！')
             }
