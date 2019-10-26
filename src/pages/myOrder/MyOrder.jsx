@@ -64,7 +64,7 @@ export default class MyOrder extends Component {
     }
     async componentDidMount() {
         let result = (await http.post1({
-            url: '/api/listOrder',
+            url: 'http://39.107.252.189:8080/api1/listOrder',
             data: {
                 uid: 1
             }

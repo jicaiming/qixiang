@@ -24,7 +24,7 @@ export default {
       method: 'POST',
       data: JSON.stringify(data),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'text/plain'
       }
     })
       .then(result => result)
