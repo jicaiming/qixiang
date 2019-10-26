@@ -7,7 +7,7 @@ const MyOrderContainer = styled.div`
     margin-top:0.2rem;
     height:100%;
     display:flex;
-    flex-flow: column;
+    flex-direction:column;
 `
 
 const NavContainer = border({
