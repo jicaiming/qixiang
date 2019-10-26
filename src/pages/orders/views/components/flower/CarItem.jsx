@@ -28,7 +28,7 @@ class CartItem extends PureComponent{
         timeList.forEach((value,index)=>{
             if(value.id === this.props.value.id){
                 dayCount = value.dayCount
-                startTime = value.createDate
+                startTime = value.startDate
                 sTime = new Date(startTime)
                 sY = sTime.getFullYear()
                 sM = sTime.getMonth()+1
@@ -52,14 +52,14 @@ class CartItem extends PureComponent{
             <CarLi>
                 <h2>{this.props.value.name}</h2>
                 <p className = "carText">
-                    <span>粉百合 </span>
+                    <span>{this.props.value.instructions.split(' ')[0]} </span>
                     |
-                    <span>紫罗兰</span>
+                    <span>   {this.props.value.instructions.split(' ')[1]}</span>
                 </p>
                 <p className = "carText">
                     已选
                     <span> {this.props.value.count} </span>
-                    捧</p>
+                    辆</p>
                 <p className = "carRentData">
                 {
                     !hasTime

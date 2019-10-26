@@ -6,6 +6,7 @@ import ListContainer from './styled'
 import CarItem from './Car/CarItem'
 import FlowerItem from './Flower/FlowerItem'
 import SiteItem from './Site/SiteItem'
+import http from "utils/http.js"
 
 // let list = [
 //   {
@@ -27,7 +28,7 @@ class GoodsList extends PureComponent {
       list: []
     }
   }
-  componentDidMount() {
+  async componentDidMount() {
     // console.log(this.props)
     let path = this.props.history.location.pathname.split("/")
     let firstKind = path[3]
@@ -40,17 +41,25 @@ class GoodsList extends PureComponent {
         break
       case 'site': 
         firstKind =  3
+        break
+      default :
+        firstKind = 1
     }
-    let secondKind = path[4] || 1
+    // let secondKind = path[4] || 1
     // console.log(firstKind,secondKind)
-    fetch(`/api/category`)
-      .then(response => response.json())
-      .then(result => {
-        this.setState({
-          list: result
-        })
+    let result = await http.get("http://39.107.252.189:8080/api/category")
+    this.setState({
+      list: result
+    })
+    console.log(result)
+
+      // .then(response => response.json())
+      // .then(result => {
+      //   this.setState({
+      //     list: result
+      //   })
         // console.log(result)
-      })
+      // })
   }
   render() {
     // console.log(this.props)
@@ -68,12 +77,17 @@ class GoodsList extends PureComponent {
         break
       case 'site': 
         firstKind =  3
+        break
+      default :
+        firstKind = 1
     }
-    let secondKind = path[4] || 1
+    let secondKind = Number(path[4]) || 1
     // console.log(firstKind,secondKind)
     let list = this.state.list
     let nowList = list.filter((v, i) => {
-      return (v.firstclassid==firstKind)&&(v.secondclassid==secondKind)
+      // console.log(v.firstclassid,firstKind)
+      // console.log(v.secondclassid,secondKind)
+      return (v.firstclassid===firstKind)&&(v.secondclassid===secondKind)
     })
     // console.log(nowList)
     switch (this.props.bigKind) {

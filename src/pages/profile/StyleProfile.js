@@ -17,6 +17,7 @@ const ProfileMessage = styled.div`
             padding-top: 0.15rem;
             z-index:99;
             img{
+                border-radius:50%;
                 width:100%;
                 height:100%;
             }

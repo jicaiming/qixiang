@@ -5,7 +5,7 @@ const defaultState = {
     timeList : [
         {
             id:1,
-            createDate:0,
+            startDate:0,
             endDate:0,
             dayCount:0
         }
@@ -25,7 +25,7 @@ export default (state=defaultState,action) =>{
 
                 if(value.id === action.data.id){
                     value.id = action.data.id
-                    value.createDate = action.data.sTime
+                    value.startDate = action.data.sTime
                     value.endDate = action.data.eTime
                     value.dayCount = action.data.dayCount
                     isExit = true
@@ -39,7 +39,7 @@ export default (state=defaultState,action) =>{
             }else{
                 newList.push({
                     id:action.data.id,
-                    createDate:action.data.sTime,
+                    startDate:action.data.sTime,
                     endDate:action.data.eTime,
                     dayCount:action.data.dayCount
                 })
