@@ -7,7 +7,7 @@ const MyOrderContainer = styled.div`
     margin-top:0.2rem;
     height:100%;
     display:flex;
-    flex-flow: column;
+    flex-direction:column;
 `
 
 const NavContainer = border({
@@ -36,15 +36,16 @@ const NavContainer = border({
 })
 
 
-
 const MainContainer = styled.div`
+    display:flex;   
+    flex-direction:column;
     flex:1;
     height:100%;
 `
 
 const Container = styled.div`
-    height:100%;
     overflow:scroll;
+    height:100%;
     div:last-child{
         margin-bottom:0.15rem;
     }
