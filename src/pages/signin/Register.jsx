@@ -38,7 +38,7 @@ export default class Register extends Component {
             method:'post',
             data:this.state.username
         }).then(res=>{
-            console.log(res.data)
+            // console.log(res.data)
             if(res.data === false)
             {alert('用户名重复')}
             if(res.data === true)
@@ -92,29 +92,31 @@ export default class Register extends Component {
         } else {
             // console.log(this)    
 
-            let mes = {
-                username: this.state.username,
-                password: this.state.password,
-                question: this.state.question,
-                ask: this.state.ask
-            }
-            await axios({
-                url: "/api/register",
-                headers: {
-                    // 'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                method: "POST",
-                data: mes
-                // body: JSON.stringify(mes)
-            })
-                .then(
-                    function (res) { return res }
-                ).then((res) => {
-                    if(res.data === true){
-                        alert('注册成功')
-                    }
-                }).catch(function (res) { console.log(res) })
+            // let mes = {
+            //     username: this.state.username,
+            //     password: this.state.password,
+            //     question: this.state.question,
+            //     ask: this.state.ask
+            // }
+            // await axios({
+            //     url: "/api/register",
+            //     headers: {
+            //         // 'Accept': 'application/json',
+            //         'Content-Type': 'application/json'
+            //     },
+            //     method: "POST",
+            //     data: mes
+            //     // body: JSON.stringify(mes)
+            // })
+            //     .then(
+            //         function (res) { return res }
+            //     ).then((res) => {
+            //         if(res.data === true){
+            //             alert('注册成功')
+            //         }
+            //     }).catch(function (res) { console.log(res) })
+
+            this.props.history.push("/login")
         }
     }
 
