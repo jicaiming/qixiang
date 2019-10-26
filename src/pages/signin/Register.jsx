@@ -46,9 +46,22 @@ export default class Register extends Component {
         })
     }
     handleSend(e) {
-        console.log(11111)
+        if(this.state.question.length !== 11) return ''
+        console.log(this.state.question)
+        axios({
+            url: `http://39.107.252.189:8080/api/faduanxin?iphone=${this.state.question}`,
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(function(){
+            alert('验证码发送成功')
+        })
     }
-    
+    handleV(e) {
+        console.log(this.state)
+    }
+
     render() {
         const bck1 = { background: '#9b9b9b' }
         // const bck2 = { background:'green'}
@@ -79,14 +92,14 @@ export default class Register extends Component {
                 <div className='select'>
                     <input type="text" placeholder="请输入手机号" name="question" ref={this.input} value={this.state.question}
                         onChange={this.handleInputChange} />
-                    <button className='getV' onClick={(e)=>this.handleSend.bind(this,e)}>获取验证码</button>
+                    <button className='getV' onClick={(e)=>this.handleSend(e)}>获取验证码</button>
                 </div>
                 <div className='ask'>
                     <input type="text" placeholder="请输入验证码" name="ask" value={this.state.ask}
                         onChange={this.handleInputChange} />
                 </div>
                 {/* <input type="submit" value="Submit" /> */}
-                <p onClick={this.handleClick} style={bck1}>注册</p>
+                <p onClick={(e)=>this.handleV(e)} style={bck1}>注册</p>
 
             </RegisterContent>
         )
