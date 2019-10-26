@@ -39,12 +39,16 @@ export default class Register extends Component {
             data:this.state.username
         }).then(res=>{
             // console.log(res.data)
-            if(res.data === false)
-            {alert('用户名重复')}
-            if(res.data === true)
-            {alert('用户名输入成功')}
+            // if(res.data === false)
+            // {alert('用户名重复')}
+            // if(res.data === true)
+            // {alert('用户名输入成功')}
         })
     }
+    handleSend(e) {
+        console.log(11111)
+    }
+    
     render() {
         const bck1 = { background: '#9b9b9b' }
         // const bck2 = { background:'green'}
@@ -64,12 +68,21 @@ export default class Register extends Component {
                     <span>确认密码</span> <input type="text" name="repassword" placeholder="" value={this.state.repassword}
                         onChange={this.handleInputChange} />
                 </div>
-                <div className='select'>
+                {/* <div className='select'>
                     <input type="text" placeholder="选择密保问题" name="question" ref={this.input} value={this.state.question}
                         onChange={this.handleInputChange} />
                 </div>
                 <div className='ask'>
                     <input type="text" placeholder="输入密保的答案" name="ask" value={this.state.ask}
+                        onChange={this.handleInputChange} />
+                </div> */}
+                <div className='select'>
+                    <input type="text" placeholder="请输入手机号" name="question" ref={this.input} value={this.state.question}
+                        onChange={this.handleInputChange} />
+                    <button className='getV' onClick={(e)=>this.handleSend.bind(this,e)}>获取验证码</button>
+                </div>
+                <div className='ask'>
+                    <input type="text" placeholder="请输入验证码" name="ask" value={this.state.ask}
                         onChange={this.handleInputChange} />
                 </div>
                 {/* <input type="submit" value="Submit" /> */}

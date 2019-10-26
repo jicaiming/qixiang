@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import leftBack from 'assets/images/icon/left-back.png'
 
 const SiteDetailContainer = styled.div`
-  padding-top: .2rem;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -30,6 +29,7 @@ const SiteDetailContainer = styled.div`
     }
   }
   footer{
+    z-index:5;
     width:3.75rem;
     height:0.6rem;
     background:rgba(55,194,188,1);

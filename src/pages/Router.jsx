@@ -22,6 +22,7 @@ import Set from './profile/Set'
 import LicenseAgreement from './profile/LicenseAgreement'
 
 import Start from './start/Start'
+import Guide from './start/guide'
 
 export default class MyRouter extends Component {
     render() {
@@ -46,12 +47,13 @@ export default class MyRouter extends Component {
                     <Route path='/license' component={LicenseAgreement}></Route>
 
                     <Route path='/start' component={Start}></Route>
-                    
+                    <Route path='/guide' component={Guide}></Route>
+
                     <Route path='/login' component={Login}></Route>
                     <Route path='/register' component={Register}></Route>
-                    <Redirect from='/' exact to='/register'></Redirect> 
+                    {/* <Redirect from='/' exact to='/register'></Redirect>  */}
 
-                    {/* <Redirect from='/' exact to='/start'></Redirect>  */}
+                    <Redirect from='/' exact to='/start'></Redirect> 
                     <Route component={Page404} ></Route>
                 </Switch>
             </>

@@ -17,7 +17,6 @@ class Category extends PureComponent {
             <div 
                 style={{
                     height: '100%',
-                    paddingTop: '.2rem'
                 }}
             >
                 <Switch>

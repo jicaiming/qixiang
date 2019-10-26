@@ -48,7 +48,11 @@ const RegisterContent = styled.div `
     }
   }
   .select{
-
+    position: relative;
+    .getV{
+    position: absolute;
+    right: 0;
+  }
   }
   .ask{
 
