@@ -60,13 +60,6 @@ class CarOrder extends PureComponent {
             let endDate = endDate1.getDate()
             value.endDate = endYear+'-'+endMonth+'-'+endDate
         })
-        // timeList.map((value,index)=>{
-        //     // delete value.startDate 
-        //     // delete value.endDate
-        //     value.startDate = value.startDate.toString()
-        //     value.endDate = value.endDate.toString()
-        // })
-        console.log(timeList)
         let serviceFee = total*50
         cartList.map((value,index)=>{
             timeList.map((v,i)=>{
@@ -93,11 +86,14 @@ class CarOrder extends PureComponent {
             this.props.clearTimeList()
             this.props.history.push('/myorder')
         }
+<<<<<<< HEAD
         // http.http({
         //     method:'post',
         //     url:'/api/commitOrder',
         //     data:data,
         // })
+=======
+>>>>>>> c214c78a2c513909b6474b52b976d1d135ed102a
         http.post({
                 method:'post',
                 url:'http://39.107.252.189:8080/api1/commitOrder',

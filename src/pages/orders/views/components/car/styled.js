@@ -5,8 +5,12 @@ import issue from 'assets/images/icon/详情-问号.png'
 const CarContainer = styled.div`
     position:relative;
     background:white;
+<<<<<<< HEAD
     overflow:scroll;
     height:100%;
+=======
+    // height:100%;
+>>>>>>> c214c78a2c513909b6474b52b976d1d135ed102a
     width:100%;
     display:flex;
     flex-direction:column;
