@@ -6,6 +6,7 @@ const ContentContainer = styled.div`
   .img1{
     margin-bottom: .13rem;
     width: 100%;
+    height: 1.42rem;
   }
   .parameter{
     display: flex;

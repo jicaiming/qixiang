@@ -7,7 +7,7 @@ import { CarContainer, CarOrderItem, Devide, CarOrderDetail, CarOrderSubmit, Ite
 import CarItem from './CarItem'
 import CarSingleOrder from './CarSingleOrder'
 import connect from '../../connect'
-import axios from 'axios' 
+import http from 'utils/http'
 
 
 class CarOrder extends PureComponent {
@@ -48,6 +48,26 @@ class CarOrder extends PureComponent {
             delete value.imageurl
         })
         let timeList = this.props.timeList
+        console.log(timeList)
+        timeList.map((value,index)=>{
+            let startDate1 = new Date(value.startDate)
+            let createYear = startDate1.getFullYear()
+            let createMonth = startDate1.getMonth()
+            let startDate = startDate1.getDate()
+            value.startDate = createYear+'-'+createMonth+'-'+startDate
+            let endDate1 = new Date(value.endDate)
+            let endYear = endDate1.getFullYear()
+            let endMonth = endDate1.getMonth()
+            let endDate = endDate1.getDate()
+            value.endDate = endYear+'-'+endMonth+'-'+endDate
+        })
+        // timeList.map((value,index)=>{
+        //     // delete value.startDate 
+        //     // delete value.endDate
+        //     value.startDate = value.startDate.toString()
+        //     value.endDate = value.endDate.toString()
+        // })
+        console.log(timeList)
         let serviceFee = total*50
         cartList.map((value,index)=>{
             timeList.map((v,i)=>{
@@ -56,10 +76,16 @@ class CarOrder extends PureComponent {
                 }
             })
         })
+        cartList.forEach((value,index)=>{
+            if(value.dayCount === 0){
+                cartList.splice(1,index)
+            }
+        })
        
         let data = {
+            uid: 1,
             orderId:orderId ,
-            cartList:cartList,
+            cartList:JSON.stringify(cartList),
             isHasServiceFee :serviceFee,
             orderAmount: this.state.totalCost
         }
@@ -69,21 +95,16 @@ class CarOrder extends PureComponent {
             this.props.history.goBack()
         }
         console.log(data)
-        
-        axios({
-            method: 'post',
-            url: '/api/commitOrder',
-            params:JSON.stringify(data),
-            header:{
-                'Content-Type':'application/json',
-                'CharSet':'utf-8'
-            }
-        }).then(res => {
-            console.log(res.data)
-        })
-        // axios.post('/api/commitOrder',data).then(function(res){
-        //     console.log(res)
+        // http.http({
+        //     method:'post',
+        //     url:'/api/commitOrder',
+        //     data:data,
         // })
+        http.post({
+                method:'post',
+                url:'http://39.107.252.189:8080/api1/commitOrder',
+                data:data,
+            })
     }
     handleClickAgreement() {
         this.setState({
@@ -98,6 +119,7 @@ class CarOrder extends PureComponent {
     render() {
         let { buyList, total } = this.props.allData
         let timeList = this.props.timeList
+        console.log(timeList)
         let totalFee = 0
         buyList.forEach((value, index) => {
             timeList.forEach((v, i) => {

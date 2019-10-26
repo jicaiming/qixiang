@@ -45,5 +45,4 @@ export default class ClassicDetails extends Component {
     handleClickCustomerService(){
         console.log('客服')
     }
-
 }
