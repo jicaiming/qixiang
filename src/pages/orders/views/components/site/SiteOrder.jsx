@@ -92,7 +92,7 @@ class SiteOrder extends PureComponent {
         if (this.state.isChecked === true) {
             this.props.clearNum()
             this.props.clearTimeList()
-            this.props.history.push('/myorder/allOrders')
+            this.props.history.push('/myorder')
         }
         console.log(data)
         // http.http({

@@ -154,11 +154,7 @@ export default class Edit extends Component {
                 pic: this.state.pic.length == 0 ? '' : this.state.pic[0].url,
                 address: this.state.address ? this.state.address.toString() : null,
             })
-<<<<<<< HEAD
-            let result = await http.post2({
-=======
             await http.post1({
->>>>>>> guangruixiao
                 url: 'http://39.107.252.189:8080/api/saveuser',
                 data: {
                     uid: '1',
