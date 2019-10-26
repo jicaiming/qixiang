@@ -86,14 +86,11 @@ class CarOrder extends PureComponent {
             this.props.clearTimeList()
             this.props.history.push('/myorder')
         }
-<<<<<<< HEAD
         // http.http({
         //     method:'post',
         //     url:'/api/commitOrder',
         //     data:data,
         // })
-=======
->>>>>>> c214c78a2c513909b6474b52b976d1d135ed102a
         http.post({
                 method:'post',
                 url:'http://39.107.252.189:8080/api1/commitOrder',
