@@ -59,7 +59,23 @@ export default class Register extends Component {
         })
     }
     handleV(e) {
-        console.log(this.state)
+        // console.log(this.state.question)
+        // console.log(this.state.ask)
+        // console.log(this.props)
+        axios({
+            url: `http://39.107.252.189:8080/api/noteVerify?phone=${this.state.question}&code=${this.state.ask}`,
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(function(res){
+            console.log(res.data)
+            if(res.data){
+                alert('注册成功！')
+            } else {
+                alert('验证码错误！')
+            }
+        })
     }
 
     render() {
@@ -142,7 +158,7 @@ export default class Register extends Component {
             //         }
             //     }).catch(function (res) { console.log(res) })
 
-            this.props.history.push("/login")
+            
         }
     }
 
