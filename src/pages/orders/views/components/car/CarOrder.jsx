@@ -84,8 +84,13 @@ class CarOrder extends PureComponent {
         if (this.state.isChecked === true) {
             this.props.clearNum()
             this.props.clearTimeList()
-            this.props.history.goBack()
+            this.props.history.push('/myorder')
         }
+        // http.http({
+        //     method:'post',
+        //     url:'/api/commitOrder',
+        //     data:data,
+        // })
         http.post({
                 method:'post',
                 url:'http://39.107.252.189:8080/api1/commitOrder',

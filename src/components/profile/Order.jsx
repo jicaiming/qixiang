@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 
 import OrderList from './OrderList'
+import http from 'utils/xgrhttp'
+
 
 import { OrderContainer, MyButton } from './StyleProfile'
 
-
 export default class Order extends Component {
-
+    state = {
+        flag: false
+    }
     render() {
         const list = this.props.list
         return (
@@ -81,7 +84,7 @@ export default class Order extends Component {
                     <p><span>{list.orderMaster.orderAmount}</span><span>元</span></p>
                 </div>
                 <div className="btn_container">
-                    {list.orderMaster.orderStatus == 0 ? <MyButton>取消订单</MyButton> : ''}
+                    {list.orderMaster.orderStatus == 0 ? <MyButton onClick={() => this.props.onClick(list.orderMaster.orderId)}>取消订单</MyButton> : ''}
                     <MyButton color='#37C2BC'>联系客服</MyButton>
                 </div>
             </OrderContainer >

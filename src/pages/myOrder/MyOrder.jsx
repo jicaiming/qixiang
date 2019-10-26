@@ -16,7 +16,7 @@ import AllOrders from './components/AllOrders'  //全部订单
 export default class MyOrder extends Component {
     state = {
         list: [],
-        waitPayList: [],
+        // waitPayList: [],
         accountPaidList: [],
         finishedList: []
     }
@@ -49,10 +49,10 @@ export default class MyOrder extends Component {
 
                 </NavContainer>
                 <MainContainer>
-                    <Route path={`${match.path}/waitPay`} render={(props) => <WaitPay {...props} list={this.state.waitPayList} />} ></Route>
+                    <Route path={`${match.path}/waitPay`} render={(props) => <WaitPay {...props} list={this.state.list} onClick={this.onClick} />}  ></Route>
                     <Route path={`${match.path}/accountPaid`} render={(props) => <AccountPaid {...props} list={this.state.accountPaidList} />} ></Route>
                     <Route path={`${match.path}/finished`} render={(props) => <Finished {...props} list={this.state.finishedList} />} ></Route>
-                    <Route path={`${match.path}/allOrders`} render={(props) => <AllOrders {...props} list={this.state.list} />} ></Route>
+                    <Route path={`${match.path}/allOrders`} render={(props) => <AllOrders {...props} list={this.state.list} onClick={this.onClick} />} ></Route>
                 </MainContainer>
             </MyOrderContainer>
         )
@@ -62,6 +62,21 @@ export default class MyOrder extends Component {
         // console.log(this)
         this.history.push('/index/profile')
     }
+    onClick = async (orderId) => {
+        let res = (await http.post1({
+            url: 'http://39.107.252.189:8080/api1/removeOrder',
+            data: {
+                orderId,
+            }
+        })).data
+        let newList = this.state.list || this.state.waitPayList
+        _.remove(newList, (value, index) => {
+            return value.orderMaster.orderId === orderId
+        });
+        this.setState({
+            list: newList
+        })
+    }
     async componentDidMount() {
         let result = (await http.post1({
             url: 'http://39.107.252.189:8080/api1/listOrder',
@@ -70,9 +85,9 @@ export default class MyOrder extends Component {
             }
         })).data.orderDTOS
 
-        let waitPayList = _.filter(result, (value, index) => {
-            return value.orderMaster.orderStatus === 0
-        })
+        // let waitPayList = _.filter(result, (value, index) => {
+        //     return value.orderMaster.orderStatus === 0
+        // })
         let accountPaidList = _.filter(result, (value, index) => {
             return value.orderMaster.orderStatus === 1
         })
@@ -82,7 +97,7 @@ export default class MyOrder extends Component {
 
         this.setState({
             list: result,
-            waitPayList,
+            // waitPayList,
             accountPaidList,
             finishedList
         })
