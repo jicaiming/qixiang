@@ -147,7 +147,6 @@ export default class Edit extends Component {
     onSubmit = async () => {
         if (hasError) {
             Toast.info('用户名不能为空');
-            // alert('用户名不能为空')
         } else {
             console.log({
                 uid: '1',
@@ -155,7 +154,11 @@ export default class Edit extends Component {
                 pic: this.state.pic.length == 0 ? '' : this.state.pic[0].url,
                 address: this.state.address ? this.state.address.toString() : null,
             })
+<<<<<<< HEAD
             let result = await http.post2({
+=======
+            await http.post1({
+>>>>>>> guangruixiao
                 url: 'http://39.107.252.189:8080/api/saveuser',
                 data: {
                     uid: '1',
@@ -164,7 +167,7 @@ export default class Edit extends Component {
                     address: this.state.address ? this.state.address.toString() : null,
                 }
             })
-            // alert('修改成功')            
+            Toast.info('用户信息修改成功！！');
         }
 
     }
@@ -175,7 +178,6 @@ export default class Edit extends Component {
                 uid: 1
             }
         })).data
-        // console.log(result.address.split(' ').slice(0, -1))
         this.setState({
             pic: result.pic ? [{
                 url: result.pic,
@@ -188,10 +190,7 @@ export default class Edit extends Component {
             sex: result.sex,
             address: result.address.split(' ').slice(0, -1),
             company: result.company
-        }, () => {
-            // console.log(this.state)
         })
-        // console.log(result.username)
     }
 
 }
